@@ -12,8 +12,8 @@ from django.core.files.base import ContentFile
 from django.utils import timezone
 from postulo.documents.archiving import send_pending
 from postulo.documents.models import CopyStatus, DocumentKind, UploadedDocument
-from postulo.documents.stores import DocumentMetadata, StorePlugin
 from postulo.plugins import registry
+from postulo.plugins.api import DocumentMetadata, StorePlugin
 from postulo.plugins.models import Connection
 
 from postulo_paperless import store as store_module

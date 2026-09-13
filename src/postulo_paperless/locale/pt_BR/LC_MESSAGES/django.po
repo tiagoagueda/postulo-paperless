@@ -1,0 +1,85 @@
+# português (Brasil) translation of postulo-paperless.
+# This file is distributed under the same license as Postulo (AGPL-3.0-or-later).
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Postulo\n"
+"Report-Msgid-Bugs-To: https://source.tiagoagueda.com/postulo/postulo/issues\n"
+"POT-Creation-Date: 2026-09-13 04:06+0000\n"
+"PO-Revision-Date: 2026-09-13 04:06+0000\n"
+"Last-Translator: Postulo contributors\n"
+"Language-Team: português (Brasil)\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: postulo scripts/messages.py\n"
+
+#: src/postulo_paperless/store.py:228
+#, draft
+msgid ""
+"A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
+msgstr ""
+"Um campo URL em cada documento que leva de volta à candidatura aqui, criado no Paperless se faltar. Deixe em branco para nenhum."
+
+#: src/postulo_paperless/store.py:208
+#, draft
+msgid "API token"
+msgstr "Token da API"
+
+#: src/postulo_paperless/store.py:223
+#, draft
+msgid "Custom field for the application's link"
+msgstr "Campo personalizado para a ligação da candidatura"
+
+#: src/postulo_paperless/store.py:211
+#, draft
+msgid "From your Paperless profile. Stored encrypted; never shown again."
+msgstr ""
+"Do seu perfil no Paperless. Guardado cifrado; nunca volta a ser mostrado."
+
+#: src/postulo_paperless/store.py:202
+#, draft
+msgid "Paperless address"
+msgstr "Endereço do Paperless"
+
+#: src/postulo_paperless/store.py:156
+#, draft
+msgid "Paperless consumed the document but gave no id."
+msgstr "O Paperless consumiu o documento mas não devolveu nenhum identificador."
+
+#: src/postulo_paperless/store.py:165
+#, python-format, draft
+msgid "Paperless could not consume the document: %(reason)s"
+msgstr "O Paperless não conseguiu consumir o documento: %(reason)s"
+
+#: src/postulo_paperless/store.py:170
+#, draft
+msgid "Paperless is still consuming the document; it will be checked again."
+msgstr "O Paperless ainda está a consumir o documento; será verificado de novo."
+
+#: src/postulo_paperless/store.py:196
+#, draft
+msgid "Paperless-ngx"
+msgstr "Paperless-ngx"
+
+#: src/postulo_paperless/store.py:219
+#, draft
+msgid "Put on every document that came from Postulo. Leave blank for none."
+msgstr "Posta em cada documento vindo do Postulo. Deixe em branco para nenhuma."
+
+#: src/postulo_paperless/store.py:249
+#, python-format, draft
+msgid "Reachable. The archive holds %(count)d documents."
+msgstr "Acessível. O arquivo tem %(count)d documentos."
+
+#: src/postulo_paperless/store.py:215
+#, draft
+msgid "Tag"
+msgstr "Etiqueta"
+
+#: src/postulo_paperless/store.py:204
+#, draft
+msgid "Where you open Paperless, e.g. https://paperless.example.org."
+msgstr "Onde abre o Paperless, p. ex. https://paperless.example.org."

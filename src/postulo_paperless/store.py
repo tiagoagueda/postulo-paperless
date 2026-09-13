@@ -28,8 +28,8 @@ from urllib.parse import urlsplit
 import httpx
 from django.utils.translation import gettext as _
 from django.utils.translation import gettext_lazy
-from postulo.documents.stores import DocumentMetadata, ExternalRef
 from postulo.plugins import http
+from postulo.plugins.api import DocumentMetadata, ExternalRef
 from postulo.plugins.base import FieldSpec, TestResult
 
 from . import __version__
