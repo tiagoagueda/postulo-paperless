@@ -17,56 +17,70 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py:228
+#, draft
 msgid ""
 "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
 msgstr ""
+"Ένα πεδίο URL σε κάθε έγγραφο που οδηγεί πίσω στην αίτηση εδώ· δημιουργείται στο Paperless αν λείπει. Αφήστε το κενό για κανένα."
 
 #: src/postulo_paperless/store.py:208
+#, draft
 msgid "API token"
-msgstr ""
+msgstr "Διακριτικό API"
 
 #: src/postulo_paperless/store.py:223
+#, draft
 msgid "Custom field for the application's link"
-msgstr ""
+msgstr "Προσαρμοσμένο πεδίο για τον σύνδεσμο της αίτησης"
 
 #: src/postulo_paperless/store.py:211
+#, draft
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr ""
+"Από το προφίλ σας στο Paperless. Αποθηκεύεται κρυπτογραφημένο· δεν εμφανίζεται ποτέ ξανά."
 
 #: src/postulo_paperless/store.py:202
+#, draft
 msgid "Paperless address"
-msgstr ""
+msgstr "Διεύθυνση Paperless"
 
 #: src/postulo_paperless/store.py:156
+#, draft
 msgid "Paperless consumed the document but gave no id."
-msgstr ""
+msgstr "Το Paperless επεξεργάστηκε το έγγραφο αλλά δεν έδωσε αναγνωριστικό."
 
 #: src/postulo_paperless/store.py:165
-#, python-format
+#, python-format, draft
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr ""
+msgstr "Το Paperless δεν μπόρεσε να επεξεργαστεί το έγγραφο: %(reason)s"
 
 #: src/postulo_paperless/store.py:170
+#, draft
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
+msgstr "Το Paperless επεξεργάζεται ακόμη το έγγραφο· θα ελεγχθεί ξανά."
 
 #: src/postulo_paperless/store.py:196
+#, draft
 msgid "Paperless-ngx"
-msgstr ""
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py:219
+#, draft
 msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr ""
+"Τοποθετείται σε κάθε έγγραφο που προήλθε από το Postulo. Αφήστε το κενό για καμία."
 
 #: src/postulo_paperless/store.py:249
-#, python-format
+#, python-format, draft
 msgid "Reachable. The archive holds %(count)d documents."
-msgstr ""
+msgstr "Προσβάσιμο. Το αρχείο περιέχει %(count)d έγγραφα."
 
 #: src/postulo_paperless/store.py:215
+#, draft
 msgid "Tag"
-msgstr ""
+msgstr "Ετικέτα"
 
 #: src/postulo_paperless/store.py:204
+#, draft
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
+msgstr "Εκεί όπου ανοίγετε το Paperless, π.χ. https://paperless.example.org."

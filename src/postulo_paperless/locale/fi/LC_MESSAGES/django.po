@@ -17,56 +17,70 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py:228
+#, draft
 msgid ""
 "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
 msgstr ""
+"URL-kenttä jokaisessa asiakirjassa, joka johtaa takaisin täällä olevaan hakemukseen; luodaan Paperlessiin, jos puuttuu. Jätä tyhjäksi, jos et halua sitä."
 
 #: src/postulo_paperless/store.py:208
+#, draft
 msgid "API token"
-msgstr ""
+msgstr "API-avain"
 
 #: src/postulo_paperless/store.py:223
+#, draft
 msgid "Custom field for the application's link"
-msgstr ""
+msgstr "Mukautettu kenttä hakemuksen linkille"
 
 #: src/postulo_paperless/store.py:211
+#, draft
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr ""
+"Paperless-profiilistasi. Tallennetaan salattuna; ei näytetä enää koskaan."
 
 #: src/postulo_paperless/store.py:202
+#, draft
 msgid "Paperless address"
-msgstr ""
+msgstr "Paperlessin osoite"
 
 #: src/postulo_paperless/store.py:156
+#, draft
 msgid "Paperless consumed the document but gave no id."
-msgstr ""
+msgstr "Paperless käsitteli asiakirjan mutta ei antanut tunnistetta."
 
 #: src/postulo_paperless/store.py:165
-#, python-format
+#, python-format, draft
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr ""
+msgstr "Paperless ei voinut käsitellä asiakirjaa: %(reason)s"
 
 #: src/postulo_paperless/store.py:170
+#, draft
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
+msgstr "Paperless käsittelee asiakirjaa yhä; se tarkistetaan uudelleen."
 
 #: src/postulo_paperless/store.py:196
+#, draft
 msgid "Paperless-ngx"
-msgstr ""
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py:219
+#, draft
 msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr ""
+"Lisätään jokaiseen Postulosta tulleeseen asiakirjaan. Jätä tyhjäksi, jos et halua sitä."
 
 #: src/postulo_paperless/store.py:249
-#, python-format
+#, python-format, draft
 msgid "Reachable. The archive holds %(count)d documents."
-msgstr ""
+msgstr "Tavoitettavissa. Arkistossa on %(count)d asiakirjaa."
 
 #: src/postulo_paperless/store.py:215
+#, draft
 msgid "Tag"
-msgstr ""
+msgstr "Tunniste"
 
 #: src/postulo_paperless/store.py:204
+#, draft
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
+msgstr "Osoite, jossa avaat Paperlessin, esim. https://paperless.example.org."

@@ -17,56 +17,68 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py:228
+#, draft
 msgid ""
 "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
 msgstr ""
+"Ett URL-fält på varje dokument som leder tillbaka till ansökan här, skapas i Paperless om det saknas. Lämna tomt för inget."
 
 #: src/postulo_paperless/store.py:208
+#, draft
 msgid "API token"
-msgstr ""
+msgstr "API-token"
 
 #: src/postulo_paperless/store.py:223
+#, draft
 msgid "Custom field for the application's link"
-msgstr ""
+msgstr "Anpassat fält för ansökans länk"
 
 #: src/postulo_paperless/store.py:211
+#, draft
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr ""
+msgstr "Från din Paperless-profil. Sparas krypterat; visas aldrig igen."
 
 #: src/postulo_paperless/store.py:202
+#, draft
 msgid "Paperless address"
-msgstr ""
+msgstr "Paperless-adress"
 
 #: src/postulo_paperless/store.py:156
+#, draft
 msgid "Paperless consumed the document but gave no id."
-msgstr ""
+msgstr "Paperless tog emot dokumentet men gav inget id."
 
 #: src/postulo_paperless/store.py:165
-#, python-format
+#, python-format, draft
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr ""
+msgstr "Paperless kunde inte ta emot dokumentet: %(reason)s"
 
 #: src/postulo_paperless/store.py:170
+#, draft
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
+msgstr "Paperless bearbetar fortfarande dokumentet; det kontrolleras igen."
 
 #: src/postulo_paperless/store.py:196
+#, draft
 msgid "Paperless-ngx"
-msgstr ""
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py:219
+#, draft
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr ""
+msgstr "Sätts på varje dokument som kom från Postulo. Lämna tomt för ingen."
 
 #: src/postulo_paperless/store.py:249
-#, python-format
+#, python-format, draft
 msgid "Reachable. The archive holds %(count)d documents."
-msgstr ""
+msgstr "Nåbar. Arkivet innehåller %(count)d dokument."
 
 #: src/postulo_paperless/store.py:215
+#, draft
 msgid "Tag"
-msgstr ""
+msgstr "Tagg"
 
 #: src/postulo_paperless/store.py:204
+#, draft
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
+msgstr "Där du öppnar Paperless, t.ex. https://paperless.example.org."

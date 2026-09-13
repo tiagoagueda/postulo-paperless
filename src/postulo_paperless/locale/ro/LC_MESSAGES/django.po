@@ -17,56 +17,69 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py:228
+#, draft
 msgid ""
 "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
 msgstr ""
+"Un câmp URL pe fiecare document care duce înapoi la candidatura de aici, creat în Paperless dacă lipsește. Lasă gol pentru niciunul."
 
 #: src/postulo_paperless/store.py:208
+#, draft
 msgid "API token"
-msgstr ""
+msgstr "Token API"
 
 #: src/postulo_paperless/store.py:223
+#, draft
 msgid "Custom field for the application's link"
-msgstr ""
+msgstr "Câmp personalizat pentru linkul candidaturii"
 
 #: src/postulo_paperless/store.py:211
+#, draft
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr ""
+"Din profilul tău Paperless. Stocat criptat; nu mai este afișat niciodată."
 
 #: src/postulo_paperless/store.py:202
+#, draft
 msgid "Paperless address"
-msgstr ""
+msgstr "Adresa Paperless"
 
 #: src/postulo_paperless/store.py:156
+#, draft
 msgid "Paperless consumed the document but gave no id."
-msgstr ""
+msgstr "Paperless a consumat documentul, dar nu a dat niciun id."
 
 #: src/postulo_paperless/store.py:165
-#, python-format
+#, python-format, draft
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr ""
+msgstr "Paperless nu a putut consuma documentul: %(reason)s"
 
 #: src/postulo_paperless/store.py:170
+#, draft
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
+msgstr "Paperless încă consumă documentul; va fi verificat din nou."
 
 #: src/postulo_paperless/store.py:196
+#, draft
 msgid "Paperless-ngx"
-msgstr ""
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py:219
+#, draft
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr ""
+msgstr "Pusă pe fiecare document venit de la Postulo. Lasă gol pentru niciuna."
 
 #: src/postulo_paperless/store.py:249
-#, python-format
+#, python-format, draft
 msgid "Reachable. The archive holds %(count)d documents."
-msgstr ""
+msgstr "Accesibil. Arhiva conține %(count)d documente."
 
 #: src/postulo_paperless/store.py:215
+#, draft
 msgid "Tag"
-msgstr ""
+msgstr "Etichetă"
 
 #: src/postulo_paperless/store.py:204
+#, draft
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
+msgstr "Unde deschizi Paperless, de ex. https://paperless.example.org."

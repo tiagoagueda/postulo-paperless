@@ -17,56 +17,69 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py:228
+#, draft
 msgid ""
 "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
 msgstr ""
+"Kamp URL fuq kull dokument li jwassal lura għall-applikazzjoni hawn, maħluq f'Paperless jekk ma jkunx hemm. Ħalli vojt biex ma jkunx hemm."
 
 #: src/postulo_paperless/store.py:208
+#, draft
 msgid "API token"
-msgstr ""
+msgstr "Token tal-API"
 
 #: src/postulo_paperless/store.py:223
+#, draft
 msgid "Custom field for the application's link"
-msgstr ""
+msgstr "Kamp personalizzat għall-link tal-applikazzjoni"
 
 #: src/postulo_paperless/store.py:211
+#, draft
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr ""
+msgstr "Mill-profil Paperless tiegħek. Maħżun kriptat; qatt ma jintwera iżjed."
 
 #: src/postulo_paperless/store.py:202
+#, draft
 msgid "Paperless address"
-msgstr ""
+msgstr "Indirizz ta' Paperless"
 
 #: src/postulo_paperless/store.py:156
+#, draft
 msgid "Paperless consumed the document but gave no id."
-msgstr ""
+msgstr "Paperless ipproċessa d-dokument imma ma ta l-ebda id."
 
 #: src/postulo_paperless/store.py:165
-#, python-format
+#, python-format, draft
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr ""
+msgstr "Paperless ma setax jipproċessa d-dokument: %(reason)s"
 
 #: src/postulo_paperless/store.py:170
+#, draft
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
+msgstr "Paperless għadu qed jipproċessa d-dokument; se jiġi ċċekkjat mill-ġdid."
 
 #: src/postulo_paperless/store.py:196
+#, draft
 msgid "Paperless-ngx"
-msgstr ""
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py:219
+#, draft
 msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr ""
+"Titpoġġa fuq kull dokument li ġie minn Postulo. Ħalli vojt biex ma jkunx hemm."
 
 #: src/postulo_paperless/store.py:249
-#, python-format
+#, python-format, draft
 msgid "Reachable. The archive holds %(count)d documents."
-msgstr ""
+msgstr "Jintlaħaq. L-arkivju fih %(count)d dokumenti."
 
 #: src/postulo_paperless/store.py:215
+#, draft
 msgid "Tag"
-msgstr ""
+msgstr "Tag"
 
 #: src/postulo_paperless/store.py:204
+#, draft
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
+msgstr "Fejn tiftaħ Paperless, eż. https://paperless.example.org."
