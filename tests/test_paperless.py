@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import tomllib
+from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
 import httpx
@@ -13,7 +15,7 @@ from django.utils import timezone
 from postulo.documents.archiving import send_pending
 from postulo.documents.models import CopyStatus, DocumentKind, UploadedDocument
 from postulo.plugins import registry
-from postulo.plugins.api import DocumentMetadata, StorePlugin
+from postulo.plugins.api import DestinationRefused, DocumentMetadata, StorePlugin
 from postulo.plugins.models import Connection
 
 from postulo_paperless import store as store_module
@@ -148,7 +150,7 @@ def paperless(monkeypatch):
         kwargs.setdefault("timeout", 10)
         return httpx.Client(transport=httpx.MockTransport(fake.handler), **kwargs)
 
-    monkeypatch.setattr(store_module.http, "client", fake_client)
+    monkeypatch.setattr(store_module, "client", fake_client)
     monkeypatch.setattr(store_module, "POLL_SECONDS", 0)
     return fake
 
@@ -191,11 +193,66 @@ def test_the_title_keeps_an_uploads_own_name_and_skips_what_is_missing():
 # ----------------------------------------------------------------- the store
 
 
+def test_the_version_postulo_shows_is_the_version_that_was_installed():
+    """Not a string somebody has to remember to change: it said 0.1.0 at 0.3.0 (#2)."""
+    declared = tomllib.loads(
+        (Path(__file__).resolve().parents[1] / "pyproject.toml").read_text(encoding="utf-8")
+    )["project"]["version"]
+    assert PaperlessStore().version == declared
+
+
 def test_it_is_a_store_and_says_where_it_points():
     store = PaperlessStore()
     assert isinstance(store, StorePlugin)
     assert store.summary(CONFIG) == "paperless.example.org · #postulo"
     assert store.summary({**CONFIG, "tag": ""}) == "paperless.example.org"
+
+
+# --------------------------------------------------------- at the form
+
+# The addresses `approve_host` would hand back for the hosts these tests type, so that
+# nothing here depends on what a name resolves to on the machine running the suite.
+RESOLVES = {
+    "paperless.example.org": "93.184.216.34",
+    "paperless.lan": "192.168.1.20",
+    "127.0.0.1": "127.0.0.1",
+}
+
+
+@pytest.fixture
+def resolving(monkeypatch):
+    def approve_host(host: str) -> str:
+        if host not in RESOLVES:
+            raise DestinationRefused(f"{host} is not an address this instance may reach.")
+        return RESOLVES[host]
+
+    monkeypatch.setattr(store_module, "approve_host", approve_host)
+
+
+def test_https_to_a_public_archive_is_accepted(resolving):
+    assert PaperlessStore().validate(CONFIG) == {}
+
+
+def test_plain_http_to_the_internet_is_refused_because_of_the_token(resolving):
+    problems = PaperlessStore().validate({**CONFIG, "url": "http://paperless.example.org/"})
+    assert "unencrypted" in problems["url"][0]
+
+
+def test_plain_http_on_ones_own_network_is_how_self_hosting_works(resolving):
+    assert PaperlessStore().validate({**CONFIG, "url": "http://paperless.lan:8000/"}) == {}
+    assert PaperlessStore().validate({**CONFIG, "url": "http://127.0.0.1:8000/"}) == {}
+
+
+def test_an_address_the_instance_will_not_dial_is_said_at_the_form(resolving):
+    problems = PaperlessStore().validate({**CONFIG, "url": "https://paperless.invalid/"})
+    assert "may reach" in problems["url"][0]
+
+
+@pytest.mark.parametrize("url", ["", "paperless.example.org", "ftp://paperless.example.org"])
+def test_something_that_is_not_an_address_is_refused_before_anything_is_resolved(url):
+    assert PaperlessStore().validate({**CONFIG, "url": url}) == {
+        "url": ["Give the whole address, beginning with https://."]
+    }
 
 
 def test_the_test_button_counts_documents_with_the_token(paperless):

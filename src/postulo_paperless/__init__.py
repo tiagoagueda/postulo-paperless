@@ -11,4 +11,13 @@ Every string a person reads is translated by this package itself, from ``locale/
 this file; Postulo never carries a plugin's words.
 """
 
-__version__ = "0.1.0"
+from importlib.metadata import PackageNotFoundError, version
+
+try:
+    #: Read from the installed distribution rather than written here, so that the number
+    #: Postulo shows on *Server settings → Plugins* is the number of the package somebody
+    #: actually installed. Two places to write it is one place to forget: this said 0.1.0
+    #: for the whole of 0.3.0's development (#2).
+    __version__ = version("postulo-paperless")
+except PackageNotFoundError:  # pragma: no cover - only when run from a source tree
+    __version__ = "0.0.0"

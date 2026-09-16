@@ -38,8 +38,17 @@ build-backend = "hatchling.build"
 packages = ["src/postulo_paperless"]
 
 [dependency-groups]
+# Which Postulo this is developed and tested against, said out loud. Without a ref the lock
+# quietly tracked whatever `main` was on the day somebody last ran `uv lock` -- a commit old
+# enough to predate the catalogue tool, which is why the catalogue tests were skipping
+# themselves in CI rather than running (#2). The lock beside this file carries the exact
+# commit, so a run is reproducible; the ref is what a deliberate `uv lock --upgrade` follows.
+#
+# `v0.3.0` is the ref this becomes, and it is not tagged yet: the core's `0.3.0` branch is
+# behind `main` and does not have the plugin surface this package imports (#215, #216). Move
+# this line to `@v0.3.0` when the core cuts the tag.
 dev = [
-    "postulo @ git+https://source.tiagoagueda.com/postulo/postulo.git",
+    "postulo @ git+https://source.tiagoagueda.com/postulo/postulo.git@main",
     "pytest>=8.3",
     "pytest-django>=4.14",
     "ruff>=0.16",

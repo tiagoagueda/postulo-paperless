@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Postulo\n"
 "Report-Msgid-Bugs-To: https://source.tiagoagueda.com/postulo/postulo/issues\n"
-"POT-Creation-Date: 2026-09-13 04:06+0000\n"
+"POT-Creation-Date: 2026-09-16 08:34+0000\n"
 "PO-Revision-Date: 2026-09-13 04:06+0000\n"
 "Last-Translator: Postulo contributors\n"
 "Language-Team: Gaeilge\n"
@@ -16,71 +16,80 @@ msgstr ""
 "Plural-Forms: nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : (n>2 && n<7) ? 2 :(n>6 && n<11) ? 3 : 4);\n"
 "X-Generator: postulo scripts/messages.py\n"
 
-#: src/postulo_paperless/store.py:228
+#: src/postulo_paperless/store.py:252
 #, draft
 msgid ""
 "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
 msgstr ""
 "Réimse URL ar gach doiciméad a threoraíonn ar ais chuig an iarratas anseo, cruthaithe in Paperless mura bhfuil sé ann. Fág bán mura dteastaíonn ceann."
 
-#: src/postulo_paperless/store.py:208
+#: src/postulo_paperless/store.py:232
 #, draft
 msgid "API token"
 msgstr "Comhartha API"
 
-#: src/postulo_paperless/store.py:223
+#: src/postulo_paperless/store.py:247
 #, draft
 msgid "Custom field for the application's link"
 msgstr "Réimse saincheaptha do nasc an iarratais"
 
-#: src/postulo_paperless/store.py:211
+#: src/postulo_paperless/store.py:235
 #, draft
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr ""
 "Ó do phróifíl Paperless. Stóráilte go criptithe; ní thaispeántar arís é go deo."
 
-#: src/postulo_paperless/store.py:202
+#: src/postulo_paperless/store.py:282
+msgid "Give the whole address, beginning with https://."
+msgstr ""
+
+#: src/postulo_paperless/store.py:226
 #, draft
 msgid "Paperless address"
 msgstr "Seoladh Paperless"
 
-#: src/postulo_paperless/store.py:156
+#: src/postulo_paperless/store.py:180
 #, draft
 msgid "Paperless consumed the document but gave no id."
 msgstr "Phróiseáil Paperless an doiciméad ach níor thug sé aon aitheantas."
 
-#: src/postulo_paperless/store.py:165
+#: src/postulo_paperless/store.py:189
 #, python-format, draft
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Níorbh fhéidir le Paperless an doiciméad a phróiseáil: %(reason)s"
 
-#: src/postulo_paperless/store.py:170
+#: src/postulo_paperless/store.py:194
 #, draft
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Tá Paperless fós ag próiseáil an doiciméid; seiceálfar arís é."
 
-#: src/postulo_paperless/store.py:196
+#: src/postulo_paperless/store.py:220
 #, draft
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
-#: src/postulo_paperless/store.py:219
+#: src/postulo_paperless/store.py:243
 #, draft
 msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr ""
 "Cuirtear ar gach doiciméad a tháinig ó Postulo é. Fág bán mura dteastaíonn ceann."
 
-#: src/postulo_paperless/store.py:249
+#: src/postulo_paperless/store.py:308
 #, python-format, draft
 msgid "Reachable. The archive holds %(count)d documents."
 msgstr "Insroichte. Tá %(count)d doiciméad sa chartlann."
 
-#: src/postulo_paperless/store.py:215
+#: src/postulo_paperless/store.py:239
 #, draft
 msgid "Tag"
 msgstr "Clib"
 
-#: src/postulo_paperless/store.py:204
+#: src/postulo_paperless/store.py:291
+msgid ""
+"This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
+msgstr ""
+
+#: src/postulo_paperless/store.py:228
 #, draft
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "An áit a n-osclaíonn tú Paperless, m.sh. https://paperless.example.org."

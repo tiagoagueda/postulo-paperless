@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Postulo\n"
 "Report-Msgid-Bugs-To: https://source.tiagoagueda.com/postulo/postulo/issues\n"
-"POT-Creation-Date: 2026-09-13 04:06+0000\n"
+"POT-Creation-Date: 2026-09-16 08:34+0000\n"
 "PO-Revision-Date: 2026-09-13 04:06+0000\n"
 "Last-Translator: Postulo contributors\n"
 "Language-Team: íslenska\n"
@@ -16,57 +16,66 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n%10!=1 || n%100==11);\n"
 "X-Generator: postulo scripts/messages.py\n"
 
-#: src/postulo_paperless/store.py:228
+#: src/postulo_paperless/store.py:252
 msgid ""
 "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
 msgstr ""
 
-#: src/postulo_paperless/store.py:208
+#: src/postulo_paperless/store.py:232
 msgid "API token"
 msgstr ""
 
-#: src/postulo_paperless/store.py:223
+#: src/postulo_paperless/store.py:247
 msgid "Custom field for the application's link"
 msgstr ""
 
-#: src/postulo_paperless/store.py:211
+#: src/postulo_paperless/store.py:235
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr ""
 
-#: src/postulo_paperless/store.py:202
+#: src/postulo_paperless/store.py:282
+msgid "Give the whole address, beginning with https://."
+msgstr ""
+
+#: src/postulo_paperless/store.py:226
 msgid "Paperless address"
 msgstr ""
 
-#: src/postulo_paperless/store.py:156
+#: src/postulo_paperless/store.py:180
 msgid "Paperless consumed the document but gave no id."
 msgstr ""
 
-#: src/postulo_paperless/store.py:165
+#: src/postulo_paperless/store.py:189
 #, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr ""
 
-#: src/postulo_paperless/store.py:170
+#: src/postulo_paperless/store.py:194
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr ""
 
-#: src/postulo_paperless/store.py:196
+#: src/postulo_paperless/store.py:220
 msgid "Paperless-ngx"
 msgstr ""
 
-#: src/postulo_paperless/store.py:219
+#: src/postulo_paperless/store.py:243
 msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr ""
 
-#: src/postulo_paperless/store.py:249
+#: src/postulo_paperless/store.py:308
 #, python-format
 msgid "Reachable. The archive holds %(count)d documents."
 msgstr ""
 
-#: src/postulo_paperless/store.py:215
+#: src/postulo_paperless/store.py:239
 msgid "Tag"
 msgstr ""
 
-#: src/postulo_paperless/store.py:204
+#: src/postulo_paperless/store.py:291
+msgid ""
+"This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
+msgstr ""
+
+#: src/postulo_paperless/store.py:228
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr ""

@@ -4,6 +4,7 @@ name: CI
 on:
   push:
     branches: [main]
+    tags: ["v*"]
   pull_request:
 
 jobs:
@@ -35,10 +36,42 @@ jobs:
         run: uv run ruff check .
 
       - name: Fail if the compiled catalogues are out of date
+        # Postulo's own catalogue tool, which is what the tests name and what the wiki tells
+        # a plugin author to run. This used to call `scripts/compile_messages.py`, which this
+        # repository has never contained, so every run failed here (#2).
         run: |
-          uv run python scripts/compile_messages.py
+          uv run postulo-messages compile
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git diff --exit-code -- '*.mo' || (echo "::error::A django.mo is stale. Run scripts/compile_messages.py and commit." && exit 1)
+          git diff --exit-code -- '*.mo' || (echo "::error::A django.mo is stale. Run 'uv run postulo-messages compile' and commit." && exit 1)
 
       - name: Test
         run: uv run pytest
+
+  release:
+    # The promises that must hold in a published version rather than in every commit: the
+    # twenty-four European Union catalogues complete, and the catalogue tool present rather
+    # than skipped past. Only a tag asks for them.
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.14-slim-bookworm
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install git and WeasyPrint's libraries
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends git curl libpango-1.0-0 libpangoft2-1.0-0 libharfbuzz0b libfontconfig1
+          rm -rf /var/lib/apt/lists/*
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Install the plugin, Postulo and the test tools
+        run: uv sync
+
+      - name: The release gate
+        run: uv run pytest -m release

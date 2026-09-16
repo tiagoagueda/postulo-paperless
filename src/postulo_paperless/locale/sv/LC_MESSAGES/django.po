@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Postulo\n"
 "Report-Msgid-Bugs-To: https://source.tiagoagueda.com/postulo/postulo/issues\n"
-"POT-Creation-Date: 2026-09-13 04:06+0000\n"
+"POT-Creation-Date: 2026-09-16 08:34+0000\n"
 "PO-Revision-Date: 2026-09-13 04:06+0000\n"
 "Last-Translator: Postulo contributors\n"
 "Language-Team: svenska\n"
@@ -16,69 +16,78 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: postulo scripts/messages.py\n"
 
-#: src/postulo_paperless/store.py:228
+#: src/postulo_paperless/store.py:252
 #, draft
 msgid ""
 "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
 msgstr ""
 "Ett URL-fält på varje dokument som leder tillbaka till ansökan här, skapas i Paperless om det saknas. Lämna tomt för inget."
 
-#: src/postulo_paperless/store.py:208
+#: src/postulo_paperless/store.py:232
 #, draft
 msgid "API token"
 msgstr "API-token"
 
-#: src/postulo_paperless/store.py:223
+#: src/postulo_paperless/store.py:247
 #, draft
 msgid "Custom field for the application's link"
 msgstr "Anpassat fält för ansökans länk"
 
-#: src/postulo_paperless/store.py:211
+#: src/postulo_paperless/store.py:235
 #, draft
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "Från din Paperless-profil. Sparas krypterat; visas aldrig igen."
 
-#: src/postulo_paperless/store.py:202
+#: src/postulo_paperless/store.py:282
+msgid "Give the whole address, beginning with https://."
+msgstr ""
+
+#: src/postulo_paperless/store.py:226
 #, draft
 msgid "Paperless address"
 msgstr "Paperless-adress"
 
-#: src/postulo_paperless/store.py:156
+#: src/postulo_paperless/store.py:180
 #, draft
 msgid "Paperless consumed the document but gave no id."
 msgstr "Paperless tog emot dokumentet men gav inget id."
 
-#: src/postulo_paperless/store.py:165
+#: src/postulo_paperless/store.py:189
 #, python-format, draft
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless kunde inte ta emot dokumentet: %(reason)s"
 
-#: src/postulo_paperless/store.py:170
+#: src/postulo_paperless/store.py:194
 #, draft
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless bearbetar fortfarande dokumentet; det kontrolleras igen."
 
-#: src/postulo_paperless/store.py:196
+#: src/postulo_paperless/store.py:220
 #, draft
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
-#: src/postulo_paperless/store.py:219
+#: src/postulo_paperless/store.py:243
 #, draft
 msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Sätts på varje dokument som kom från Postulo. Lämna tomt för ingen."
 
-#: src/postulo_paperless/store.py:249
+#: src/postulo_paperless/store.py:308
 #, python-format, draft
 msgid "Reachable. The archive holds %(count)d documents."
 msgstr "Nåbar. Arkivet innehåller %(count)d dokument."
 
-#: src/postulo_paperless/store.py:215
+#: src/postulo_paperless/store.py:239
 #, draft
 msgid "Tag"
 msgstr "Tagg"
 
-#: src/postulo_paperless/store.py:204
+#: src/postulo_paperless/store.py:291
+msgid ""
+"This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
+msgstr ""
+
+#: src/postulo_paperless/store.py:228
 #, draft
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "Där du öppnar Paperless, t.ex. https://paperless.example.org."

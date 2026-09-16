@@ -14,13 +14,18 @@ application's address on the Postulo instance, so a document found in Paperless 
 back to where it was used. Withdrawing or declining an application deletes nothing here:
 an archive is for keeping.
 
-Every request goes through ``postulo.plugins.http.client()``, so the instance's
+Every request goes through ``postulo.plugins.api.client()``, so the instance's
 destination policy applies — a Paperless on the LAN needs the operator's
 ``POSTULO_CONNECTIONS_ALLOW_PRIVATE`` — and so do its timeouts and user agent.
+
+Everything this module takes from Postulo comes from ``postulo.plugins.api`` and nothing
+else: that module is the promise, and the rest of ``postulo`` is this month's internals
+(#2). ``tests/test_surface.py`` fails on a second door.
 """
 
 from __future__ import annotations
 
+import ipaddress
 import re
 import time
 from urllib.parse import urlsplit
@@ -28,9 +33,15 @@ from urllib.parse import urlsplit
 import httpx
 from django.utils.translation import gettext as _
 from django.utils.translation import gettext_lazy
-from postulo.plugins import http
-from postulo.plugins.api import DocumentMetadata, ExternalRef
-from postulo.plugins.base import FieldSpec, TestResult
+from postulo.plugins.api import (
+    DestinationRefused,
+    DocumentMetadata,
+    ExternalRef,
+    FieldSpec,
+    TestResult,
+    approve_host,
+    client,
+)
 
 from . import __version__
 
@@ -55,6 +66,19 @@ class StillConsuming(PaperlessError):
 
 def _base(config: dict) -> str:
     return str(config.get("url", "")).rstrip("/")
+
+
+def _is_public(address: str) -> bool:
+    """Whether an address ``approve_host`` handed back is out on the internet.
+
+    Not a second policy: Postulo has already decided the address may be dialled. This only
+    tells apart the archive on somebody's own network from one a token would have to cross
+    the internet to reach.
+    """
+    try:
+        return ipaddress.ip_address(address).is_global
+    except ValueError:  # pragma: no cover - approve_host answers with an address
+        return True
 
 
 def _headers(config: dict) -> dict:
@@ -238,11 +262,46 @@ class PaperlessStore:
         tag = str(config.get("tag") or "").strip()
         return f"{host} · #{tag}" if tag else host
 
+    def validate(self, config: dict) -> dict[str, list[str]]:
+        """At the form: an address Postulo may dial, and not one that leaks the token.
+
+        Every request this plugin makes carries ``Authorization: Token …``, so the scheme
+        is not a matter of taste. Over ``http://`` to a host out on the internet the token
+        is readable by anything on the way, and the person who typed the address is the
+        only one in a position to fix it — which is why this is said here rather than at
+        three in the morning when a document is archived (#2).
+
+        Plain ``http://`` to the LAN is the self-hoster's normal case and stays allowed:
+        ``approve_host`` resolves the name and holds it to the instance's own policy, so
+        an address it comes back with is one Postulo would dial anyway, and whether that
+        address is out on the internet is the whole of the question left.
+        """
+        url = str(config.get("url") or "").strip()
+        parts = urlsplit(url)
+        if parts.scheme not in ("http", "https") or not parts.hostname:
+            return {"url": [str(_("Give the whole address, beginning with https://."))]}
+        try:
+            address = approve_host(parts.hostname)
+        except DestinationRefused as error:
+            return {"url": [str(error)]}
+        if parts.scheme == "http" and _is_public(address):
+            return {
+                "url": [
+                    str(
+                        _(
+                            "This would send your API token unencrypted to a server on the "
+                            "internet, where anything along the way can read it. Use https://."
+                        )
+                    )
+                ]
+            }
+        return {}
+
     def test(self, config: dict) -> TestResult:
         try:
-            with http.client() as client:
-                count = Archive(config, client=client).count_documents()
-        except (PaperlessError, httpx.HTTPError, http.DestinationRefused) as error:
+            with client() as session:
+                count = Archive(config, client=session).count_documents()
+        except (PaperlessError, httpx.HTTPError, DestinationRefused) as error:
             return TestResult(False, str(error))
         return TestResult(
             True,
@@ -252,8 +311,8 @@ class PaperlessStore:
     def put(self, document, file, metadata: DocumentMetadata, config: dict, user) -> ExternalRef:
         tag = str(config.get("tag") or "").strip()
         field_name = str(config.get("custom_field") or "").strip()
-        with http.client() as client:
-            archive = Archive(config, client=client)
+        with client() as session:
+            archive = Archive(config, client=session)
             fields = {
                 "title": compose_title(metadata)[:128],
                 "created": (metadata.sent_on or metadata.created_at.date()).isoformat(),

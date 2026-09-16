@@ -12,8 +12,15 @@ from pathlib import Path
 
 import pytest
 
-messages_tool = pytest.importorskip(
-    "postulo.core.messages_tool", reason="the catalogue tool arrived with Postulo 0.3"
+try:
+    from postulo.core import messages_tool
+except ImportError:  # pragma: no cover - only against a Postulo older than 0.3
+    messages_tool = None
+
+#: What a missing catalogue tool means, and what to do about it.
+NO_TOOL = (
+    "the catalogue tool arrived with Postulo 0.3; this repository's dev dependency "
+    "pins the core, so seeing this means the pin has slipped"
 )
 
 REPO = Path(__file__).resolve().parents[1]
@@ -48,8 +55,18 @@ EUROPEAN_UNION = (
 )
 
 
-@pytest.fixture(scope="module")
-def tool():
+@pytest.fixture
+def tool(request):
+    """The catalogue tool -- skipped past while working, never at a release.
+
+    `importorskip` used to stand here, and a skip is the wrong answer to "the core this was
+    pinned to does not have the tool": the release gate went green by running nothing at all
+    (#2). Under `-m release` a missing tool is a failure, which is what a gate is for.
+    """
+    if messages_tool is None:
+        if request.node.get_closest_marker("release"):
+            pytest.fail(NO_TOOL)
+        pytest.skip(NO_TOOL)
     messages_tool.use(REPO)
     return messages_tool
 

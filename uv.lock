@@ -725,7 +725,7 @@ wheels = [
 [[package]]
 name = "postulo"
 version = "0.2.1"
-source = { git = "https://source.tiagoagueda.com/postulo/postulo.git#f4263a2dc3b44424929acfdac431e4f77023c4f6" }
+source = { git = "https://source.tiagoagueda.com/postulo/postulo.git?rev=main#5ee31c66aa278f5d189acf7e59031d3f56188b68" }
 dependencies = [
     { name = "cryptography" },
     { name = "django" },
@@ -761,7 +761,7 @@ requires-dist = [{ name = "httpx", specifier = ">=0.28" }]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "postulo", git = "https://source.tiagoagueda.com/postulo/postulo.git" },
+    { name = "postulo", git = "https://source.tiagoagueda.com/postulo/postulo.git?rev=main" },
     { name = "pytest", specifier = ">=8.3" },
     { name = "pytest-django", specifier = ">=4.14" },
     { name = "ruff", specifier = ">=0.16" },
