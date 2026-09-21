@@ -432,6 +432,18 @@ socialaccount = [
 ]
 
 [[package]]
+name = "django-cotton"
+version = "2.7.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/02/cd/5c467a1495b756f56246a6d8d36425517cd01bd3aa4bc6209a821f83ec74/django_cotton-2.7.2.tar.gz", hash = "sha256:7e050042873f724beaa5824e86d5034ced2f7de1c5478c3a9d8c053e05caa8ac", size = 33171, upload-time = "2026-06-01T22:52:00.314Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8b/9b/d75158f6280906befada54f9cb17c10d5e0eac078d8d2e189e2f90da0fc1/django_cotton-2.7.2-py3-none-any.whl", hash = "sha256:1b293037ead54ab228362654da00ededc5ca52b2ff407b6087a81cfd9390850e", size = 32084, upload-time = "2026-06-01T22:52:01.238Z" },
+]
+
+[[package]]
 name = "django-environ"
 version = "0.14.0"
 source = { registry = "https://pypi.org/simple" }
@@ -724,12 +736,13 @@ wheels = [
 
 [[package]]
 name = "postulo"
-version = "0.2.1"
-source = { git = "https://source.tiagoagueda.com/postulo/postulo.git?rev=main#5ee31c66aa278f5d189acf7e59031d3f56188b68" }
+version = "0.3.0"
+source = { git = "https://source.tiagoagueda.com/postulo/postulo.git?rev=1d6cdd7e0#1d6cdd7e0b0f6d2a0b27262dfd00546c0a1f4b1c" }
 dependencies = [
     { name = "cryptography" },
     { name = "django" },
     { name = "django-allauth", extra = ["mfa", "socialaccount"] },
+    { name = "django-cotton" },
     { name = "django-environ" },
     { name = "django-htmx" },
     { name = "django-ninja" },
@@ -761,7 +774,7 @@ requires-dist = [{ name = "httpx", specifier = ">=0.28" }]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "postulo", git = "https://source.tiagoagueda.com/postulo/postulo.git?rev=main" },
+    { name = "postulo", git = "https://source.tiagoagueda.com/postulo/postulo.git?rev=1d6cdd7e0" },
     { name = "pytest", specifier = ">=8.3" },
     { name = "pytest-django", specifier = ">=4.14" },
     { name = "ruff", specifier = ">=0.16" },

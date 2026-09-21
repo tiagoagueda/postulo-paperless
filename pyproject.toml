@@ -48,7 +48,7 @@ packages = ["src/postulo_paperless"]
 # behind `main` and does not have the plugin surface this package imports (#215, #216). Move
 # this line to `@v0.3.0` when the core cuts the tag.
 dev = [
-    "postulo @ git+https://source.tiagoagueda.com/postulo/postulo.git@main",
+    "postulo @ git+https://source.tiagoagueda.com/postulo/postulo.git@1d6cdd7e0",
     "pytest>=8.3",
     "pytest-django>=4.14",
     "ruff>=0.16",
