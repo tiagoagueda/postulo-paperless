@@ -3,7 +3,7 @@ name = "postulo-paperless"
 version = "0.3.0"
 description = "Keep every document Postulo holds — rendered CVs and letters, uploaded files — in a Paperless-ngx archive, filed by company, kind and application."
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12.4"
 license = "AGPL-3.0-or-later"
 authors = [{ name = "Tiago Agueda" }]
 keywords = ["postulo", "plugin", "paperless", "paperless-ngx", "archive"]
@@ -48,7 +48,7 @@ packages = ["src/postulo_paperless"]
 # behind `main` and does not have the plugin surface this package imports (#215, #216). Move
 # this line to `@v0.3.0` when the core cuts the tag.
 dev = [
-    "postulo @ git+https://source.tiagoagueda.com/postulo/postulo.git@1d6cdd7e0",
+    "postulo @ git+https://source.tiagoagueda.com/postulo/postulo.git@a6363a397",
     "pytest>=8.3",
     "pytest-django>=4.14",
     "ruff>=0.16",

@@ -78,6 +78,14 @@ never translates a plugin's strings; a catalogue for every language Postulo offe
 the source, and `uv run pytest -m release` holds the twenty-four European Union
 catalogues complete before a release.
 
+A language code here is a BCP 47 tag in its canonical form, as everywhere in Postulo: the
+language in lower case, a script with a capital, a region in capitals (`fr-FR`, `pt-BR`,
+`sr-Cyrl`). The directories under `locale/` are the one exception: `fr_FR` and `sr_Cyrl`
+are gettext's names for a catalogue, not codes, and `postulo-messages` derives them from
+the tags, so nobody types one. Postulo hands a store each document's language as such a
+tag (`DocumentMetadata.language`). This plugin sends nothing about it to Paperless today;
+if it ever does, it sends the tag as it was handed over.
+
 ## Develop
 
 ```sh

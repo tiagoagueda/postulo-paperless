@@ -390,9 +390,9 @@ def test_the_plugin_speaks_french_and_portuguese_by_itself():
 
     registry.plugins("store", refresh=True)
     store = registry.find_plugin("store", "paperless")
-    with translation.override("fr-fr"):
+    with translation.override("fr-FR"):
         assert store.config_fields()[0].label == "Adresse de Paperless"
-    with translation.override("pt-pt"):
+    with translation.override("pt-PT"):
         assert store.config_fields()[0].label == "Endereço do Paperless"
-    with translation.override("en-gb"):
+    with translation.override("en-GB"):
         assert store.config_fields()[0].label == "Paperless address"

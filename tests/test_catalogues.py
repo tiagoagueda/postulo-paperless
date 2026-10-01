@@ -11,6 +11,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import pytest
+from django.conf import settings
 
 try:
     from postulo.core import messages_tool
@@ -25,8 +26,11 @@ NO_TOOL = (
 
 REPO = Path(__file__).resolve().parents[1]
 
+#: What a person writes in this repository, as opposed to what a tool makes.
+WRITTEN_BY_HAND = {".py", ".md", ".toml", ".yml", ".json", ".html", ".txt"}
+
 #: Filled while working, so a change is seen in three languages.
-WORKING = ("fr-fr", "pt-pt")
+WORKING = ("fr-FR", "pt-PT")
 #: The twenty-four, minus the source. Complete in a published version, not in every commit.
 EUROPEAN_UNION = (
     "bg",
@@ -37,7 +41,7 @@ EUROPEAN_UNION = (
     "es",
     "et",
     "fi",
-    "fr-fr",
+    "fr-FR",
     "ga",
     "hr",
     "hu",
@@ -47,7 +51,7 @@ EUROPEAN_UNION = (
     "mt",
     "nl",
     "pl",
-    "pt-pt",
+    "pt-PT",
     "ro",
     "sk",
     "sl",
@@ -99,3 +103,30 @@ def test_the_working_languages_are_complete(tool, code):
 def test_every_european_union_language_stays_complete(tool, code):
     gaps = missing(tool, code)
     assert gaps == [], f"{code}: {len(gaps)} untranslated, e.g. {gaps[:3]}"
+
+
+def test_a_language_code_is_written_one_way():
+    """`fr-FR` wherever a code is written here, the way Postulo writes one (#5).
+
+    The catalogue tool refuses a catalogue asked for in another spelling. Nothing would
+    notice one anywhere else, so this reads the files: no code Postulo offers with a region
+    or a script in it may appear in lower case. The directories under `locale/` are
+    gettext's names for a catalogue (`fr_FR`), not codes, and are not read.
+    """
+    otherwise = sorted(code.lower() for code, _name in settings.LANGUAGES if "-" in code)
+    assert otherwise, "Postulo offers no code with a region in it, so this would hold nothing"
+
+    read = [REPO / "README.md", REPO / "pyproject.toml"]
+    for folder in ("src", "tests", ".forgejo"):
+        read += [
+            path
+            for path in sorted((REPO / folder).rglob("*"))
+            if path.suffix in WRITTEN_BY_HAND and "locale" not in path.parts
+        ]
+    found = [
+        f"{path.relative_to(REPO).as_posix()}: {spelling}"
+        for path in read
+        for spelling in otherwise
+        if spelling in path.read_text(encoding="utf-8")
+    ]
+    assert found == []
