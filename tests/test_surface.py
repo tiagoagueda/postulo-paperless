@@ -37,7 +37,10 @@ def test_nothing_reaches_past_the_plugin_surface():
 
 def test_the_surface_is_what_this_plugin_actually_uses():
     """The other half: the surface is imported, rather than merely not reached past."""
-    assert imports_of(SOURCE, package=PACKAGE) == {SURFACE}
+    found = imports_of(SOURCE, package=PACKAGE)
+    assert found, "the package imports nothing from Postulo"
+    # By name since postulo/postulo 12504e44f: `postulo.plugins.api.FieldSpec`, not the module.
+    assert all(name == SURFACE or name.startswith(SURFACE + ".") for name in found), found
 
 
 @pytest.mark.parametrize(

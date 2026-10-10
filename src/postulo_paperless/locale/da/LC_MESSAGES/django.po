@@ -1,11 +1,9 @@
 # dansk translation of postulo-paperless.
-# This file is distributed under the same license as Postulo (AGPL-3.0-or-later).
+# This file is distributed under the same license as the postulo-paperless package (AGPL-3.0-or-later).
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Postulo\n"
-"Report-Msgid-Bugs-To: https://source.tiagoagueda.com/postulo/postulo/issues\n"
-"POT-Creation-Date: 2026-09-16 08:34+0000\n"
+"Project-Id-Version: postulo-paperless\n"
 "PO-Revision-Date: 2026-09-13 04:06+0000\n"
 "Last-Translator: Postulo contributors\n"
 "Language-Team: dansk\n"
@@ -16,78 +14,75 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: postulo scripts/messages.py\n"
 
-#: src/postulo_paperless/store.py:252
-#, draft
-msgid ""
-"A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr ""
-"Et URL-felt på hvert dokument, der fører tilbage til ansøgningen her, oprettet i Paperless, hvis det mangler. Lad stå tomt for intet."
+#: src/postulo_paperless/store.py
+#, fuzzy
+msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
+msgstr "Et URL-felt på hvert dokument, der fører tilbage til ansøgningen her, oprettet i Paperless, hvis det mangler. Lad stå tomt for intet."
 
-#: src/postulo_paperless/store.py:232
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "API token"
 msgstr "API-token"
 
-#: src/postulo_paperless/store.py:247
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "Brugerdefineret felt til ansøgningens link"
 
-#: src/postulo_paperless/store.py:235
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "Fra din Paperless-profil. Gemmes krypteret; vises aldrig igen."
 
-#: src/postulo_paperless/store.py:282
+#: src/postulo_paperless/store.py
 msgid "Give the whole address, beginning with https://."
 msgstr ""
 
-#: src/postulo_paperless/store.py:226
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless address"
 msgstr "Paperless-adresse"
 
-#: src/postulo_paperless/store.py:180
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Paperless behandlede dokumentet, men gav intet id."
 
-#: src/postulo_paperless/store.py:189
-#, python-format, draft
+#: src/postulo_paperless/store.py
+#, fuzzy, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless kunne ikke behandle dokumentet: %(reason)s"
 
-#: src/postulo_paperless/store.py:194
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless behandler stadig dokumentet; det bliver tjekket igen."
 
-#: src/postulo_paperless/store.py:220
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
-#: src/postulo_paperless/store.py:243
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Sættes på hvert dokument, der kom fra Postulo. Lad stå tomt for intet."
 
-#: src/postulo_paperless/store.py:308
-#, python-format, draft
+#: src/postulo_paperless/store.py
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d documents."
 msgstr "Kan nås. Arkivet rummer %(count)d dokumenter."
 
-#: src/postulo_paperless/store.py:239
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Tag"
 msgstr "Tag"
 
-#: src/postulo_paperless/store.py:291
-msgid ""
-"This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
+#: src/postulo_paperless/store.py
+msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
 msgstr ""
 
-#: src/postulo_paperless/store.py:228
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "Der, hvor du åbner Paperless, f.eks. https://paperless.example.org."

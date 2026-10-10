@@ -36,6 +36,10 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/postulo_paperless"]
+# The compiled catalogues: not committed (a translation arriving from Weblate would
+# leave a stale one behind), so `postulo-messages compile` writes them before the build
+# and this puts them in the wheel, which leaves out what .gitignore names.
+artifacts = ["src/postulo_paperless/locale/*/LC_MESSAGES/django.mo"]
 
 [dependency-groups]
 # Which Postulo this is developed and tested against, said out loud. Without a ref the lock
@@ -48,7 +52,7 @@ packages = ["src/postulo_paperless"]
 # behind `main` and does not have the plugin surface this package imports (#215, #216). Move
 # this line to `@v0.3.0` when the core cuts the tag.
 dev = [
-    "postulo @ git+https://source.tiagoagueda.com/postulo/postulo.git@a6363a397",
+    "postulo @ git+https://source.tiagoagueda.com/postulo/postulo.git@925e3e9cd35a97617cc45b36ecdde862d04515b1",
     "pytest>=8.3",
     "pytest-django>=4.14",
     "ruff>=0.16",

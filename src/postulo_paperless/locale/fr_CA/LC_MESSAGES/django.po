@@ -1,0 +1,77 @@
+# français (Canada) translation of postulo-paperless.
+# This file is distributed under the same license as the postulo-paperless package (AGPL-3.0-or-later).
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: postulo-paperless\n"
+"PO-Revision-Date: 2026-10-10 10:47+0000\n"
+"Last-Translator: Postulo contributors\n"
+"Language-Team: français (Canada)\n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: postulo-messages\n"
+
+#: src/postulo_paperless/store.py
+msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
+msgstr ""
+
+#: src/postulo_paperless/store.py
+msgid "API token"
+msgstr ""
+
+#: src/postulo_paperless/store.py
+msgid "Custom field for the application's link"
+msgstr ""
+
+#: src/postulo_paperless/store.py
+msgid "From your Paperless profile. Stored encrypted; never shown again."
+msgstr ""
+
+#: src/postulo_paperless/store.py
+msgid "Give the whole address, beginning with https://."
+msgstr ""
+
+#: src/postulo_paperless/store.py
+msgid "Paperless address"
+msgstr ""
+
+#: src/postulo_paperless/store.py
+msgid "Paperless consumed the document but gave no id."
+msgstr ""
+
+#: src/postulo_paperless/store.py
+#, python-format
+msgid "Paperless could not consume the document: %(reason)s"
+msgstr ""
+
+#: src/postulo_paperless/store.py
+msgid "Paperless is still consuming the document; it will be checked again."
+msgstr ""
+
+#: src/postulo_paperless/store.py
+msgid "Paperless-ngx"
+msgstr ""
+
+#: src/postulo_paperless/store.py
+msgid "Put on every document that came from Postulo. Leave blank for none."
+msgstr ""
+
+#: src/postulo_paperless/store.py
+#, python-format
+msgid "Reachable. The archive holds %(count)d documents."
+msgstr ""
+
+#: src/postulo_paperless/store.py
+msgid "Tag"
+msgstr ""
+
+#: src/postulo_paperless/store.py
+msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
+msgstr ""
+
+#: src/postulo_paperless/store.py
+msgid "Where you open Paperless, e.g. https://paperless.example.org."
+msgstr ""

@@ -72,11 +72,16 @@ the timeline in Postulo and nothing in the archive; an archive is for keeping.
 
 ## Translations
 
-French and Portuguese ship with the package, in `src/postulo_paperless/locale/`. Postulo
-never translates a plugin's strings; a catalogue for every language Postulo offers is in place; fill one and run
-`uv run postulo-messages compile`. `uv run postulo-messages extract` refreshes them from
-the source, and `uv run pytest -m release` holds the twenty-four European Union
-catalogues complete before a release.
+French and Portuguese ship with the package, in `src/postulo_paperless/locale/`. Postulo never translates a plugin's strings, and nobody translates this one in a commit:
+every translation is made in Weblate, at
+[translate.tiagoagueda.com](https://translate.tiagoagueda.com/projects/postulo/), which drafts
+new strings by machine and sends what speakers save back as a pull request from its
+`weblate` branch. A commit runs `uv run postulo-messages extract`, which leaves an empty slot
+for a new string in every catalogue, and `uv run postulo-messages guard` in CI refuses one
+that writes a translation (postulo/postulo#706). The `.mo` files are not committed:
+`uv run postulo-messages compile` writes them, before the tests and before `uv build`.
+`uv run pytest -m release` holds the twenty-four European Union catalogues complete before
+a release.
 
 A language code here is a BCP 47 tag in its canonical form, as everywhere in Postulo: the
 language in lower case, a script with a capital, a region in capitals (`fr-FR`, `pt-BR`,

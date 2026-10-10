@@ -1,11 +1,9 @@
 # français (France) translation of postulo-paperless.
-# This file is distributed under the same license as Postulo (AGPL-3.0-or-later).
+# This file is distributed under the same license as the postulo-paperless package (AGPL-3.0-or-later).
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Postulo\n"
-"Report-Msgid-Bugs-To: https://source.tiagoagueda.com/postulo/postulo/issues\n"
-"POT-Creation-Date: 2026-09-16 08:34+0000\n"
+"Project-Id-Version: postulo-paperless\n"
 "PO-Revision-Date: 2026-09-13 04:06+0000\n"
 "Last-Translator: Postulo contributors\n"
 "Language-Team: français (France)\n"
@@ -16,70 +14,64 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: postulo scripts/messages.py\n"
 
-#: src/postulo_paperless/store.py:252
-msgid ""
-"A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr ""
-"Un champ URL sur chaque document, qui ramène à la candidature ici, créé dans Paperless s'il manque. Laissez vide pour aucun."
+#: src/postulo_paperless/store.py
+msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
+msgstr "Un champ URL sur chaque document, qui ramène à la candidature ici, créé dans Paperless s'il manque. Laissez vide pour aucun."
 
-#: src/postulo_paperless/store.py:232
+#: src/postulo_paperless/store.py
 msgid "API token"
 msgstr "Jeton d'API"
 
-#: src/postulo_paperless/store.py:247
+#: src/postulo_paperless/store.py
 msgid "Custom field for the application's link"
 msgstr "Champ personnalisé pour le lien de la candidature"
 
-#: src/postulo_paperless/store.py:235
+#: src/postulo_paperless/store.py
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "Depuis votre profil Paperless. Conservé chiffré ; jamais réaffiché."
 
-#: src/postulo_paperless/store.py:282
+#: src/postulo_paperless/store.py
 msgid "Give the whole address, beginning with https://."
 msgstr "Indiquez l'adresse complète, en commençant par https://."
 
-#: src/postulo_paperless/store.py:226
+#: src/postulo_paperless/store.py
 msgid "Paperless address"
 msgstr "Adresse de Paperless"
 
-#: src/postulo_paperless/store.py:180
+#: src/postulo_paperless/store.py
 msgid "Paperless consumed the document but gave no id."
 msgstr "Paperless a consommé le document mais n'a donné aucun identifiant."
 
-#: src/postulo_paperless/store.py:189
+#: src/postulo_paperless/store.py
 #, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless n'a pas pu consommer le document : %(reason)s"
 
-#: src/postulo_paperless/store.py:194
+#: src/postulo_paperless/store.py
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
-"Paperless est encore en train de consommer le document ; ce sera revérifié."
+msgstr "Paperless est encore en train de consommer le document ; ce sera revérifié."
 
-#: src/postulo_paperless/store.py:220
+#: src/postulo_paperless/store.py
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
-#: src/postulo_paperless/store.py:243
+#: src/postulo_paperless/store.py
 msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Apposée sur chaque document venu de Postulo. Laissez vide pour aucune."
 
-#: src/postulo_paperless/store.py:308
+#: src/postulo_paperless/store.py
 #, python-format
 msgid "Reachable. The archive holds %(count)d documents."
 msgstr "Joignable. L'archive contient %(count)d documents."
 
-#: src/postulo_paperless/store.py:239
+#: src/postulo_paperless/store.py
 msgid "Tag"
 msgstr "Étiquette"
 
-#: src/postulo_paperless/store.py:291
-msgid ""
-"This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr ""
-"Cela enverrait votre jeton d'API en clair vers un serveur sur Internet, où n'importe quoi sur le trajet peut le lire. Utilisez https://."
+#: src/postulo_paperless/store.py
+msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
+msgstr "Cela enverrait votre jeton d'API en clair vers un serveur sur Internet, où n'importe quoi sur le trajet peut le lire. Utilisez https://."
 
-#: src/postulo_paperless/store.py:228
+#: src/postulo_paperless/store.py
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
-"L'adresse où vous ouvrez Paperless, par ex. https://paperless.example.org."
+msgstr "L'adresse où vous ouvrez Paperless, par ex. https://paperless.example.org."

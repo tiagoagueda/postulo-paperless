@@ -1,11 +1,9 @@
 # Deutsch translation of postulo-paperless.
-# This file is distributed under the same license as Postulo (AGPL-3.0-or-later).
+# This file is distributed under the same license as the postulo-paperless package (AGPL-3.0-or-later).
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Postulo\n"
-"Report-Msgid-Bugs-To: https://source.tiagoagueda.com/postulo/postulo/issues\n"
-"POT-Creation-Date: 2026-09-16 08:34+0000\n"
+"Project-Id-Version: postulo-paperless\n"
 "PO-Revision-Date: 2026-09-13 04:06+0000\n"
 "Last-Translator: Postulo contributors\n"
 "Language-Team: Deutsch\n"
@@ -16,80 +14,75 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: postulo scripts/messages.py\n"
 
-#: src/postulo_paperless/store.py:252
-#, draft
-msgid ""
-"A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr ""
-"Ein URL-Feld an jedem Dokument, das zurück zur Bewerbung hier führt; wird in Paperless angelegt, falls es fehlt. Leer lassen für keines."
+#: src/postulo_paperless/store.py
+#, fuzzy
+msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
+msgstr "Ein URL-Feld an jedem Dokument, das zurück zur Bewerbung hier führt; wird in Paperless angelegt, falls es fehlt. Leer lassen für keines."
 
-#: src/postulo_paperless/store.py:232
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "API token"
 msgstr "API-Token"
 
-#: src/postulo_paperless/store.py:247
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "Benutzerdefiniertes Feld für den Link zur Bewerbung"
 
-#: src/postulo_paperless/store.py:235
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr ""
-"Aus Ihrem Paperless-Profil. Wird verschlüsselt gespeichert; nie wieder angezeigt."
+msgstr "Aus Ihrem Paperless-Profil. Wird verschlüsselt gespeichert; nie wieder angezeigt."
 
-#: src/postulo_paperless/store.py:282
+#: src/postulo_paperless/store.py
 msgid "Give the whole address, beginning with https://."
 msgstr ""
 
-#: src/postulo_paperless/store.py:226
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless address"
 msgstr "Paperless-Adresse"
 
-#: src/postulo_paperless/store.py:180
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Paperless hat das Dokument verarbeitet, aber keine ID geliefert."
 
-#: src/postulo_paperless/store.py:189
-#, python-format, draft
+#: src/postulo_paperless/store.py
+#, fuzzy, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless konnte das Dokument nicht verarbeiten: %(reason)s"
 
-#: src/postulo_paperless/store.py:194
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless verarbeitet das Dokument noch; es wird erneut geprüft."
 
-#: src/postulo_paperless/store.py:220
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
-#: src/postulo_paperless/store.py:243
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr ""
-"Wird an jedes Dokument vergeben, das von Postulo kam. Leer lassen für keines."
+msgstr "Wird an jedes Dokument vergeben, das von Postulo kam. Leer lassen für keines."
 
-#: src/postulo_paperless/store.py:308
-#, python-format, draft
+#: src/postulo_paperless/store.py
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d documents."
 msgstr "Erreichbar. Das Archiv enthält %(count)d Dokumente."
 
-#: src/postulo_paperless/store.py:239
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Tag"
 msgstr "Schlagwort"
 
-#: src/postulo_paperless/store.py:291
-msgid ""
-"This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
+#: src/postulo_paperless/store.py
+msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
 msgstr ""
 
-#: src/postulo_paperless/store.py:228
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "Wo Sie Paperless öffnen, z. B. https://paperless.example.org."

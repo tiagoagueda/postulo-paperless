@@ -6,3 +6,7 @@ __pycache__/
 dist/
 build/
 *.egg-info/
+
+# Compiled by `postulo-messages compile` before a build, never committed: translations
+# arrive from Weblate as .po changes (postulo/postulo#349).
+*.mo

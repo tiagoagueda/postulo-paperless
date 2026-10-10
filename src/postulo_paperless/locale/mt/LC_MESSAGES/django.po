@@ -1,11 +1,9 @@
 # Malti translation of postulo-paperless.
-# This file is distributed under the same license as Postulo (AGPL-3.0-or-later).
+# This file is distributed under the same license as the postulo-paperless package (AGPL-3.0-or-later).
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Postulo\n"
-"Report-Msgid-Bugs-To: https://source.tiagoagueda.com/postulo/postulo/issues\n"
-"POT-Creation-Date: 2026-09-16 08:34+0000\n"
+"Project-Id-Version: postulo-paperless\n"
 "PO-Revision-Date: 2026-09-13 04:06+0000\n"
 "Last-Translator: Postulo contributors\n"
 "Language-Team: Malti\n"
@@ -16,79 +14,75 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==0 || ( n%100>1 && n%100<11) ? 1 : (n%100>10 && n%100<20 ) ? 2 : 3);\n"
 "X-Generator: postulo scripts/messages.py\n"
 
-#: src/postulo_paperless/store.py:252
-#, draft
-msgid ""
-"A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr ""
-"Kamp URL fuq kull dokument li jwassal lura għall-applikazzjoni hawn, maħluq f'Paperless jekk ma jkunx hemm. Ħalli vojt biex ma jkunx hemm."
+#: src/postulo_paperless/store.py
+#, fuzzy
+msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
+msgstr "Kamp URL fuq kull dokument li jwassal lura għall-applikazzjoni hawn, maħluq f'Paperless jekk ma jkunx hemm. Ħalli vojt biex ma jkunx hemm."
 
-#: src/postulo_paperless/store.py:232
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "API token"
 msgstr "Token tal-API"
 
-#: src/postulo_paperless/store.py:247
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "Kamp personalizzat għall-link tal-applikazzjoni"
 
-#: src/postulo_paperless/store.py:235
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "Mill-profil Paperless tiegħek. Maħżun kriptat; qatt ma jintwera iżjed."
 
-#: src/postulo_paperless/store.py:282
+#: src/postulo_paperless/store.py
 msgid "Give the whole address, beginning with https://."
 msgstr ""
 
-#: src/postulo_paperless/store.py:226
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless address"
 msgstr "Indirizz ta' Paperless"
 
-#: src/postulo_paperless/store.py:180
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Paperless ipproċessa d-dokument imma ma ta l-ebda id."
 
-#: src/postulo_paperless/store.py:189
-#, python-format, draft
+#: src/postulo_paperless/store.py
+#, fuzzy, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless ma setax jipproċessa d-dokument: %(reason)s"
 
-#: src/postulo_paperless/store.py:194
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless għadu qed jipproċessa d-dokument; se jiġi ċċekkjat mill-ġdid."
 
-#: src/postulo_paperless/store.py:220
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
-#: src/postulo_paperless/store.py:243
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr ""
-"Titpoġġa fuq kull dokument li ġie minn Postulo. Ħalli vojt biex ma jkunx hemm."
+msgstr "Titpoġġa fuq kull dokument li ġie minn Postulo. Ħalli vojt biex ma jkunx hemm."
 
-#: src/postulo_paperless/store.py:308
-#, python-format, draft
+#: src/postulo_paperless/store.py
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d documents."
 msgstr "Jintlaħaq. L-arkivju fih %(count)d dokumenti."
 
-#: src/postulo_paperless/store.py:239
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Tag"
 msgstr "Tag"
 
-#: src/postulo_paperless/store.py:291
-msgid ""
-"This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
+#: src/postulo_paperless/store.py
+msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
 msgstr ""
 
-#: src/postulo_paperless/store.py:228
-#, draft
+#: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "Fejn tiftaħ Paperless, eż. https://paperless.example.org."

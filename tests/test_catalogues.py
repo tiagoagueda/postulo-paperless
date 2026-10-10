@@ -1,9 +1,9 @@
 """This plugin's own catalogues, held to the rule Postulo holds its own to.
 
 Postulo never translates a plugin's strings, so Postulo's release gate cannot see these;
-this is the same gate, here (postulo/postulo#187). English is the source, French and
-European Portuguese are filled while working, and the twenty-four European Union
-catalogues are complete in a published version -- `uv run pytest -m release`.
+this is the same gate, here (postulo/postulo#187). English is the source, every translation
+is made in Weblate (postulo/postulo#706) and arrives as its pull request, and the twenty-four
+European Union catalogues are complete in a published version -- `uv run pytest -m release`.
 """
 
 from __future__ import annotations
@@ -29,8 +29,6 @@ REPO = Path(__file__).resolve().parents[1]
 #: What a person writes in this repository, as opposed to what a tool makes.
 WRITTEN_BY_HAND = {".py", ".md", ".toml", ".yml", ".json", ".html", ".txt"}
 
-#: Filled while working, so a change is seen in three languages.
-WORKING = ("fr-FR", "pt-PT")
 #: The twenty-four, minus the source. Complete in a published version, not in every commit.
 EUROPEAN_UNION = (
     "bg",
@@ -91,11 +89,6 @@ def test_placeholders_and_plural_forms_agree(tool):
 def test_every_language_postulo_offers_has_a_catalogue(tool):
     absent = [code for code in tool.translated_languages() if not tool.po_path(code).is_file()]
     assert absent == [], "run `uv run postulo-messages extract`"
-
-
-@pytest.mark.parametrize("code", WORKING)
-def test_the_working_languages_are_complete(tool, code):
-    assert missing(tool, code) == []
 
 
 @pytest.mark.release
