@@ -4,14 +4,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-09-13 04:06+0000\n"
-"Last-Translator: Postulo contributors\n"
-"Language-Team: suomi\n"
+"PO-Revision-Date: 2026-10-10 12:45+0000\n"
+"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"Language-Team: Finnish <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
@@ -35,8 +35,9 @@ msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "Paperless-profiilistasi. Tallennetaan salattuna; ei näytetä enää koskaan."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr ""
+msgstr "Anna koko osoite, alkaen https://."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -79,8 +80,9 @@ msgid "Tag"
 msgstr "Tunniste"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr ""
+msgstr "Tämä lähettäisi API-poletin salaamatta palvelimelle Internetissä, jossa kaikki matkan varrella voi lukea sen. Käytä https://."
 
 #: src/postulo_paperless/store.py
 #, fuzzy

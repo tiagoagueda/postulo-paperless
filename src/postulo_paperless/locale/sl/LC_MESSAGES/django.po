@@ -4,14 +4,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-09-13 04:06+0000\n"
-"Last-Translator: Postulo contributors\n"
-"Language-Team: slovenščina\n"
+"PO-Revision-Date: 2026-10-10 12:45+0000\n"
+"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"Language-Team: Slovenian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
@@ -35,8 +35,9 @@ msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "Iz vašega profila v Paperless. Shranjeno šifrirano; nikoli več prikazano."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr ""
+msgstr "Navedi celoten naslov, začenši s https://."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -79,8 +80,9 @@ msgid "Tag"
 msgstr "Oznaka"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr ""
+msgstr "To bi poslali vaš API žeton nešifrirano na strežnik na internetu, kjer lahko karkoli na poti preberete. Uporabi https://."
 
 #: src/postulo_paperless/store.py
 #, fuzzy

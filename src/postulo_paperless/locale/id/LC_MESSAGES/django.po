@@ -4,9 +4,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-10 10:47+0000\n"
-"Last-Translator: Postulo contributors\n"
-"Language-Team: Bahasa Indonesia\n"
+"PO-Revision-Date: 2026-10-13 13:14+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
+"Language-Team: Indonesian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,62 +16,62 @@ msgstr ""
 
 #: src/postulo_paperless/store.py
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr ""
+msgstr "Kolom URL pada setiap dokumen yang menautkan kembali ke lamaran di sini, dibuat di Paperless jika belum ada. Kosongkan jika tidak perlu."
 
 #: src/postulo_paperless/store.py
 msgid "API token"
-msgstr ""
+msgstr "Token API"
 
 #: src/postulo_paperless/store.py
 msgid "Custom field for the application's link"
-msgstr ""
+msgstr "Kolom kustom untuk tautan lamaran"
 
 #: src/postulo_paperless/store.py
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr ""
+msgstr "Dari profil Paperless Anda. Disimpan terenkripsi; tidak pernah ditampilkan lagi."
 
 #: src/postulo_paperless/store.py
 msgid "Give the whole address, beginning with https://."
-msgstr ""
+msgstr "Berikan alamat lengkap, diawali dengan https://."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless address"
-msgstr ""
+msgstr "Alamat Paperless"
 
 #: src/postulo_paperless/store.py
 msgid "Paperless consumed the document but gave no id."
-msgstr ""
+msgstr "Paperless sudah memproses dokumen tetapi tidak memberikan ID."
 
 #: src/postulo_paperless/store.py
 #, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr ""
+msgstr "Paperless tidak dapat memproses dokumen: %(reason)s"
 
 #: src/postulo_paperless/store.py
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
+msgstr "Paperless masih memproses dokumen; dokumen akan diperiksa lagi."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless-ngx"
-msgstr ""
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr ""
+msgstr "Diberikan pada setiap dokumen yang berasal dari Postulo. Kosongkan jika tidak perlu."
 
 #: src/postulo_paperless/store.py
 #, python-format
 msgid "Reachable. The archive holds %(count)d documents."
-msgstr ""
+msgstr "Dapat dijangkau. Arsip berisi %(count)d dokumen."
 
 #: src/postulo_paperless/store.py
 msgid "Tag"
-msgstr ""
+msgstr "Tag"
 
 #: src/postulo_paperless/store.py
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr ""
+msgstr "Ini akan mengirim token API Anda tanpa enkripsi ke server di internet, tempat siapa pun di sepanjang jalur dapat membacanya. Gunakan https://."
 
 #: src/postulo_paperless/store.py
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
+msgstr "Tempat Anda membuka Paperless, misalnya https://paperless.example.org."

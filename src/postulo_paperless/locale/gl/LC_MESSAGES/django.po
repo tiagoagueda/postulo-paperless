@@ -4,74 +4,74 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-09-13 04:06+0000\n"
-"Last-Translator: Postulo contributors\n"
-"Language-Team: galego\n"
+"PO-Revision-Date: 2026-10-13 18:04+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
+"Language-Team: Galician <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr ""
+msgstr "Un campo URL en cada documento que leva de volta á candidatura aquí; créase no Paperless se non existe. Déixao en branco para non usar ningún."
 
 #: src/postulo_paperless/store.py
 msgid "API token"
-msgstr ""
+msgstr "Testemuño de API"
 
 #: src/postulo_paperless/store.py
 msgid "Custom field for the application's link"
-msgstr ""
+msgstr "Campo personalizado para a ligazón da candidatura"
 
 #: src/postulo_paperless/store.py
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr ""
+msgstr "Do teu perfil de Paperless. Almacénase cifrado; nunca se volve mostrar."
 
 #: src/postulo_paperless/store.py
 msgid "Give the whole address, beginning with https://."
-msgstr ""
+msgstr "Escribe o enderezo completo, comezando por https://."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless address"
-msgstr ""
+msgstr "Enderezo de Paperless"
 
 #: src/postulo_paperless/store.py
 msgid "Paperless consumed the document but gave no id."
-msgstr ""
+msgstr "Paperless procesou o documento pero non devolveu ningún id."
 
 #: src/postulo_paperless/store.py
 #, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr ""
+msgstr "Paperless non puido procesar o documento: %(reason)s"
 
 #: src/postulo_paperless/store.py
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
+msgstr "Paperless aínda está a procesar o documento; comprobarase de novo."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless-ngx"
-msgstr ""
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr ""
+msgstr "Engádese a cada documento que veña do Postulo. Déixao en branco para non usar ningunha."
 
 #: src/postulo_paperless/store.py
 #, python-format
 msgid "Reachable. The archive holds %(count)d documents."
-msgstr ""
+msgstr "Accesible. O arquivo contén %(count)d documentos."
 
 #: src/postulo_paperless/store.py
 msgid "Tag"
-msgstr ""
+msgstr "Etiqueta"
 
 #: src/postulo_paperless/store.py
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr ""
+msgstr "Isto enviaría o teu testemuño de API sen cifrar a un servidor en Internet, onde calquera intermediario pode lelo. Usa https://."
 
 #: src/postulo_paperless/store.py
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
+msgstr "Onde abres Paperless, por exemplo, https://paperless.example.org."

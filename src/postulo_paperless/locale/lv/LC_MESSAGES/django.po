@@ -4,14 +4,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-09-13 04:06+0000\n"
-"Last-Translator: Postulo contributors\n"
-"Language-Team: latviešu\n"
+"PO-Revision-Date: 2026-10-10 12:45+0000\n"
+"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"Language-Team: Latvian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/lv/>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2;\n"
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
@@ -35,8 +35,9 @@ msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "No jūsu Paperless profila. Glabāts šifrēti; vairs nekad netiek rādīts."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr ""
+msgstr "Norādiet visu adresi, sākot ar https://."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -79,8 +80,9 @@ msgid "Tag"
 msgstr "Birka"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr ""
+msgstr "Tas nosūtītu jūsu API žetonu nešifrēts uz serveri internetā, kur visu pa ceļam var izlasīt. Izmanto https://."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
