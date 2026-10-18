@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-09-17 19:01+0000\n"
+"PO-Revision-Date: 2026-10-13 13:14+0000\n"
 "Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Portuguese (Portugal) <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/pt_PT/>\n"
 "Language: pt_PT\n"
@@ -20,7 +20,7 @@ msgstr "Um campo URL em cada documento que leva de volta à candidatura aqui, cr
 
 #: src/postulo_paperless/store.py
 msgid "API token"
-msgstr "Token da API"
+msgstr "Token de API"
 
 #: src/postulo_paperless/store.py
 msgid "Custom field for the application's link"
@@ -70,7 +70,7 @@ msgstr "Etiqueta"
 
 #: src/postulo_paperless/store.py
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr "Isto enviaria o seu token da API sem cifra para um servidor na Internet, onde qualquer coisa pelo caminho o pode ler. Use https://."
+msgstr "Isto enviaria o seu token de API sem cifra para um servidor na Internet, onde qualquer coisa pelo caminho o pode ler. Use https://."
 
 #: src/postulo_paperless/store.py
 msgid "Where you open Paperless, e.g. https://paperless.example.org."

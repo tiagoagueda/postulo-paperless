@@ -4,74 +4,87 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-10 10:47+0000\n"
-"Last-Translator: Postulo contributors\n"
-"Language-Team: اردو\n"
+"PO-Revision-Date: 2026-10-10 12:45+0000\n"
+"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"Language-Team: Urdu <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/ur/>\n"
 "Language: ur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: postulo-messages\n"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr ""
+msgstr "ہر دستاویز پر ایک ادائیگی کا میدان جو یہاں درخواست کی طرف رجوع کرتا ہے، اگر گم شدہ نہ ہو تو کاغذی کرنسی میں بنایا گیا ہے. کسی کو پریشان نہ کریں ۔."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "API token"
-msgstr ""
+msgstr "علامات"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Custom field for the application's link"
-msgstr ""
+msgstr "اطلاقیہ لنک کے لیے متعلقه میدان"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr ""
+msgstr "آپ کی کاغذی پرفارم سے. دوبارہ کبھی نظر نہیں آتا ۔."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr ""
+msgstr "پورا پتہ دے، شروع https://s://."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless address"
-msgstr ""
+msgstr "کاغذی پتہ"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless consumed the document but gave no id."
-msgstr ""
+msgstr "کاغذی کرنسی کھا لی لیکن کوئی شناخت نہیں دی۔."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr ""
+msgstr "کاغذی کرنسی نہیں کھا سکتی تھی"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
+msgstr "کاغذی کرنسی ابھی تک کھا رہی ہے؛ پھر سے چیک کیا جائے گا۔."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless-ngx"
-msgstr ""
+msgstr "غیر متصل"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr ""
+msgstr "پوسٹلو سے آنے والی ہر دستاویز پر رکھیں۔ کسی کو پریشان نہ کریں ۔."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d documents."
-msgstr ""
+msgstr "دستیاب. محفوظہ %(count)d دستاویز رکھتا ہے."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Tag"
-msgstr ""
+msgstr "ٹیگ"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr ""
+msgstr "یہ آپ کے اے پی آئی انٹرنیٹ پر ایک سرور کے پاس نشان بھیج دیں گے، جہاں راستے سے کوئی بھی چیز اسے پڑھ سکتی ہے۔ ایس ."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
+msgstr "جہاں آپ کھلے کاغذ کے بغیر، مثلاً https://ppersless.expal.org."

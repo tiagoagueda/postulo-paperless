@@ -4,74 +4,87 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-09-13 04:06+0000\n"
-"Last-Translator: Postulo contributors\n"
-"Language-Team: norsk bokmål\n"
+"PO-Revision-Date: 2026-10-10 12:45+0000\n"
+"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"Language-Team: Norwegian Bokmål <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/nb_NO/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr ""
+msgstr "Et URL-felt på hvert dokument som fører tilbake til programmet her, opprettet i Paperless hvis det mangler. La tom for ingen."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "API token"
-msgstr ""
+msgstr "API-token"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Custom field for the application's link"
-msgstr ""
+msgstr "Egendefinert felt for programmets lenke"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr ""
+msgstr "Fra din papirløse profil. Lagret kryptert, aldri vist igjen."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr ""
+msgstr "Gi hele adressen, begynnende med https://."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless address"
-msgstr ""
+msgstr "Papirløs adresse"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless consumed the document but gave no id."
-msgstr ""
+msgstr "Papirløs brukt dokumentet, men ga ingen id."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr ""
+msgstr "Paperless kunne ikke bruke dokumentet: %(reason)s"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
+msgstr "Papirless forbruker dokumentet; det vil bli kontrollert igjen."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless-ngx"
-msgstr ""
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr ""
+msgstr "Legg på hvert dokument som kom fra Postulo. La tom for ingen."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d documents."
-msgstr ""
+msgstr "Nåelig. Arkivet inneholder %(count)d dokumenter."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Tag"
-msgstr ""
+msgstr "Tagg"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr ""
+msgstr "Dette vil sende din API-token ukryptert til en server på Internett, der alt underveis kan lese den. Bruk https://."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
+msgstr "Hvor du åpner Paperless, for eksempel https://paperless.example.org."

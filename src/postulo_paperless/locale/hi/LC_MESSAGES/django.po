@@ -4,74 +4,87 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-10 10:47+0000\n"
-"Last-Translator: Postulo contributors\n"
-"Language-Team: हिन्दी\n"
+"PO-Revision-Date: 2026-10-13 13:14+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
+"Language-Team: Hindi <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: postulo-messages\n"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr ""
+msgstr "हर डॉक्यूमेंट पर एक URL फ़ील्ड, जो यहां के आवेदन पर वापस ले जाती है; न होने पर Paperless में बनाई जाती है। कुछ न होने पर खाली छोड़ें।"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "API token"
-msgstr ""
+msgstr "API टोकन"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Custom field for the application's link"
-msgstr ""
+msgstr "आवेदन के लिंक के लिए कस्टम फ़ील्ड"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr ""
+msgstr "आपकी Paperless प्रोफ़ाइल से। एन्क्रिप्ट करके रखा जाता है; फिर कभी नहीं दिखाया जाता।"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr ""
+msgstr "पूरा पता दें, https:// से शुरू करके।"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless address"
-msgstr ""
+msgstr "Paperless का पता"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless consumed the document but gave no id."
-msgstr ""
+msgstr "Paperless ने डॉक्यूमेंट प्रोसेस कर लिया, लेकिन कोई id नहीं दी।"
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr ""
+msgstr "Paperless डॉक्यूमेंट प्रोसेस नहीं कर सका: %(reason)s"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
+msgstr "Paperless अभी भी डॉक्यूमेंट प्रोसेस कर रहा है; इसे फिर से जांचा जाएगा।"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless-ngx"
-msgstr ""
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr ""
+msgstr "Postulo से आए हर डॉक्यूमेंट पर लगाया जाता है। कुछ न होने पर खाली छोड़ें।"
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d documents."
-msgstr ""
+msgstr "कनेक्शन हो गया। आर्काइव में %(count)d डॉक्यूमेंट हैं।"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Tag"
-msgstr ""
+msgstr "टैग"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr ""
+msgstr "इससे आपका API टोकन बिना एन्क्रिप्शन के इंटरनेट पर किसी सर्वर को भेजा जाएगा, जहां रास्ते में कोई भी उसे पढ़ सकता है। https:// इस्तेमाल करें।"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
+msgstr "जहां आप Paperless खोलते हैं, जैसे https://paperless.example.org।"

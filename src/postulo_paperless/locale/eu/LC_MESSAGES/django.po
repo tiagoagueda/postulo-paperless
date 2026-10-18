@@ -4,74 +4,87 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-09-13 04:06+0000\n"
-"Last-Translator: Postulo contributors\n"
-"Language-Team: euskara\n"
+"PO-Revision-Date: 2026-10-10 12:45+0000\n"
+"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"Language-Team: Basque <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/eu/>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr ""
+msgstr "Aplikaziora itzultzen den dokumentu bakoitzeko URL eremu bat, Paperlessen sortua falta bada. Utzi hutsik."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "API token"
-msgstr ""
+msgstr "API tokena"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Custom field for the application's link"
-msgstr ""
+msgstr "Aplikazioaren estekaren eremu pertsonalizatua"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr ""
+msgstr "Paperik gabeko profila. Enkriptaturik dago, ez da berriro agertu."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr ""
+msgstr "Eman helbide osoa, https://-ekin hasita."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless address"
-msgstr ""
+msgstr "Paperik gabeko helbidea"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless consumed the document but gave no id."
-msgstr ""
+msgstr "Paperlessek dokumentua kontsumitu zuen, baina ez zuen identifikaziorik eman."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr ""
+msgstr "Papergabeak ezin izan du dokumentua kontsumitu: %(reason)s"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
+msgstr "Paperlessek dokumentua kontsumitzen jarraitzen du; berriro egiaztatuko da."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless-ngx"
-msgstr ""
+msgstr "Paperik gabekongx"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr ""
+msgstr "Postuloko dokumentu guztiak jarri. Utzi hutsik."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d documents."
-msgstr ""
+msgstr "Irisgarria. Artxiboak dokumentuak ditu."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Tag"
-msgstr ""
+msgstr "Etiketa"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr ""
+msgstr "Honek zure API tokena Interneteko zerbitzari batera bidaliko luke enkriptatu gabe, bidean zehar edozerk irakur dezan. Erabili https://."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
+msgstr "Paperless irekitzen duzunean, adibidez, https://paperless.adibidea.org."

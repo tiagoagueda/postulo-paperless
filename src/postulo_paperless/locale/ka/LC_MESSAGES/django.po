@@ -4,74 +4,87 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-09-13 04:06+0000\n"
-"Last-Translator: Postulo contributors\n"
-"Language-Team: ქართული\n"
+"PO-Revision-Date: 2026-10-14 08:04+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
+"Language-Team: Georgian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr ""
+msgstr "URL ველი ყოველ დოკუმენტზე, რომელიც აქ განაცხადისკენ მიგიყვანთ; თუ არ არსებობს, Paperless-ში შეიქმნება. დატოვეთ ცარიელი, თუ არცერთი არ არის."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "API token"
-msgstr ""
+msgstr "API ტოკენი"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Custom field for the application's link"
-msgstr ""
+msgstr "მორგებული ველი განაცხადის ბმულისთვის"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr ""
+msgstr "თქვენი Paperless-ის პროფილიდან. ინახება დაშიფრულად; აღარასოდეს გამოჩნდება."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr ""
+msgstr "მიუთითეთ სრული მისამართი, რომელიც იწყება https://."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless address"
-msgstr ""
+msgstr "Paperless-ის მისამართი"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless consumed the document but gave no id."
-msgstr ""
+msgstr "Paperless-მა დოკუმენტი მიიღო, მაგრამ id არ მისცა."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr ""
+msgstr "Paperless-მა დოკუმენტი ვერ მიიღო: %(reason)s"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
+msgstr "Paperless ჯერ კიდევ ამუშავებს დოკუმენტს; ის ხელახლა შემოწმდება."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless-ngx"
-msgstr ""
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr ""
+msgstr "ედება ყოველ დოკუმენტს, რომელიც Postulo-დან მოვიდა. დატოვეთ ცარიელი, თუ არცერთი არ არის."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d documents."
-msgstr ""
+msgstr "ხელმისაწვდომია. არქივში %(count)d დოკუმენტია."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Tag"
-msgstr ""
+msgstr "იარლიყი"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr ""
+msgstr "ეს თქვენს API ტოკენს დაუშიფრავად გაუგზავნიდა ინტერნეტში არსებულ სერვერს, სადაც გზაში ნებისმიერს შეუძლია მისი წაკითხვა. გამოიყენეთ https://."
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
+msgstr "სადაც Paperless-ს ხსნით, მაგ. https://paperless.example.org."

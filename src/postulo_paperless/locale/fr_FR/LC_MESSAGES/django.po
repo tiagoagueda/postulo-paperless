@@ -4,14 +4,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-09-13 04:06+0000\n"
-"Last-Translator: Postulo contributors\n"
-"Language-Team: français (France)\n"
+"PO-Revision-Date: 2026-10-13 13:14+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
+"Language-Team: French <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/fr/>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
@@ -28,7 +28,7 @@ msgstr "Champ personnalisé pour le lien de la candidature"
 
 #: src/postulo_paperless/store.py
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr "Depuis votre profil Paperless. Conservé chiffré ; jamais réaffiché."
+msgstr "Depuis votre profil Paperless. Conservé chiffré ; jamais réaffiché."
 
 #: src/postulo_paperless/store.py
 msgid "Give the whole address, beginning with https://."
@@ -45,11 +45,11 @@ msgstr "Paperless a consommé le document mais n'a donné aucun identifiant."
 #: src/postulo_paperless/store.py
 #, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr "Paperless n'a pas pu consommer le document : %(reason)s"
+msgstr "Paperless n'a pas pu consommer le document : %(reason)s"
 
 #: src/postulo_paperless/store.py
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr "Paperless est encore en train de consommer le document ; ce sera revérifié."
+msgstr "Paperless est encore en train de consommer le document ; ce sera revérifié."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless-ngx"
