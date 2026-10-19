@@ -46,6 +46,8 @@ def test_the_surface_is_what_this_plugin_actually_uses():
 @pytest.mark.parametrize(
     "name",
     [
+        "BodyRefused",
+        "ConnectionUnusable",
         "DestinationRefused",
         "DocumentMetadata",
         "ExternalRef",
@@ -53,6 +55,9 @@ def test_the_surface_is_what_this_plugin_actually_uses():
         "TestResult",
         "approve_host",
         "client",
+        "deadline_in",
+        "read_body",
+        "until",
     ],
 )
 def test_the_surface_promises_what_this_store_asks_of_it(name: str):

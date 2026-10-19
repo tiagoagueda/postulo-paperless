@@ -39,6 +39,10 @@ msgid "Paperless address"
 msgstr "Endereço do Paperless"
 
 #: src/postulo_paperless/store.py
+msgid "Paperless answered with more than this plugin reads, or too slowly."
+msgstr ""
+
+#: src/postulo_paperless/store.py
 msgid "Paperless consumed the document but gave no id."
 msgstr "O Paperless consumiu o documento mas não devolveu nenhum identificador."
 
@@ -52,6 +56,11 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "O Paperless ainda está a consumir o documento; será verificado de novo."
 
 #: src/postulo_paperless/store.py
+#, python-format
+msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
+msgstr ""
+
+#: src/postulo_paperless/store.py
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
@@ -61,8 +70,10 @@ msgstr "Posta em cada documento vindo do Postulo. Deixe em branco para nenhuma."
 
 #: src/postulo_paperless/store.py
 #, python-format
-msgid "Reachable. The archive holds %(count)d documents."
-msgstr "Acessível. O arquivo tem %(count)d documentos."
+msgid "Reachable. The archive holds %(count)d document."
+msgid_plural "Reachable. The archive holds %(count)d documents."
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/postulo_paperless/store.py
 msgid "Tag"

@@ -45,6 +45,10 @@ msgid "Paperless address"
 msgstr "Anwani ya barua pepe"
 
 #: src/postulo_paperless/store.py
+msgid "Paperless answered with more than this plugin reads, or too slowly."
+msgstr ""
+
+#: src/postulo_paperless/store.py
 #, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Waandishi walitumia hati hiyo lakini hawakutoa kitambulisho."
@@ -60,6 +64,11 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Karatasi bado hutumia hati; itachunguzwa tena."
 
 #: src/postulo_paperless/store.py
+#, python-format
+msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
+msgstr ""
+
+#: src/postulo_paperless/store.py
 #, fuzzy
 msgid "Paperless-ngx"
 msgstr "Kiwango cha chini-ngx"
@@ -70,9 +79,11 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Andika kila barua iliyotumwa kutoka posta. Acha pombe kwa ajili ya mtu yeyote."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
-msgid "Reachable. The archive holds %(count)d documents."
-msgstr "Ya kufikia. Nyaraka hizo zina nyaraka (X29X)."
+#, python-format
+msgid "Reachable. The archive holds %(count)d document."
+msgid_plural "Reachable. The archive holds %(count)d documents."
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/postulo_paperless/store.py
 #, fuzzy

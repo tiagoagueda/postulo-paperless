@@ -55,7 +55,10 @@ had; *Send to stores now* under a document tries at once.
 - **Correspondent** ← the company, created if missing.
 - **Document type** ← the kind: *CV*, *Cover letter*, *Certificate*…
 - **Tag** ← `postulo` (or yours).
-- **Custom field** *Postulo* (URL) ← the application's address on your instance.
+- **Custom field** *Postulo* (URL) ← the application's address on your instance. Paperless
+  only takes a whole address, so this needs `POSTULO_PUBLIC_URL` to be set on the Postulo
+  instance; without it the field is left out. It is a convenience: if Paperless refuses it,
+  the document is still recorded as archived.
 - **Title** ← *CV — Company — Role — date* for what Postulo rendered; an upload keeps its
   own name, followed by the date.
 - **Created** ← the day it was sent, or uploaded.
@@ -66,6 +69,13 @@ times it is offered — which is what makes retrying safe. Consumption is asynch
 the plugin waits a short while for it, and if Paperless is slower (OCR of a large scan,
 a busy server) it leaves the document to the next scheduler pass, where the duplicate
 answer picks it up.
+
+A file type Paperless has no parser for (a Word document without Tika, say) is offered once
+and recorded as *not accepted*, not retried. A token Paperless no longer accepts (revoked, or
+the account removed) switches the connection off with that reason instead of failing every
+document in turn; enter a current token and switch it back on. Every answer is read with a
+deadline and a size cap, and a redirect is never followed, so the token goes only to the
+address you typed.
 
 Nothing is ever deleted from Paperless. Withdrawing or declining an application changes
 the timeline in Postulo and nothing in the archive; an archive is for keeping.
