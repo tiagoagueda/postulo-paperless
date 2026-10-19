@@ -26,14 +26,17 @@ else: that module is the promise, and the rest of ``postulo`` is this month's in
 from __future__ import annotations
 
 import ipaddress
+import logging
 import re
 import time
 from urllib.parse import urlsplit
 
 import httpx
 from django.utils.translation import gettext as _
-from django.utils.translation import gettext_lazy
+from django.utils.translation import gettext_lazy, ngettext
 from postulo.plugins.api import (
+    BodyRefused,
+    ConnectionUnusable,
     DestinationRefused,
     DocumentMetadata,
     ExternalRef,
@@ -41,6 +44,9 @@ from postulo.plugins.api import (
     TestResult,
     approve_host,
     client,
+    deadline_in,
+    read_body,
+    until,
 )
 
 from . import __version__
@@ -52,12 +58,35 @@ WAIT_SECONDS = 20.0
 POLL_SECONDS = 1.0
 #: Uploading a document may take longer than the default request timeout.
 UPLOAD_TIMEOUT = 60.0
+#: The most any one request may take, answer included, from the first byte sent to the last
+#: read: ``timeout`` bounds each wait for the network, not their sum, and Paperless is a server
+#: the account holder named (#16). Handed to ``client(total=...)``; the upload gets
+#: ``UPLOAD_TIMEOUT`` instead.
+REQUEST_SECONDS = 30.0
+#: The most of one answer that is read. These are small JSON documents (a page of one row, a
+#: task, a document's fields); a megabyte is generous, and a server sending more is not
+#: Paperless (#16).
+MAX_BODY = 1024 * 1024
+#: What is asked for, because ``read_body`` unpacks these two and refuses any other coding.
+ACCEPT_ENCODING = "gzip, deflate"
+#: The longest the remote server's own words are allowed to run in a message (#14).
+DETAIL_CHARACTERS = 120
 
-_DUPLICATE_ID = re.compile(r"#(\d+)")
+logger = logging.getLogger(__name__)
+
+#: The id Paperless closes its duplicate message with: "... It is a duplicate of <title>
+#: (#<id>)." The title comes first and is the person's own text, so a ``#`` in it comes before
+#: the id and never after (#11).
+_DUPLICATE_ID = re.compile(r"\(#(\d+)\)")
+_ANY_ID = re.compile(r"#(\d+)")
 
 
 class PaperlessError(Exception):
     """Paperless answered, and the answer was no. The message is for the person."""
+
+
+class FileRefused(PaperlessError):
+    """Paperless will not take this file, and offering it again will not change that (#14)."""
 
 
 class StillConsuming(PaperlessError):
@@ -85,14 +114,67 @@ def _headers(config: dict) -> dict:
     return {"Authorization": f"Token {config.get('token', '')}", "Accept": "application/json"}
 
 
+def _one_line(text: object, limit: int = DETAIL_CHARACTERS) -> str:
+    """What a server said, on one line and no longer than ``limit``.
+
+    The message is recorded on the copy and written to the operator's log, and a log line is
+    one place a newline from a stranger must never land (#14).
+    """
+    return " ".join(str(text).split())[:limit]
+
+
+def _messages(body: object) -> list[str]:
+    """Every message in a Django REST Framework error body, field names kept.
+
+    ``{"detail": "..."}`` for authentication and permission errors; for a validation error a
+    mapping of field name to a list of messages (``{"document": ["File type ... not
+    supported"]}``), which nests for a nested serializer; sometimes a bare list.
+    """
+    if isinstance(body, str):
+        return [body]
+    if isinstance(body, list):
+        return [message for item in body for message in _messages(item)]
+    if isinstance(body, dict):
+        if "detail" in body:
+            return _messages(body["detail"])
+        found = []
+        for field, value in body.items():
+            found.extend(f"{field}: {message}" for message in _messages(value))
+        return found
+    return []
+
+
 def _explain(response: httpx.Response) -> str:
-    detail = ""
+    try:
+        detail = " ".join(_messages(response.json()))
+    except ValueError:
+        detail = response.text
+    detail = _one_line(detail)
+    return f"HTTP {response.status_code}" + (f": {detail}" if detail else "")
+
+
+def _duplicate_id(result: str) -> int | None:
+    """The document a task says already exists: the last ``(#id)``, else the last ``#id``."""
+    for pattern in (_DUPLICATE_ID, _ANY_ID):
+        found = pattern.findall(result)
+        if found:
+            return int(found[-1])
+    return None
+
+
+def _refuses_the_file(response: httpx.Response) -> bool:
+    """Whether a 400 is about the uploaded file itself: its errors are on the ``document`` field."""
     try:
         body = response.json()
-        detail = body.get("detail", "") if isinstance(body, dict) else ""
     except ValueError:
-        detail = response.text[:120]
-    return f"HTTP {response.status_code}" + (f": {detail}" if detail else "")
+        return False
+    return isinstance(body, dict) and "document" in body and "detail" not in body
+
+
+def _is_absolute(url: str) -> bool:
+    """Whether Paperless's URL field would take it: a scheme it knows and a host."""
+    parts = urlsplit(url)
+    return parts.scheme in ("http", "https") and bool(parts.hostname)
 
 
 def compose_title(metadata: DocumentMetadata) -> str:
@@ -113,16 +195,64 @@ class Archive:
 
     # ------------------------------------------------------------ plumbing
 
+    def _send(self, method: str, path: str, *, seconds: float | None = None, **kwargs):
+        """One request, its answer read no further than ``MAX_BODY`` and ``seconds`` (#16).
+
+        Streamed, because ``client.get`` has read the whole body before it returns. A redirect is
+        never followed: the address is the one the person typed, and a server that answers with
+        another is not sent the token a second time, wherever it points.
+        """
+        deadline = deadline_in(REQUEST_SECONDS if seconds is None else seconds)
+        try:
+            with (
+                until(deadline),
+                self.client.stream(
+                    method,
+                    f"{self.base}/api/{path}",
+                    headers={**self.headers, "Accept-Encoding": ACCEPT_ENCODING},
+                    follow_redirects=False,
+                    **kwargs,
+                ) as response,
+            ):
+                body = read_body(response, limit=MAX_BODY, deadline=deadline)
+                status = response.status_code
+        except BodyRefused as error:
+            raise PaperlessError(
+                str(_("Paperless answered with more than this plugin reads, or too slowly."))
+            ) from error
+        return httpx.Response(status, content=body)
+
+    def _refuse(self, response: httpx.Response) -> PaperlessError:
+        """The exception for an answer that was not the one wanted.
+
+        A 401 is the other side finished with the token (revoked, regenerated, the account
+        removed): trying again changes nothing, so the connection is switched off once with a
+        reason and the rest of the queue waits, instead of every document failing six times
+        (#13). A 403 is one missing permission in Paperless, fixed there, so it stays an
+        ordinary failure that is tried again.
+        """
+        if response.status_code == 401:
+            raise ConnectionUnusable(
+                str(
+                    _(
+                        "Paperless no longer accepts the API token (%(reason)s). "
+                        "Enter a current one, then switch the connection on again."
+                    )
+                )
+                % {"reason": _explain(response)}
+            )
+        return PaperlessError(_explain(response))
+
     def _get(self, path: str, **params) -> dict | list:
-        response = self.client.get(f"{self.base}/api/{path}", params=params, headers=self.headers)
+        response = self._send("GET", path, params=params)
         if response.status_code != 200:
-            raise PaperlessError(_explain(response))
+            raise self._refuse(response)
         return response.json()
 
     def _post(self, path: str, **kwargs) -> httpx.Response:
-        response = self.client.post(f"{self.base}/api/{path}", headers=self.headers, **kwargs)
+        response = self._send("POST", path, **kwargs)
         if response.status_code not in (200, 201):
-            raise PaperlessError(_explain(response))
+            raise self._refuse(response)
         return response
 
     # ---------------------------------------------------------- the calls
@@ -146,15 +276,20 @@ class Archive:
     def post_document(self, file, metadata: DocumentMetadata, fields: dict) -> str:
         """Offer the file to the consumer. Returns the task id Paperless gave back."""
         data = {key: value for key, value in fields.items() if value not in (None, "", [])}
-        response = self.client.post(
-            f"{self.base}/api/documents/post_document/",
-            headers=self.headers,
+        response = self._send(
+            "POST",
+            "documents/post_document/",
+            seconds=UPLOAD_TIMEOUT,
             data=data,
             files={"document": (metadata.filename, file, metadata.content_type)},
             timeout=UPLOAD_TIMEOUT,
         )
+        if response.status_code == 400 and _refuses_the_file(response):
+            # Paperless looked at the file and will not consume it (a type it has no parser
+            # for). It is the same answer however often it is asked, so say so once (#14).
+            raise FileRefused(_explain(response))
         if response.status_code != 200:
-            raise PaperlessError(_explain(response))
+            raise self._refuse(response)
         body = response.json()
         return str(body if not isinstance(body, dict) else body.get("task_id", body))
 
@@ -174,20 +309,20 @@ class Archive:
                 related = (task or {}).get("related_document")
                 if related:
                     return int(related)
-                match = _DUPLICATE_ID.search(str((task or {}).get("result", "")))
-                if match:
-                    return int(match.group(1))
+                existing = _duplicate_id(str((task or {}).get("result", "")))
+                if existing:
+                    return existing
                 raise PaperlessError(str(_("Paperless consumed the document but gave no id.")))
             if status == "FAILURE":
                 result = str((task or {}).get("result", ""))
-                match = _DUPLICATE_ID.search(result)
-                if "duplicate" in result.lower() and match:
+                existing = _duplicate_id(result)
+                if "duplicate" in result.lower() and existing:
                     # Paperless already holds this exact file. That is the outcome we
                     # wanted, and it is why offering a document twice is harmless.
-                    return int(match.group(1))
+                    return existing
                 raise PaperlessError(
                     str(_("Paperless could not consume the document: %(reason)s"))
-                    % {"reason": result[:300] or status}
+                    % {"reason": _one_line(result, 300) or status}
                 )
             if time.monotonic() >= deadline:
                 raise StillConsuming(
@@ -204,13 +339,9 @@ class Archive:
             if int(entry.get("field", -1)) != field_id
         ]
         fields.append({"field": field_id, "value": value})
-        response = self.client.patch(
-            f"{self.base}/api/documents/{document_id}/",
-            headers=self.headers,
-            json={"custom_fields": fields},
-        )
+        response = self._send("PATCH", f"documents/{document_id}/", json={"custom_fields": fields})
         if response.status_code != 200:
-            raise PaperlessError(_explain(response))
+            raise self._refuse(response)
 
 
 class PaperlessStore:
@@ -299,19 +430,28 @@ class PaperlessStore:
 
     def test(self, config: dict) -> TestResult:
         try:
-            with client() as session:
+            with client(total=REQUEST_SECONDS) as session:
                 count = Archive(config, client=session).count_documents()
-        except (PaperlessError, httpx.HTTPError, DestinationRefused) as error:
+        except (PaperlessError, ConnectionUnusable, httpx.HTTPError, DestinationRefused) as error:
             return TestResult(False, str(error))
         return TestResult(
             True,
-            str(_("Reachable. The archive holds %(count)d documents.")) % {"count": count},
+            str(
+                ngettext(
+                    "Reachable. The archive holds %(count)d document.",
+                    "Reachable. The archive holds %(count)d documents.",
+                    count,
+                )
+            )
+            % {"count": count},
         )
 
-    def put(self, document, file, metadata: DocumentMetadata, config: dict, user) -> ExternalRef:
+    def put(
+        self, document, file, metadata: DocumentMetadata, config: dict, user
+    ) -> ExternalRef | None:
         tag = str(config.get("tag") or "").strip()
         field_name = str(config.get("custom_field") or "").strip()
-        with client() as session:
+        with client(total=UPLOAD_TIMEOUT) as session:
             archive = Archive(config, client=session)
             fields = {
                 "title": compose_title(metadata)[:128],
@@ -322,11 +462,26 @@ class PaperlessStore:
                 fields["correspondent"] = archive.ensure("correspondents", metadata.company)
             if tag:
                 fields["tags"] = [archive.ensure("tags", tag)]
-            task_id = archive.post_document(file, metadata, fields)
+            try:
+                task_id = archive.post_document(file, metadata, fields)
+            except FileRefused as refusal:
+                logger.info("Paperless will not take %s: %s", metadata.filename, refusal)
+                return None
             document_id = archive.wait_for(task_id)
-            if field_name and metadata.application_url:
-                field_id = archive.ensure("custom_fields", field_name, data_type="url")
-                archive.set_custom_field(document_id, field_id, metadata.application_url)
+            # The document is archived from here on. The link back is a convenience: a failure
+            # to write it must not make the copy look failed, or the whole file is uploaded
+            # again for nothing, six times over (#12).
+            if field_name and _is_absolute(metadata.application_url or ""):
+                try:
+                    field_id = archive.ensure("custom_fields", field_name, data_type="url")
+                    archive.set_custom_field(document_id, field_id, metadata.application_url)
+                except (PaperlessError, httpx.HTTPError) as error:
+                    logger.warning(
+                        "Document %s is archived in Paperless, but its link back to Postulo "
+                        "could not be written: %s",
+                        document_id,
+                        _one_line(error),
+                    )
         return ExternalRef(
             store=self.name,
             id=str(document_id),

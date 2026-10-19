@@ -45,6 +45,10 @@ msgid "Paperless address"
 msgstr "Paperless-এর ওয়েব ঠিকানা"
 
 #: src/postulo_paperless/store.py
+msgid "Paperless answered with more than this plugin reads, or too slowly."
+msgstr ""
+
+#: src/postulo_paperless/store.py
 #, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Paperless নথিটি গ্রহণ করেছে কিন্তু কোনো id দেয়নি।"
@@ -60,6 +64,11 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless এখনো নথিটি গ্রহণ করছে; এটি আবার যাচাই করা হবে।"
 
 #: src/postulo_paperless/store.py
+#, python-format
+msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
+msgstr ""
+
+#: src/postulo_paperless/store.py
 #, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
@@ -70,9 +79,11 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Postulo থেকে আসা প্রতিটি নথিতে দেওয়া হয়। কোনোটি না চাইলে ফাঁকা রাখুন।"
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
-msgid "Reachable. The archive holds %(count)d documents."
-msgstr "পৌঁছানো যায়। আর্কাইভে %(count)dটি নথি আছে।"
+#, python-format
+msgid "Reachable. The archive holds %(count)d document."
+msgid_plural "Reachable. The archive holds %(count)d documents."
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/postulo_paperless/store.py
 #, fuzzy

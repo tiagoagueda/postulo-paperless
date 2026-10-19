@@ -45,6 +45,10 @@ msgid "Paperless address"
 msgstr "کاغذی پتہ"
 
 #: src/postulo_paperless/store.py
+msgid "Paperless answered with more than this plugin reads, or too slowly."
+msgstr ""
+
+#: src/postulo_paperless/store.py
 #, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "کاغذی کرنسی کھا لی لیکن کوئی شناخت نہیں دی۔."
@@ -60,6 +64,11 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "کاغذی کرنسی ابھی تک کھا رہی ہے؛ پھر سے چیک کیا جائے گا۔."
 
 #: src/postulo_paperless/store.py
+#, python-format
+msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
+msgstr ""
+
+#: src/postulo_paperless/store.py
 #, fuzzy
 msgid "Paperless-ngx"
 msgstr "غیر متصل"
@@ -70,9 +79,11 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "پوسٹلو سے آنے والی ہر دستاویز پر رکھیں۔ کسی کو پریشان نہ کریں ۔."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
-msgid "Reachable. The archive holds %(count)d documents."
-msgstr "دستیاب. محفوظہ %(count)d دستاویز رکھتا ہے."
+#, python-format
+msgid "Reachable. The archive holds %(count)d document."
+msgid_plural "Reachable. The archive holds %(count)d documents."
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/postulo_paperless/store.py
 #, fuzzy

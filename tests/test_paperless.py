@@ -15,7 +15,12 @@ from django.utils import timezone
 from postulo.documents.archiving import send_pending
 from postulo.documents.models import CopyStatus, DocumentKind, UploadedDocument
 from postulo.plugins import registry
-from postulo.plugins.api import DestinationRefused, DocumentMetadata, StorePlugin
+from postulo.plugins.api import (
+    ConnectionUnusable,
+    DestinationRefused,
+    DocumentMetadata,
+    StorePlugin,
+)
 from postulo.plugins.models import Connection
 
 from postulo_paperless import store as store_module
@@ -40,8 +45,13 @@ class FakePaperless:
         self.posted: list[dict] = []
         self.checksums: dict[bytes, int] = {}
         self.pending_polls = 0  # how many polls answer PENDING before SUCCESS
+        #: The refusal of the file, as Paperless words it: under the ``document`` field, in a list.
         self.reject_with: str | None = None
+        #: When set, the answer to the PATCH that writes the custom field.
+        self.patch_with: httpx.Response | None = None
         self.requests: list[tuple[str, str]] = []
+        #: What ``client()`` was asked for, to show the deadline is handed on.
+        self.client_calls: list[dict] = []
 
     def handler(self, request: httpx.Request) -> httpx.Response:
         path = urlsplit(str(request.url)).path
@@ -66,7 +76,7 @@ class FakePaperless:
 
         if path == "/api/documents/post_document/":
             if self.reject_with:
-                return httpx.Response(400, json={"detail": self.reject_with})
+                return httpx.Response(400, json={"document": [self.reject_with]})
             content_type = request.headers["Content-Type"]
             assert content_type.startswith("multipart/form-data"), content_type
             body = request.content
@@ -77,10 +87,13 @@ class FakePaperless:
             if file_bytes in self.checksums:
                 existing = self.checksums[file_bytes]
                 title = self.documents[existing]["title"]
+                name = fields["document"]["filename"]
+                # Paperless-ngx's own wording: the file name twice, the title before the id,
+                # a full stop at the end.
                 self.tasks[task_id] = {
                     "status": "FAILURE",
-                    "result": f"{fields['document']['filename']}: Not consuming: It is a "
-                    f"duplicate of {title} (#{existing})",
+                    "result": f"{name}: Not consuming {name}: It is a duplicate of {title} "
+                    f"(#{existing}).",
                     "related_document": None,
                     "polls": 0,
                 }
@@ -117,6 +130,8 @@ class FakePaperless:
             if request.method == "GET":
                 return httpx.Response(200, json=document)
             if request.method == "PATCH":
+                if self.patch_with is not None:
+                    return self.patch_with
                 document["custom_fields"] = json.loads(request.content)["custom_fields"]
                 return httpx.Response(200, json=document)
 
@@ -147,6 +162,8 @@ def paperless(monkeypatch):
 
     def fake_client(**kwargs):
         kwargs.pop("event_hooks", None)
+        fake.client_calls.append(dict(kwargs))
+        kwargs.pop("total", None)  # the real client holds each request to it; a mock cannot
         kwargs.setdefault("timeout", 10)
         return httpx.Client(transport=httpx.MockTransport(fake.handler), **kwargs)
 
@@ -262,6 +279,14 @@ def test_the_test_button_counts_documents_with_the_token(paperless):
     assert not result.ok and "HTTP 401: Invalid token." in result.message
 
 
+def test_the_test_button_says_one_document_in_the_singular(paperless):
+    paperless.documents[1] = {"id": 1, "title": "x", "custom_fields": []}
+    result = PaperlessStore().test(CONFIG)
+    assert result.ok and result.message == "Reachable. The archive holds 1 document."
+    paperless.documents[2] = {"id": 2, "title": "y", "custom_fields": []}
+    assert PaperlessStore().test(CONFIG).message == "Reachable. The archive holds 2 documents."
+
+
 def test_put_files_the_document_and_leads_back_to_the_application(paperless):
     ref = PaperlessStore().put(None, ContentFile(b"%PDF-1.7 cv"), a_metadata(), CONFIG, None)
     assert ref.store == "paperless" and ref.id == "1"
@@ -316,9 +341,208 @@ def test_a_consumer_that_needs_a_few_polls_is_waited_for(paperless):
 
 
 def test_a_refusal_is_explained(paperless):
+    """Paperless puts a validation refusal under the field's name, in a list (#14)."""
+    response = httpx.Response(400, json={"document": ["File type text/plain not supported"]})
+    assert (
+        store_module._explain(response) == "HTTP 400: document: File type text/plain not supported"
+    )
+    other = httpx.Response(400, json={"tags": ["Invalid pk"], "title": ["Too long.", "Bad."]})
+    assert store_module._explain(other) == "HTTP 400: tags: Invalid pk title: Too long. title: Bad."
+    assert store_module._explain(httpx.Response(400, json=["one", "two"])) == "HTTP 400: one two"
+
+
+def test_a_file_paperless_will_not_consume_is_declined_not_retried(paperless):
     paperless.reject_with = "File type text/plain not supported"
-    with pytest.raises(PaperlessError, match="HTTP 400: File type text/plain not supported"):
+    ref = PaperlessStore().put(None, ContentFile(b"x"), a_metadata(), CONFIG, None)
+    assert ref is None, "the store contract's `not for me`"
+    uploads = [r for r in paperless.requests if r == ("POST", "/api/documents/post_document/")]
+    assert len(uploads) == 1
+
+
+def test_a_refusal_on_another_field_is_a_failure_that_names_it(paperless, monkeypatch):
+    original = paperless.handler
+
+    def handler(request):
+        if request.url.path == "/api/documents/post_document/":
+            return httpx.Response(400, json={"created": ["Date has wrong format."]})
+        return original(request)
+
+    monkeypatch.setattr(paperless, "handler", handler)
+    with pytest.raises(PaperlessError, match="HTTP 400: created: Date has wrong format."):
         PaperlessStore().put(None, ContentFile(b"x"), a_metadata(), CONFIG, None)
+
+
+@pytest.mark.parametrize(
+    "response",
+    [
+        httpx.Response(400, json={"detail": "first line\nforged: log line\r\n" + "x" * 1000}),
+        httpx.Response(400, json={"document": ["first line\nforged log line " + "x" * 1000]}),
+        httpx.Response(502, text="first line\nforged log line " + "x" * 1000),
+    ],
+)
+def test_what_the_server_says_is_one_line_of_at_most_a_hundred_and_twenty(response):
+    message = store_module._explain(response)
+    assert "\n" not in message and "\r" not in message
+    assert len(message) <= len(f"HTTP {response.status_code}: ") + 120
+    assert "first line" in message
+
+
+def test_a_failed_task_reason_is_one_line_too(paperless):
+    archive = Archive(CONFIG, client=httpx.Client(transport=httpx.MockTransport(paperless.handler)))
+    paperless.tasks["t"] = {"status": "FAILURE", "result": "bad\nforged line", "polls": 0}
+    with pytest.raises(PaperlessError) as raised:
+        archive.wait_for("t")
+    assert "\n" not in str(raised.value) and "bad forged line" in str(raised.value)
+
+
+# ------------------------------------------------------------ a revoked token (#13)
+
+
+def test_a_wrong_token_retires_the_connection_and_the_button_still_answers(paperless):
+    wrong = {**CONFIG, "token": "revoked"}
+    with pytest.raises(ConnectionUnusable, match="no longer accepts the API token") as raised:
+        PaperlessStore().put(None, ContentFile(b"x"), a_metadata(), wrong, None)
+    assert "Invalid token." in str(raised.value)
+    assert raised.value.keep_secrets is False, "a revoked token is not worth keeping"
+    result = PaperlessStore().test(wrong)
+    assert not result.ok and "Invalid token." in result.message
+
+
+def test_forbidden_is_an_ordinary_failure_because_one_permission_is_missing(paperless):
+    def handler(request):
+        return httpx.Response(403, json={"detail": "You do not have permission."})
+
+    archive = Archive(CONFIG, client=httpx.Client(transport=httpx.MockTransport(handler)))
+    with pytest.raises(PaperlessError, match="HTTP 403") as raised:
+        archive.count_documents()
+    assert not isinstance(raised.value, ConnectionUnusable)
+
+
+# ------------------------------------------------------- the duplicate's id (#11)
+
+
+def test_a_retried_document_is_matched_by_the_id_at_the_end_of_the_message(paperless):
+    store = PaperlessStore()
+    store.put(None, ContentFile(b"someone else's"), a_metadata(role="Other"), CONFIG, None)
+    first = store.put(
+        None, ContentFile(b"mine"), a_metadata(role="Engineer (Req #1)"), CONFIG, None
+    )
+    assert first.id == "2"
+    untouched = json.loads(json.dumps(paperless.documents[1]["custom_fields"]))
+    again = store.put(
+        None, ContentFile(b"mine"), a_metadata(role="Engineer (Req #1)"), CONFIG, None
+    )
+    assert again.id == "2", "Paperless named document 2, not the `#1` in its title"
+    assert paperless.documents[1]["custom_fields"] == untouched
+    assert len(paperless.documents) == 2
+
+
+def test_an_uploads_own_title_with_a_hash_does_not_win_either(paperless):
+    store = PaperlessStore()
+    upload = a_metadata(origin="upload", title="Ticket #48213 — scan", company="", role="")
+    store.put(None, ContentFile(b"filler"), a_metadata(), CONFIG, None)
+    first = store.put(None, ContentFile(b"scan"), upload, CONFIG, None)
+    again = store.put(None, ContentFile(b"scan"), upload, CONFIG, None)
+    assert first.id == again.id == "2"
+    assert "(#2)." in paperless.tasks["task-3"]["result"], "Paperless's full wording"
+
+
+@pytest.mark.parametrize(
+    ("result", "expected"),
+    [
+        ("a.pdf: Not consuming a.pdf: It is a duplicate of CV (#9) (#57).", 57),
+        ("It is a duplicate of Req #12 (#5). Note: existing document is in the trash.", 5),
+        ("duplicate of Req #12 and #34", 34),
+        ("nothing here", None),
+    ],
+)
+def test_the_duplicates_id_is_the_last_one(result, expected):
+    assert store_module._duplicate_id(result) == expected
+
+
+# ------------------------------------------------------ the link back (#12)
+
+
+def test_a_bare_path_is_not_written_into_a_url_field(paperless):
+    metadata = a_metadata(application_url="/applications/7/")
+    ref = PaperlessStore().put(None, ContentFile(b"x"), metadata, CONFIG, None)
+    assert ref.id == "1"
+    assert not [r for r in paperless.requests if r[0] == "PATCH"]
+    assert paperless.tables["custom_fields"] == [], "the field is not even created"
+
+
+def test_a_refused_link_does_not_make_an_archived_document_a_failure(paperless, caplog):
+    paperless.patch_with = httpx.Response(400, json={"custom_fields": ["Enter a valid URL."]})
+    with caplog.at_level("WARNING"):
+        ref = PaperlessStore().put(None, ContentFile(b"x"), a_metadata(), CONFIG, None)
+    assert ref.id == "1" and ref.url == f"{BASE}/documents/1/details"
+    assert "custom_fields: Enter a valid URL." in caplog.text
+    assert "tok3n" not in caplog.text
+
+
+# ------------------------------------------------- bounded answers (#16)
+
+
+def test_every_request_runs_under_a_deadline_of_its_own(paperless):
+    PaperlessStore().test(CONFIG)
+    PaperlessStore().put(None, ContentFile(b"x"), a_metadata(), CONFIG, None)
+    assert [call["total"] for call in paperless.client_calls] == [
+        store_module.REQUEST_SECONDS,
+        store_module.UPLOAD_TIMEOUT,
+    ]
+
+
+def test_an_answer_over_the_cap_is_refused_unread():
+    def declared(request):
+        return httpx.Response(200, content=b"x" * (store_module.MAX_BODY + 1))
+
+    class Endless(httpx.SyncByteStream):
+        def __iter__(self):
+            while True:
+                yield b"x" * 65536
+
+    def undeclared(request):
+        return httpx.Response(200, stream=Endless())
+
+    for handler in (declared, undeclared):
+        archive = Archive(CONFIG, client=httpx.Client(transport=httpx.MockTransport(handler)))
+        with pytest.raises(PaperlessError, match="more than this plugin reads"):
+            archive.count_documents()
+
+
+def test_a_server_answering_a_byte_at_a_time_is_cut_at_the_deadline(monkeypatch):
+    import time
+
+    class Trickle(httpx.SyncByteStream):
+        def __iter__(self):
+            while True:
+                time.sleep(0.05)
+                yield b" "
+
+    def handler(request):
+        return httpx.Response(200, stream=Trickle())
+
+    monkeypatch.setattr(store_module, "REQUEST_SECONDS", 0.3)
+    archive = Archive(CONFIG, client=httpx.Client(transport=httpx.MockTransport(handler)))
+    started = time.monotonic()
+    with pytest.raises(PaperlessError, match="too slowly"):
+        archive.count_documents()
+    assert time.monotonic() - started < 3
+
+
+def test_a_redirect_is_not_followed_and_the_token_goes_nowhere_else():
+    seen: list[str] = []
+
+    def handler(request):
+        seen.append(str(request.url))
+        if request.url.host == "paperless.example.org":
+            return httpx.Response(302, headers={"Location": "https://elsewhere.example/api/"})
+        return httpx.Response(200, json={"count": 0, "results": []})
+
+    archive = Archive(CONFIG, client=httpx.Client(transport=httpx.MockTransport(handler)))
+    with pytest.raises(PaperlessError, match="HTTP 302"):
+        archive.count_documents()
+    assert all("elsewhere" not in url for url in seen)
 
 
 def test_blank_tag_and_field_mean_none(paperless):
@@ -382,6 +606,56 @@ def test_postulo_finds_the_store_and_the_scheduler_sends_through_it(paperless, s
     assert paperless.documents[1]["title"] == f"Diploma — {timezone.now().date().isoformat()}"
     assert paperless.tables["document_types"] == [{"id": 1, "name": "Certificate"}]
     assert paperless.tables["correspondents"] == [], "an upload has no company"
+
+
+def _a_connection_with_two_pending_copies(token: str):
+    from django.contrib.auth import get_user_model
+
+    registry.plugins("store", refresh=True)
+    user = get_user_model().objects.create_user(email="ana@example.org", password="pw" * 8)  # noqa: S106
+    connection = Connection(
+        owner=user,
+        kind="store",
+        plugin="paperless",
+        label="Home",
+        config={"url": BASE, "tag": "postulo", "custom_field": "Postulo"},
+    )
+    connection.secrets = {"token": token}
+    connection.save()
+    for name in ("one", "two"):
+        upload = UploadedDocument(owner=user, title=name, kind=DocumentKind.CERTIFICATE)
+        upload.file.save(f"{name}.pdf", ContentFile(b"%PDF-1.7 " + name.encode()), save=False)
+        upload.save()
+    return connection
+
+
+@pytest.mark.django_db
+def test_a_dead_token_switches_the_connection_off_once_through_the_scheduler(paperless):
+    connection = _a_connection_with_two_pending_copies("revoked")
+    send_pending()
+    connection.refresh_from_db()
+    assert not connection.enabled
+    assert "no longer accepts the API token" in connection.last_error
+    assert connection.secrets == {}, "a token known not to work is not kept"
+    # The pass that found the token dead read both copies with the connection still on, so the
+    # second is tried once more in it (the core's doing); no later pass dials it again.
+    dialled = len(paperless.requests)
+    send_pending()
+    assert len(paperless.requests) == dialled, "a switched-off connection is not dialled"
+
+
+@pytest.mark.django_db
+def test_a_file_paperless_cannot_consume_ends_declined_after_one_upload(paperless):
+    from postulo.documents.models import DocumentCopy
+
+    _a_connection_with_two_pending_copies("tok3n")
+    paperless.reject_with = "File type application/msword not supported"
+    for _attempt in range(3):
+        send_pending()
+    statuses = set(DocumentCopy.objects.values_list("status", flat=True))
+    assert statuses == {CopyStatus.DECLINED}
+    uploads = [r for r in paperless.requests if r[1] == "/api/documents/post_document/"]
+    assert len(uploads) == 2, "one upload per file, not six"
 
 
 @pytest.mark.django_db
