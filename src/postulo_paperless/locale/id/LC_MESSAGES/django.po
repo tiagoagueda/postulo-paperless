@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-13 13:14+0000\n"
-"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
+"PO-Revision-Date: 2026-10-19 11:15+0000\n"
+"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
 "Language-Team: Indonesian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
@@ -39,8 +39,9 @@ msgid "Paperless address"
 msgstr "Alamat Paperless"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "Berkas menjawab dengan lebih dari plugin ini membaca, atau terlalu lambat."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless consumed the document but gave no id."
@@ -56,9 +57,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless masih memproses dokumen; dokumen akan diperiksa lagi."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Tidak ada kertas lagi yang menerima token API (%(reason)s). Masukkan yang kini, lalu nyalakan koneksi lagi."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless-ngx"
@@ -69,10 +70,10 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Diberikan pada setiap dokumen yang berasal dari Postulo. Kosongkan jika tidak perlu."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
+msgstr[0] "Dapat. Arsip menyimpan %(count)d dokumen."
 
 #: src/postulo_paperless/store.py
 msgid "Tag"

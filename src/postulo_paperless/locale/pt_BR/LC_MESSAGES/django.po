@@ -4,14 +4,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-09-13 04:06+0000\n"
-"Last-Translator: Postulo contributors\n"
-"Language-Team: português (Brasil)\n"
+"PO-Revision-Date: 2026-10-19 11:15+0000\n"
+"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"Language-Team: Portuguese (Brazil) <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
@@ -44,8 +44,9 @@ msgid "Paperless address"
 msgstr "Endereço do Paperless"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "Sem papel respondeu com mais do que este plugin lê, ou muito lentamente."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -63,9 +64,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "O Paperless ainda está a consumir o documento; será verificado de novo."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Sem papel não aceita mais o token API (%(reason)s). Digite um atual e ligue a conexão novamente."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -78,11 +79,11 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Posta em cada documento vindo do Postulo. Deixe em branco para nenhuma."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Atingível. O arquivo contém documentos."
+msgstr[1] "Atingível. O arquivo contém documentos."
 
 #: src/postulo_paperless/store.py
 #, fuzzy

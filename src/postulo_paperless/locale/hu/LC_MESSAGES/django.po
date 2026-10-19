@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-13 13:14+0000\n"
-"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
+"PO-Revision-Date: 2026-10-19 11:15+0000\n"
+"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
 "Language-Team: Hungarian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
@@ -39,8 +39,9 @@ msgid "Paperless address"
 msgstr "Paperless-cím"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "Paperless válaszolt több, mint ez a plugin olvas, vagy túl lassan."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless consumed the document but gave no id."
@@ -56,9 +57,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "A Paperless még feldolgozza a dokumentumot; a Postulo később újra ellenőrzi."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Paperless már nem fogadja el az API zsetont (%(reason)s). Adja meg az aktuális, majd kapcsolja be a kapcsolatot újra."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless-ngx"
@@ -69,11 +70,11 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Minden dokumentumra rákerül, amely a Postulóból érkezett. Ha nincs, hagyja üresen."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Elérhető. Az archívumban %(count)d dokumentum található."
+msgstr[1] "Elérhető. Az archívumban %(count)d dokumentumok vannak."
 
 #: src/postulo_paperless/store.py
 msgid "Tag"

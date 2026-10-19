@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-13 13:14+0000\n"
-"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
+"PO-Revision-Date: 2026-10-19 11:15+0000\n"
+"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
 "Language-Team: Hindi <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
@@ -45,8 +45,9 @@ msgid "Paperless address"
 msgstr "Paperless का पता"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "पेपरलेस ने इस प्लगइन से अधिक पढ़े, या बहुत धीरे से जवाब दिया।।"
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -64,9 +65,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless अभी भी डॉक्यूमेंट प्रोसेस कर रहा है; इसे फिर से जांचा जाएगा।"
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "पेपरलेस अब एपीआई टोकन स्वीकार नहीं करता है (%(reason)s). एक वर्तमान में प्रवेश करें, फिर कनेक्शन को फिर से स्विच करें।।"
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -79,11 +80,11 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Postulo से आए हर डॉक्यूमेंट पर लगाया जाता है। कुछ न होने पर खाली छोड़ें।"
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "पहुंच योग्य। संग्रह में %(count)d दस्तावेज़ हैं।।"
+msgstr[1] "पहुंच योग्य। संग्रह में %(count)d दस्तावेज़ हैं।।"
 
 #: src/postulo_paperless/store.py
 #, fuzzy
