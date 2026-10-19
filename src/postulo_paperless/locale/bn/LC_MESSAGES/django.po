@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-13 18:04+0000\n"
-"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
+"PO-Revision-Date: 2026-10-19 11:15+0000\n"
+"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
 "Language-Team: Bengali <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/bn/>\n"
 "Language: bn\n"
 "MIME-Version: 1.0\n"
@@ -45,8 +45,9 @@ msgid "Paperless address"
 msgstr "Paperless-এর ওয়েব ঠিকানা"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "পত্রিকা ছাড়া এই প্লাগ-ইনের চেয়েও বেশি, অথবা ধীরে ধীরে উত্তর দেওয়া হয় ।।"
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -64,9 +65,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless এখনো নথিটি গ্রহণ করছে; এটি আবার যাচাই করা হবে।"
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "কাগজের বাইরে আর API টোকেন গ্রহণ করা হয় না (X৪৪৩X)। বর্তমান একটি নাম লিখুন, তারপর পুনরায় সংযোগ করার বাটন- টি চালু করুন ।।"
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -79,11 +80,11 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Postulo থেকে আসা প্রতিটি নথিতে দেওয়া হয়। কোনোটি না চাইলে ফাঁকা রাখুন।"
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "অবশ্যই। আর্কাইভের মধ্যে [X২৯] ডকুমেন্ট রয়েছে।।"
+msgstr[1] "অবশ্যই। আর্কাইভের মধ্যে [X২৯] ডকুমেন্ট রয়েছে।।"
 
 #: src/postulo_paperless/store.py
 #, fuzzy

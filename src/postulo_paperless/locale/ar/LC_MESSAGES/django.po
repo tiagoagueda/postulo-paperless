@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-13 16:04+0000\n"
-"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
+"PO-Revision-Date: 2026-10-19 11:15+0000\n"
+"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
 "Language-Team: Arabic <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -45,8 +45,9 @@ msgid "Paperless address"
 msgstr "عنوان Paperless"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "جاوب بلا أوراق مع أكثر من هذا البلوغ يقرأ، أو ببطء شديد."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -64,9 +65,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "لا يزال Paperless يعالج المستند؛ سيُتحقق منه مرة أخرى."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Paperless no longer accepts the API token (%(reason)s). أدخلي واحدة حالية، ثم أبدلي الإتصال مرة أخرى."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -79,15 +80,15 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "يوضع على كل مستند وارد من Postulo. اتركه فارغًا إن لم يوجد."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "قابل للتواصل المحفوظات لا تحمل أي وثائق."
+msgstr[1] "قابل للتواصل ويحتفظ المحفوظات بوثيقة %(count)d."
+msgstr[2] "قابل للتواصل المحفوظات تحمل وثيقتين."
+msgstr[3] "قابل للتواصل وتحتفظ المحفوظات بوثائق %(count)d."
 msgstr[4] ""
-msgstr[5] ""
+msgstr[5] "قابل للتواصل وتحتفظ المحفوظات بوثائق %(count)d."
 
 #: src/postulo_paperless/store.py
 #, fuzzy

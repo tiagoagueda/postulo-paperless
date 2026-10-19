@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-10 12:45+0000\n"
+"PO-Revision-Date: 2026-10-19 11:15+0000\n"
 "Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
 "Language-Team: Urdu <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/ur/>\n"
 "Language: ur\n"
@@ -45,8 +45,9 @@ msgid "Paperless address"
 msgstr "کاغذی پتہ"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "اس پلگن سے زیادہ جواب دینے والا کاغذی جواب یا بہت آہستہ ہوتا ہے۔."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -64,9 +65,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "کاغذی کرنسی ابھی تک کھا رہی ہے؛ پھر سے چیک کیا جائے گا۔."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "کاغذ کے بغیر اب اے پی آئی کی نشان دہی (X43X) کو تسلیم نہیں کیا جا سکتا۔ حالیہ ایکشن داخل کریں، پھر دوبارہ اتصال کو تبدیل کریں."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -79,11 +80,11 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "پوسٹلو سے آنے والی ہر دستاویز پر رکھیں۔ کسی کو پریشان نہ کریں ۔."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "دستیاب. محفوظہ %(count)d دستاویز رکھتی ہے."
+msgstr[1] "دستیاب. محفوظہ %(count)d دستاویز رکھتا ہے."
 
 #: src/postulo_paperless/store.py
 #, fuzzy

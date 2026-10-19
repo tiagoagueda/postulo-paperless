@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-10 12:45+0000\n"
+"PO-Revision-Date: 2026-10-19 11:15+0000\n"
 "Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
 "Language-Team: Dutch <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/nl/>\n"
 "Language: nl\n"
@@ -45,8 +45,9 @@ msgid "Paperless address"
 msgstr "Paperless-adres"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "Papierloos beantwoord met meer dan deze plugin leest, of te langzaam."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -64,9 +65,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless is het document nog aan het verwerken; het wordt opnieuw gecontroleerd."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Papierloos accepteert de API token niet meer (%(reason)s). Voer een huidige in en zet de verbinding weer aan."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -79,11 +80,11 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Wordt op elk document gezet dat van Postulo kwam. Laat leeg voor geen."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Bereikbaar. Het archief bevat %(count)d document."
+msgstr[1] "Bereikbaar. Het archief bevat %(count)d documenten."
 
 #: src/postulo_paperless/store.py
 #, fuzzy

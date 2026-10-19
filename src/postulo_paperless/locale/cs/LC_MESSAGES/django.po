@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-10 12:45+0000\n"
+"PO-Revision-Date: 2026-10-19 11:15+0000\n"
 "Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
 "Language-Team: Czech <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/cs/>\n"
 "Language: cs\n"
@@ -45,8 +45,9 @@ msgid "Paperless address"
 msgstr "Adresa Paperless"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "Bezpapírové odpovědi s více než tento plugin čte, nebo příliš pomalu."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -64,9 +65,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless dokument stále zpracovává; bude znovu zkontrolován."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Bezpapírový již nepřijímá symbol API (%(reason)s). Zadejte aktuální a pak znovu zapněte spojení."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -79,12 +80,12 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Přidá se na každý dokument, který přišel z Postulo. Nechte prázdné, pokud žádný nechcete."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Dosažitelný. Archiv obsahuje dokument %(count)d."
+msgstr[1] "Dosažitelný. Archiv obsahuje dokumenty %(count)d."
+msgstr[2] "Dosažitelný. Archiv obsahuje dokumenty %(count)d."
 
 #: src/postulo_paperless/store.py
 #, fuzzy

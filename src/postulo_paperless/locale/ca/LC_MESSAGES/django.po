@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-10 12:45+0000\n"
+"PO-Revision-Date: 2026-10-19 11:15+0000\n"
 "Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
 "Language-Team: Catalan <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/ca/>\n"
 "Language: ca\n"
@@ -45,8 +45,9 @@ msgid "Paperless address"
 msgstr "Adreça sense paper"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "Sense paper respondre amb més d' aquest connector llegeix, o massa lentament."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -64,9 +65,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Els sense papers encara consumeixen el document; es tornarà a comprovar."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Ja no accepta la fitxa API (%(reason)s). Introduïu un actual i torneu a canviar la connexió."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -79,11 +80,11 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Poseu-vos tots els documents que provenen de Postulo. Deixeu-vos en blanc per a cap."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Abastable. L' arxiu conté el document %(count)d."
+msgstr[1] "Abastable. L' arxiu conté els documents %(count)d."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
