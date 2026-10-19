@@ -48,11 +48,11 @@ artifacts = ["src/postulo_paperless/locale/*/LC_MESSAGES/django.mo"]
 # themselves in CI rather than running (#2). The lock beside this file carries the exact
 # commit, so a run is reproducible; the ref is what a deliberate `uv lock --upgrade` follows.
 #
-# `v0.3.0` is the ref this becomes, and it is not tagged yet: the core's `0.3.0` branch is
-# behind `main` and does not have the plugin surface this package imports (#215, #216). Move
-# this line to `@v0.3.0` when the core cuts the tag.
+# The ref is a full commit of the core's `main`, because the core cuts no tag the plugin surface
+# this package imports is in (#215, #216). Move it with `uv lock --upgrade`, and let the audit job
+# in `.forgejo/workflows/ci.yml` say when the lock's dependencies have drifted (#17).
 dev = [
-    "postulo @ git+https://source.tiagoagueda.com/postulo/postulo.git@925e3e9cd35a97617cc45b36ecdde862d04515b1",
+    "postulo @ git+https://source.tiagoagueda.com/postulo/postulo.git@42be52048214fd98ed96d881fdf9fbadc10c4b73",
     "pytest>=8.3",
     "pytest-django>=4.14",
     "ruff>=0.16",
