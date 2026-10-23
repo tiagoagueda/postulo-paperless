@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"PO-Revision-Date: 2026-10-23 12:47+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Urdu <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/ur/>\n"
 "Language: ur\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "کاغذی کرنسی کھا لی لیکن کوئی شناخت نہیں 
 #: src/postulo_paperless/store.py
 #, fuzzy, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr "کاغذی کرنسی نہیں کھا سکتی تھی"
+msgstr "Paperless دستاویز کو پراسیس نہیں کر سکا: %(reason)s"
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -67,7 +67,7 @@ msgstr "کاغذی کرنسی ابھی تک کھا رہی ہے؛ پھر سے چ�
 #: src/postulo_paperless/store.py
 #, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "کاغذ کے بغیر اب اے پی آئی کی نشان دہی (X43X) کو تسلیم نہیں کیا جا سکتا۔ حالیہ ایکشن داخل کریں، پھر دوبارہ اتصال کو تبدیل کریں."
+msgstr "Paperless اب API ٹوکن قبول نہیں کرتا (%(reason)s)۔ ایک موجودہ ٹوکن درج کریں، پھر کنکشن دوبارہ آن کریں۔"
 
 #: src/postulo_paperless/store.py
 #, fuzzy

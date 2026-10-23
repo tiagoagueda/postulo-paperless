@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"PO-Revision-Date: 2026-10-23 11:33+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Albanian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/sq/>\n"
 "Language: sq\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Pa letra e konsumoi dokumentin por nuk dha asnjë ID."
 #: src/postulo_paperless/store.py
 #, fuzzy, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr "Pa titull nuk"
+msgstr "Paperless nuk mundi ta përpunonte dokumentin: %(reason)s"
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -67,7 +67,7 @@ msgstr "Pa fletë akoma është duke konsumuar dokumentin; ai do të kontrollohe
 #: src/postulo_paperless/store.py
 #, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Pa kusht nuk pranon më simbolin API ([X43XX]). Shto a në."
+msgstr "Paperless nuk e pranon më token-in e API-t (%(reason)s). Jepni një të vlefshëm, pastaj aktivizojeni sërish lidhjen."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
