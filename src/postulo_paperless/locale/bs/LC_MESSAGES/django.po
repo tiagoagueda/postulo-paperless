@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-14 08:04+0000\n"
-"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
+"PO-Revision-Date: 2026-10-22 21:55+0000\n"
+"Last-Translator: Administrator <weblate@tiagoagueda.com>\n"
 "Language-Team: Bosnian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/bs/>\n"
 "Language: bs\n"
 "MIME-Version: 1.0\n"
@@ -45,8 +45,9 @@ msgid "Paperless address"
 msgstr "Adresa Paperlessa"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "Paperless je odgovorio s više podataka nego što ovaj dodatak čita, ili presporo."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -66,7 +67,7 @@ msgstr "Paperless još obrađuje dokument; bit će ponovo provjeren."
 #: src/postulo_paperless/store.py
 #, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Paperless više ne prihvata API token (%(reason)s). Unesite važeći, a zatim ponovo uključite vezu."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -82,9 +83,9 @@ msgstr "Stavlja se na svaki dokument koji je došao iz Postula. Ostavite prazno 
 #, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Dostupno. Arhiva sadrži %(count)d dokument."
+msgstr[1] "Dostupno. Arhiva sadrži %(count)d dokumenta."
+msgstr[2] "Dostupno. Arhiva sadrži %(count)d dokumenata."
 
 #: src/postulo_paperless/store.py
 #, fuzzy

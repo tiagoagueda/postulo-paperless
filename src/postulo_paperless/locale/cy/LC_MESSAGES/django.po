@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-13 19:14+0000\n"
-"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
+"PO-Revision-Date: 2026-10-22 21:55+0000\n"
+"Last-Translator: Administrator <weblate@tiagoagueda.com>\n"
 "Language-Team: Welsh <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/cy/>\n"
 "Language: cy\n"
 "MIME-Version: 1.0\n"
@@ -45,8 +45,9 @@ msgid "Paperless address"
 msgstr "Cyfeiriad Paperless"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "Atebodd Paperless gyda mwy nag y mae'r ategyn hwn yn ei ddarllen, neu'n rhy araf."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -64,9 +65,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Mae Paperless yn dal i brosesu'r ddogfen; caiff ei gwirio eto."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Dyw Paperless ddim yn derbyn y tocyn API mwyach (%(reason)s). Rhowch un cyfredol, yna trowch y cysylltiad ymlaen eto."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -79,13 +80,13 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Yn cael ei roi ar bob dogfen a ddaeth o Postulo. Gadewch yn wag am ddim."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Mae modd ei gyrraedd. Mae %(count)d dogfen yn yr archif."
+msgstr[1] "Mae modd ei gyrraedd. Mae %(count)d dogfen yn yr archif."
+msgstr[2] "Mae modd ei gyrraedd. Mae %(count)d o ddogfennau yn yr archif."
+msgstr[3] "Mae modd ei gyrraedd. Mae %(count)d o ddogfennau yn yr archif."
 
 #: src/postulo_paperless/store.py
 #, fuzzy

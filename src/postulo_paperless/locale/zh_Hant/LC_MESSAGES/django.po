@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-19 11:15+0000\n"
+"PO-Revision-Date: 2026-10-22 21:56+0000\n"
 "Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
 "Language-Team: Chinese (Traditional Han script) <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/zh_Hant/>\n"
 "Language: zh_Hant\n"
