@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-19 11:15+0000\n"
-"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"PO-Revision-Date: 2026-10-22 21:56+0000\n"
+"Last-Translator: Administrator <weblate@tiagoagueda.com>\n"
 "Language-Team: Lithuanian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgstr "Paperless adresas"
 #: src/postulo_paperless/store.py
 #, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "Paperless atsakė su daugiau nei šis priedas skaito, arba per lėtai."
+msgstr "Paperless atsakymas buvo didesnis, nei šis įskiepis nuskaito, arba per lėtas."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless consumed the document but gave no id."
@@ -59,7 +59,7 @@ msgstr "Paperless vis dar apdoroja dokumentą; bus patikrinta dar kartą."
 #: src/postulo_paperless/store.py
 #, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Beprasmiai nebepriima API rakto (%(reason)s). @ info: whatsthis."
+msgstr "Paperless nebepriima API rakto (%(reason)s). Įveskite galiojantį raktą ir vėl įjunkite ryšį."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless-ngx"
@@ -73,9 +73,9 @@ msgstr "Priskiriama kiekvienam iš Postulo gautam dokumentui. Palikite tuščią
 #, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] "Matote. Archyvas turi %(count)d dokumentus."
-msgstr[2] "Matote. Archyvas turi %(count)d dokumentus."
+msgstr[0] "Pasiekiama. Archyve yra %(count)d dokumentas."
+msgstr[1] "Pasiekiama. Archyve yra %(count)d dokumentai."
+msgstr[2] "Pasiekiama. Archyve yra %(count)d dokumentų."
 
 #: src/postulo_paperless/store.py
 msgid "Tag"

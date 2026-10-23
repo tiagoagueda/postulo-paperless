@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-19 11:15+0000\n"
-"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"PO-Revision-Date: 2026-10-22 21:55+0000\n"
+"Last-Translator: Administrator <weblate@tiagoagueda.com>\n"
 "Language-Team: Galician <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
@@ -39,9 +39,8 @@ msgid "Paperless address"
 msgstr "Enderezo de Paperless"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "Paperless respondeu con máis do que este plugin leu, ou moi lentamente."
+msgstr "Paperless respondeu con máis do que le este complemento, ou demasiado amodo."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless consumed the document but gave no id."
@@ -57,9 +56,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless aínda está a procesar o documento; comprobarase de novo."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Non se acepta o token API (%(reason)s). Introduza un actual e despois cambie a conexión de novo."
+msgstr "Paperless xa non acepta o testemuño de API (%(reason)s). Introduce un vixente e despois volve activar a conexión."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless-ngx"
@@ -70,11 +69,11 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Engádese a cada documento que veña do Postulo. Déixao en branco para non usar ningunha."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "Alcanzable. O ficheiro contén %(count)d."
-msgstr[1] "Alcanzable. O ficheiro contén %(count)d."
+msgstr[0] "Accesible. O arquivo contén %(count)d documento."
+msgstr[1] "Accesible. O arquivo contén %(count)d documentos."
 
 #: src/postulo_paperless/store.py
 msgid "Tag"

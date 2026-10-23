@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-13 19:14+0000\n"
-"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
+"PO-Revision-Date: 2026-10-22 21:56+0000\n"
+"Last-Translator: Administrator <weblate@tiagoagueda.com>\n"
 "Language-Team: Maltese <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/mt/>\n"
 "Language: mt\n"
 "MIME-Version: 1.0\n"
@@ -45,8 +45,9 @@ msgid "Paperless address"
 msgstr "Indirizz ta' Paperless"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "Paperless wieġeb b'aktar milli jaqra dan il-plugin, jew bil-mod wisq."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -64,9 +65,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless għadu qed jipproċessa d-dokument; se jiġi ċċekkjat mill-ġdid."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Paperless m'għadux jaċċetta t-token tal-API (%(reason)s). Daħħal wieħed kurrenti, imbagħad erġa' ixgħel il-konnessjoni."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -79,13 +80,13 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Titpoġġa fuq kull dokument li ġie minn Postulo. Ħalli vojt biex ma jkunx hemm."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Jintlaħaq. L-arkivju fih %(count)d dokument."
+msgstr[1] "Jintlaħaq. L-arkivju fih %(count)d dokumenti."
+msgstr[2] "Jintlaħaq. L-arkivju fih %(count)d dokument."
+msgstr[3] "Jintlaħaq. L-arkivju fih %(count)d dokument."
 
 #: src/postulo_paperless/store.py
 #, fuzzy

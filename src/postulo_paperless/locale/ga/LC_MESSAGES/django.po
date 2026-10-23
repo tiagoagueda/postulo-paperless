@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-10 12:45+0000\n"
-"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"PO-Revision-Date: 2026-10-22 21:55+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Irish <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/ga/>\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
@@ -45,8 +45,9 @@ msgid "Paperless address"
 msgstr "Seoladh Paperless"
 
 #: src/postulo_paperless/store.py
+#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "Paperless fhreagair le níos mó ná léann an breiseán, nó ró-mhall."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -64,9 +65,9 @@ msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Tá Paperless fós ag próiseáil an doiciméid; seiceálfar arís é."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Paperless Glacann a thuilleadh an comhartha API (%(reason)s). Cuir isteach ceann reatha, ansin an nasc a athrú arís."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -79,14 +80,14 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Cuirtear ar gach doiciméad a tháinig ó Postulo é. Fág bán mura dteastaíonn ceann."
 
 #: src/postulo_paperless/store.py
-#, python-format
+#, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
+msgstr[0] "Ar fáil. Tá an chartlann %(count)d doiciméad."
+msgstr[1] "Ar fáil. Tá an chartlann 2 doiciméid."
+msgstr[2] "Ar fáil. Tá an chartlann %(count)d doiciméid."
+msgstr[3] "Ar fáil. Tá an chartlann %(count)d doiciméid."
+msgstr[4] "Ar fáil. Tá an chartlann %(count)d doiciméid."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
