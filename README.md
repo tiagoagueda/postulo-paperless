@@ -90,7 +90,7 @@ new strings by machine and sends what speakers save back as a pull request from 
 for a new string in every catalogue, and `uv run postulo-messages guard` in CI refuses one
 that writes a translation (postulo/postulo#706). The `.mo` files are not committed:
 `uv run postulo-messages compile` writes them, before the tests and before `uv build`.
-`uv run pytest -m release` holds the twenty-four European Union catalogues complete before
+`uv run pytest -m release` holds the languages the paired core release selects complete before
 a release.
 
 A language code here is a BCP 47 tag in its canonical form, as everywhere in Postulo: the
