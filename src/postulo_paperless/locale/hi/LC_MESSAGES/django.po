@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"PO-Revision-Date: 2026-10-23 12:47+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Hindi <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "Paperless का पता"
 #: src/postulo_paperless/store.py
 #, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "पेपरलेस ने इस प्लगइन से अधिक पढ़े, या बहुत धीरे से जवाब दिया।।"
+msgstr "Paperless ने इस प्लगइन की पढ़ने की सीमा से अधिक उत्तर दिया, या बहुत धीमे उत्तर दिया।"
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -67,7 +67,7 @@ msgstr "Paperless अभी भी डॉक्यूमेंट प्रो�
 #: src/postulo_paperless/store.py
 #, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "पेपरलेस अब एपीआई टोकन स्वीकार नहीं करता है (%(reason)s). एक वर्तमान में प्रवेश करें, फिर कनेक्शन को फिर से स्विच करें।।"
+msgstr "Paperless अब API टोकन स्वीकार नहीं करता (%(reason)s)। एक वर्तमान टोकन दर्ज करें, फिर कनेक्शन को फिर से चालू करें।"
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -83,8 +83,8 @@ msgstr "Postulo से आए हर डॉक्यूमेंट पर ल�
 #, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "पहुंच योग्य। संग्रह में %(count)d दस्तावेज़ हैं।।"
-msgstr[1] "पहुंच योग्य। संग्रह में %(count)d दस्तावेज़ हैं।।"
+msgstr[0] "पहुँच योग्य। आर्काइव में %(count)d दस्तावेज़ है।"
+msgstr[1] "पहुँच योग्य। आर्काइव में %(count)d दस्तावेज़ हैं।"
 
 #: src/postulo_paperless/store.py
 #, fuzzy

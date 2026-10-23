@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"PO-Revision-Date: 2026-10-23 12:47+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Swahili <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/sw/>\n"
 "Language: sw\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "Eneo la kawaida kwa kiungo cha maombi"
 #: src/postulo_paperless/store.py
 #, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr "Kutoka kwa wasifu wako usio na maandishi. Picha zote na Wizara ya Mambo ya Ndani ya Nchi. ...................................................................."
+msgstr "Kutoka kwenye wasifu wako wa Paperless. Huhifadhiwa kwa usimbaji fiche; haionyeshwi tena kamwe."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -67,7 +67,7 @@ msgstr "Karatasi bado hutumia hati; itachunguzwa tena."
 #: src/postulo_paperless/store.py
 #, fuzzy, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Bila karatasi hakuna tena kukubali ishara ya API (X43X). Kuingia moja ya sasa, kisha kubadili uhusiano tena."
+msgstr "Paperless haikubali tena tokeni ya API (%(reason)s). Weka tokeni ya sasa, kisha uwashe muunganisho tena."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -83,8 +83,8 @@ msgstr "Andika kila barua iliyotumwa kutoka posta. Acha pombe kwa ajili ya mtu y
 #, fuzzy, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "Ya kufikia. Nyaraka hii ina hati ya %(count)d."
-msgstr[1] "Ya kufikia. Nyaraka hizo zina nyaraka (X29X)."
+msgstr[0] "Inafikika. Kumbukumbu ina hati %(count)d."
+msgstr[1] "Inafikika. Kumbukumbu ina hati %(count)d."
 
 #: src/postulo_paperless/store.py
 #, fuzzy
