@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-10-24 05:02+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Slovak <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
@@ -15,89 +15,75 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
 msgstr "Pole URL na každom dokumente vedúce späť k žiadosti tu; ak v Paperless chýba, vytvorí sa. Ak žiadne nechcete, nechajte prázdne."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
 msgstr "API token"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "Vlastné pole pre odkaz na žiadosť"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr "Z vášho profilu v Paperless. Uložené šifrovane; už sa nikdy nezobrazí."
+msgstr "Z vášho profilu v Paperless. Ukladá sa zašifrovane; už sa nikdy nezobrazí."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr "Uveďte celú adresu, počnúc https://."
+msgstr "Uveďte celú adresu začínajúcu https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
 msgstr "Adresa Paperless"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "Bezpapierové odpovede s viac ako tento plugin číta, alebo príliš pomaly."
+msgstr "Paperless poslal väčšiu odpoveď, než tento zásuvný modul prečíta, alebo odpovedal príliš pomaly."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Paperless dokument spracoval, ale nevrátil žiadne id."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless nemohol dokument spracovať: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless dokument ešte spracúva; skontroluje sa znova."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Bezpapierový token už neprijíma (%(reason)s). Zadajte aktuálnu, potom znovu zapnite pripojenie."
+msgstr "Paperless už neprijíma API token (%(reason)s). Zadajte aktuálny a potom pripojenie znova zapnite."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr "Pridá sa na každý dokument, ktorý prišiel z aplikácie Postulo. Ak žiadny nechcete, nechajte prázdne."
+msgstr "Pridá sa ku každému dokumentu, ktorý prišiel z Postulo. Ak žiadny nechcete, nechajte prázdne."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "Dosiahnuteľný. Archív má %(count)d dokument."
-msgstr[1] "Dosiahnuteľný. Archív má %(count)d dokumenty."
-msgstr[2] "Dosiahnuteľný. Archív má %(count)d dokumenty."
+msgstr[0] "Dostupné. Archív obsahuje %(count)d dokument."
+msgstr[1] "Dostupné. Archív obsahuje %(count)d dokumenty."
+msgstr[2] "Dostupné. Archív obsahuje %(count)d dokumentov."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "Štítok"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr "To by poslalo váš token API nešifrovaný na server na internete, kde čokoľvek na ceste môže čítať. Použite https://."
+msgstr "Takto by sa váš API token poslal nezašifrovaný na server na internete, kde ho môže po ceste prečítať ktokoľvek. Použite https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "Kde otvárate Paperless, napr. https://paperless.example.org."
