@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:55+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-10-24 05:02+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Finnish <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -15,88 +15,74 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
 msgstr "URL-kenttä jokaisessa asiakirjassa, joka johtaa takaisin täällä olevaan hakemukseen; luodaan Paperlessiin, jos puuttuu. Jätä tyhjäksi, jos et halua sitä."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
-msgstr "API-avain"
+msgstr "API-tunnus"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "Mukautettu kenttä hakemuksen linkille"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "Paperless-profiilistasi. Tallennetaan salattuna; ei näytetä enää koskaan."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
 msgstr "Anna koko osoite, alkaen https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
 msgstr "Paperlessin osoite"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "Paperiton vastasi enemmän kuin tämä plugin lukee, tai liian hitaasti."
+msgstr "Paperless vastasi enemmän kuin tämä liitännäinen lukee, tai liian hitaasti."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Paperless käsitteli asiakirjan mutta ei antanut tunnistetta."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless ei voinut käsitellä asiakirjaa: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless käsittelee asiakirjaa yhä; se tarkistetaan uudelleen."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Paperiton ei enää hyväksy API-tolettia (%(reason)s). Syötä nykyinen ja kytke yhteys uudelleen päälle."
+msgstr "Paperless ei enää hyväksy API-tunnusta (%(reason)s). Anna voimassa oleva tunnus ja kytke sitten yhteys uudelleen päälle."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Lisätään jokaiseen Postulosta tulleeseen asiakirjaan. Jätä tyhjäksi, jos et halua sitä."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "Saavutettava. Arkistossa on %(count)d asiakirja."
-msgstr[1] "Saavutettava. Arkistossa on %(count)d asiakirjoja."
+msgstr[0] "Tavoitettavissa. Arkistossa on %(count)d asiakirja."
+msgstr[1] "Tavoitettavissa. Arkistossa on %(count)d asiakirjaa."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "Tunniste"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr "Tämä lähettäisi API-poletin salaamatta palvelimelle Internetissä, jossa kaikki matkan varrella voi lukea sen. Käytä https://."
+msgstr "Tämä lähettäisi API-tunnuksesi salaamattomana palvelimelle internetissä, jolloin kuka tahansa matkan varrella voi lukea sen. Käytä https://-osoitetta."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "Osoite, jossa avaat Paperlessin, esim. https://paperless.example.org."

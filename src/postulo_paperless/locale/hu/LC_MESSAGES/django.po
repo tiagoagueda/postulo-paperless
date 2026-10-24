@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: Administrator <weblate@tiagoagueda.com>\n"
+"PO-Revision-Date: 2026-10-24 03:02+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Hungarian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Minden dokumentumra rákerül, amely a Postulóból érkezett. Ha nincs, hagyja üresen."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
 msgstr[0] "Elérhető. Az archívum %(count)d dokumentumot tartalmaz."

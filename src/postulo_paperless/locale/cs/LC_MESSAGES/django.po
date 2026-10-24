@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:55+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-10-24 03:02+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Czech <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -15,89 +15,75 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr "Pole URL na každém dokumentu vedoucí zpět k žádosti zde, vytvořené v Paperless, pokud chybí. Nechte prázdné, pokud žádné nechcete."
+msgstr "Pole URL u každého dokumentu, které vede zpět k žádosti zde; pokud chybí, vytvoří se v Paperless. Nechte prázdné, pokud ho nechcete."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
 msgstr "API token"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "Vlastní pole pro odkaz na žádost"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr "Z vašeho profilu v Paperless. Uloženo šifrovaně; už se nikdy nezobrazí."
+msgstr "Z vašeho profilu v Paperless. Ukládá se zašifrovaně; už se nikdy nezobrazí."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr "Uveďte celou adresu, počínaje https: / /."
+msgstr "Uveďte celou adresu, začínající https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
 msgstr "Adresa Paperless"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "Bezpapírové odpovědi s více než tento plugin čte, nebo příliš pomalu."
+msgstr "Paperless odpověděl víc, než tento plugin čte, nebo příliš pomalu."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Paperless dokument zpracoval, ale nevrátil žádné id."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless nemohl dokument zpracovat: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr "Paperless dokument stále zpracovává; bude znovu zkontrolován."
+msgstr "Paperless dokument stále zpracovává; zkontroluje se znovu později."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Bezpapírový již nepřijímá symbol API (%(reason)s). Zadejte aktuální a pak znovu zapněte spojení."
+msgstr "Paperless už nepřijímá API token (%(reason)s). Zadejte platný a pak připojení znovu zapněte."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr "Přidá se na každý dokument, který přišel z Postulo. Nechte prázdné, pokud žádný nechcete."
+msgstr "Přidá se ke každému dokumentu, který přišel z Postulo. Nechte prázdné, pokud žádný nechcete."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "Dosažitelný. Archiv obsahuje dokument %(count)d."
-msgstr[1] "Dosažitelný. Archiv obsahuje dokumenty %(count)d."
-msgstr[2] "Dosažitelný. Archiv obsahuje dokumenty %(count)d."
+msgstr[0] "Dostupné. Archiv obsahuje %(count)d dokument."
+msgstr[1] "Dostupné. Archiv obsahuje %(count)d dokumenty."
+msgstr[2] "Dostupné. Archiv obsahuje %(count)d dokumentů."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "Štítek"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr "To by poslalo váš API token nešifrovaný na server na internetu, kde cokoliv může přečíst. Použití https: / /."
+msgstr "Tím by se váš API token poslal nešifrovaně na server na internetu, kde ho může přečíst kdokoli po cestě. Použijte https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr "Kde otevíráte Paperless, např. https://paperless.example.org."
+msgstr "Kde Paperless otevíráte, např. https://paperless.example.org."

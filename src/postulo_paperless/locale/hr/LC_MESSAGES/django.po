@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: Administrator <weblate@tiagoagueda.com>\n"
+"PO-Revision-Date: 2026-10-24 05:02+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Croatian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -15,51 +15,43 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr "URL polje na svakom dokumentu koje vodi natrag na prijavu ovdje, stvara se u aplikaciji Paperless ako ne postoji. Ostavite prazno ako ga ne želite."
+msgstr "Polje za URL na svakom dokumentu koje vodi natrag na prijavu ovdje; stvara se u Paperlessu ako ne postoji. Ostavite prazno ako ga ne želite."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
 msgstr "API token"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "Prilagođeno polje za poveznicu prijave"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "Iz vašeg Paperless profila. Sprema se šifrirano; više se nikada ne prikazuje."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
 msgstr "Unesite cijelu adresu, počevši s https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
-msgstr "Paperless adresa"
+msgstr "Adresa Paperlessa"
 
 #: src/postulo_paperless/store.py
 msgid "Paperless answered with more than this plugin reads, or too slowly."
 msgstr "Paperless je odgovorio s više podataka nego što ovaj dodatak čita, ili presporo."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
-msgstr "Paperless je obradio dokument, ali nije vratio id."
+msgstr "Paperless je obradio dokument, ali nije vratio ID."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless nije mogao obraditi dokument: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless još obrađuje dokument; bit će ponovno provjeren."
 
@@ -69,14 +61,12 @@ msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current o
 msgstr "Paperless više ne prihvaća API token (%(reason)s). Unesite važeći, a zatim ponovno uključite vezu."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr "Stavlja se na svaki dokument koji potječe iz aplikacije Postulo. Ostavite prazno ako je ne želite."
+msgstr "Stavlja se na svaki dokument koji je došao iz Postula. Ostavite prazno ako je ne želite."
 
 #: src/postulo_paperless/store.py
 #, python-format
@@ -87,16 +77,13 @@ msgstr[1] "Dostupno. Arhiva sadrži %(count)d dokumenta."
 msgstr[2] "Dostupno. Arhiva sadrži %(count)d dokumenata."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "Oznaka"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
 msgstr "Time bi se vaš API token poslao nešifriran poslužitelju na internetu, gdje ga svatko usput može pročitati. Upotrijebite https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "Gdje otvarate Paperless, npr. https://paperless.example.org."

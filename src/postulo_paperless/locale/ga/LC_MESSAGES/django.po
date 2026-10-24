@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:55+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-10-24 05:02+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Irish <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/ga/>\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
@@ -15,91 +15,77 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
 msgstr "Réimse URL ar gach doiciméad a threoraíonn ar ais chuig an iarratas anseo, cruthaithe in Paperless mura bhfuil sé ann. Fág bán mura dteastaíonn ceann."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
 msgstr "Comhartha API"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "Réimse saincheaptha do nasc an iarratais"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "Ó do phróifíl Paperless. Stóráilte go criptithe; ní thaispeántar arís é go deo."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr "Cóipeáil nasc leis an tweet Leabaigh an Tweet https://."
+msgstr "Tabhair an seoladh iomlán, ag tosú le https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
 msgstr "Seoladh Paperless"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "Paperless fhreagair le níos mó ná léann an breiseán, nó ró-mhall."
+msgstr "D’fhreagair Paperless le níos mó ná a léann an breiseán seo, nó rómhall."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Phróiseáil Paperless an doiciméad ach níor thug sé aon aitheantas."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Níorbh fhéidir le Paperless an doiciméad a phróiseáil: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Tá Paperless fós ag próiseáil an doiciméid; seiceálfar arís é."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Paperless Glacann a thuilleadh an comhartha API (%(reason)s). Cuir isteach ceann reatha, ansin an nasc a athrú arís."
+msgstr "Ní ghlacann Paperless leis an gcomhartha API a thuilleadh (%(reason)s). Cuir isteach ceann reatha, agus ansin cuir an nasc ar siúl arís."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Cuirtear ar gach doiciméad a tháinig ó Postulo é. Fág bán mura dteastaíonn ceann."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "Ar fáil. Tá an chartlann %(count)d doiciméad."
-msgstr[1] "Ar fáil. Tá an chartlann 2 doiciméid."
-msgstr[2] "Ar fáil. Tá an chartlann %(count)d doiciméid."
-msgstr[3] "Ar fáil. Tá an chartlann %(count)d doiciméid."
-msgstr[4] "Ar fáil. Tá an chartlann %(count)d doiciméid."
+msgstr[0] "Inrochtana. Tá %(count)d doiciméad sa chartlann."
+msgstr[1] "Inrochtana. Tá %(count)d dhoiciméad sa chartlann."
+msgstr[2] "Inrochtana. Tá %(count)d dhoiciméad sa chartlann."
+msgstr[3] "Inrochtana. Tá %(count)d ndoiciméad sa chartlann."
+msgstr[4] "Inrochtana. Tá %(count)d doiciméad sa chartlann."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "Clib"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr "Bheadh sé seo a sheoladh do API chomhartha unencrypted chuig freastalaí ar an idirlíon, áit ar féidir aon rud feadh na slí a léamh. Úsáid https://."
+msgstr "Sheolfadh sé seo do chomhartha API gan chriptiú chuig freastalaí ar an idirlíon, áit ar féidir le haon rud ar an mbealach é a léamh. Úsáid https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "An áit a n-osclaíonn tú Paperless, m.sh. https://paperless.example.org."

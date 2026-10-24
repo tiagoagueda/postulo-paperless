@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:55+0000\n"
-"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"PO-Revision-Date: 2026-10-24 05:02+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Catalan <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -15,88 +15,74 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr "Un camp URL en cada document que es torna a l' aplicació aquí, creat en sense paper si falta. Deixeu-vos en blanc per a cap."
+msgstr "Un camp URL a cada document que porta de tornada a la candidatura d'aquí; si no existeix, es crea al Paperless. Deixeu-lo en blanc per no fer-ne servir cap."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
-msgstr "Testimoni API"
+msgstr "Testimoni d'API"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
-msgstr "Camp personalitzat per a l' enllaç de l' aplicació"
+msgstr "Camp personalitzat per a l'enllaç de la candidatura"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr "Del teu perfil sense papers. S' ha desat xifrat; no es torna a mostrar mai més."
+msgstr "Del vostre perfil del Paperless. Es desa xifrat; no es torna a mostrar mai."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr "Doneu tota l'adreça, començant amb https://."
+msgstr "Indiqueu l'adreça completa, començant per https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
-msgstr "Adreça sense paper"
+msgstr "Adreça del Paperless"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "Sense paper respondre amb més d' aquest connector llegeix, o massa lentament."
+msgstr "El Paperless ha respost amb més dades de les que llegeix aquest connector, o massa lentament."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
-msgstr "No s'ha consumit el document però no ha donat cap identificador."
+msgstr "El Paperless ha processat el document, però no n'ha retornat cap identificador."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr "No s' ha pogut consumir el document: %(reason)s"
+msgstr "El Paperless no ha pogut processar el document: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr "Els sense papers encara consumeixen el document; es tornarà a comprovar."
+msgstr "El Paperless encara està processant el document; es tornarà a comprovar."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Ja no accepta la fitxa API (%(reason)s). Introduïu un actual i torneu a canviar la connexió."
+msgstr "El Paperless ja no accepta el testimoni d'API (%(reason)s). Introduïu-ne un de vigent i torneu a activar la connexió."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
-msgstr "Papers sense paper"
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr "Poseu-vos tots els documents que provenen de Postulo. Deixeu-vos en blanc per a cap."
+msgstr "S'afegeix a cada document que prové de Postulo. Deixeu-lo en blanc per no afegir-ne cap."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "Abastable. L' arxiu conté el document %(count)d."
-msgstr[1] "Abastable. L' arxiu conté els documents %(count)d."
+msgstr[0] "Accessible. L'arxiu conté %(count)d document."
+msgstr[1] "Accessible. L'arxiu conté %(count)d documents."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "Etiqueta"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr "Això enviarà la vostra fitxa API sense encriptar a un servidor a Internet, on qualsevol cosa pot llegir- la. Usa https://."
+msgstr "Això enviaria el vostre testimoni d'API sense xifrar a un servidor d'Internet, on qualsevol intermediari el podria llegir. Utilitzeu https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr "On obris paper sense paper, p. ex. https://paperless. example.org."
+msgstr "On obriu el Paperless, p. ex. https://paperless.example.org."

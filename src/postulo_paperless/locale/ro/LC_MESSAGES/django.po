@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"PO-Revision-Date: 2026-10-24 05:02+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Romanian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -15,89 +15,75 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr "Un câmp URL pe fiecare document care duce înapoi la candidatura de aici, creat în Paperless dacă lipsește. Lasă gol pentru niciunul."
+msgstr "Un câmp URL pe fiecare document care duce înapoi la candidatura de aici, creat în Paperless dacă lipsește. Lăsați gol pentru niciunul."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
 msgstr "Token API"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "Câmp personalizat pentru linkul candidaturii"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr "Din profilul tău Paperless. Stocat criptat; nu mai este afișat niciodată."
+msgstr "Din profilul dumneavoastră Paperless. Stocat criptat; nu mai este afișat niciodată."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr "Introdu adresa completă, care începe cu https://."
+msgstr "Introduceți adresa completă, care începe cu https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
 msgstr "Adresa Paperless"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "Răspuns fără hârtie cu mai mult decât acest plugin citește, sau prea lent."
+msgstr "Paperless a răspuns cu mai mult decât citește acest plugin sau prea lent."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
-msgstr "Paperless a consumat documentul, dar nu a dat niciun id."
+msgstr "Paperless a preluat documentul, dar nu a returnat niciun id."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr "Paperless nu a putut consuma documentul: %(reason)s"
+msgstr "Paperless nu a putut prelua documentul: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr "Paperless încă consumă documentul; va fi verificat din nou."
+msgstr "Paperless încă procesează documentul; va fi verificat din nou."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Fără hârtie nu mai acceptă semnul API (%(reason)s). Introduceți unul curent, apoi porniți conexiunea din nou."
+msgstr "Paperless nu mai acceptă tokenul API (%(reason)s). Introduceți unul valabil, apoi reactivați conexiunea."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr "Pusă pe fiecare document venit de la Postulo. Lasă gol pentru niciuna."
+msgstr "Aplicată pe fiecare document venit de la Postulo. Lăsați gol pentru niciuna."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "E accesibil. Arhiva deţine documentul %(count)d."
-msgstr[1] "E accesibil. Arhiva deţine documente %(count)d."
-msgstr[2] "E accesibil. Arhiva deţine documente %(count)d."
+msgstr[0] "Accesibil. Arhiva conține %(count)d document."
+msgstr[1] "Accesibil. Arhiva conține %(count)d documente."
+msgstr[2] "Accesibil. Arhiva conține %(count)d de documente."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "Etichetă"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr "Astfel tokenul tău API ar fi trimis necriptat către un server de pe internet, unde îl poate citi orice se află pe traseu. Folosește https://."
+msgstr "Astfel, tokenul dumneavoastră API ar fi trimis necriptat către un server de pe internet, unde îl poate citi oricine se află pe traseu. Folosiți https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr "Unde deschizi Paperless, de ex. https://paperless.example.org."
+msgstr "Adresa la care deschideți Paperless, de ex. https://paperless.example.org."

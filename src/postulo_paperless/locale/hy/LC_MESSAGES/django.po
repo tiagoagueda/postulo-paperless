@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-10-24 03:02+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Armenian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/hy/>\n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
@@ -46,7 +46,7 @@ msgstr "Paperless-ի հասցե"
 
 #: src/postulo_paperless/store.py
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "Paperless-ը պատասխանեց ավելիով, քան այս հավելումը կարդում է, կամ չափազանց դանդաղ։"
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -66,7 +66,7 @@ msgstr "Paperless-ը դեռ մշակում է փաստաթուղթը․ այն �
 #: src/postulo_paperless/store.py
 #, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Paperless-ն այլևս չի ընդունում API թոքենը (%(reason)s)։ Մուտքագրեք գործող թոքեն, ապա կրկին միացրեք կապը։"
 
 #: src/postulo_paperless/store.py
 #, fuzzy
@@ -82,8 +82,8 @@ msgstr "Դրվում է Postulo-ից եկած յուրաքանչյուր փաս�
 #, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Հասանելի է։ Արխիվը պարունակում է %(count)d փաստաթուղթ։"
+msgstr[1] "Հասանելի է։ Արխիվը պարունակում է %(count)d փաստաթուղթ։"
 
 #: src/postulo_paperless/store.py
 #, fuzzy
