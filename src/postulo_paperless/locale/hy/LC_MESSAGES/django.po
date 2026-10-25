@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-24 03:02+0000\n"
+"PO-Revision-Date: 2026-10-24 21:43+0000\n"
 "Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Armenian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/hy/>\n"
 "Language: hy\n"
@@ -15,32 +15,26 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr "Յուրաքանչյուր փաստաթղթի URL դաշտ, որը հետ է տանում այստեղի դիմումին․ Paperless-ում ստեղծվում է, եթե բացակայում է։ Թողեք դատարկ, եթե չկա։"
+msgstr "Յուրաքանչյուր փաստաթղթի URL դաշտ, որը հետ է տանում այստեղի դիմումին․ Paperless-ում ստեղծվում է, եթե բացակայում է։ Թողեք դատարկ, եթե այդպիսի դաշտ պետք չէ։"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
 msgstr "API թոքեն"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "Դիմումի հղման հատուկ դաշտ"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "Ձեր Paperless պրոֆիլից։ Պահվում է գաղտնագրված և այլևս չի ցուցադրվում։"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr "Նշեք ամբողջական հասցեն՝ սկսած https://։"
+msgstr "Նշեք ամբողջական հասցեն, որը սկսվում է https://-ով։"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
 msgstr "Paperless-ի հասցե"
 
@@ -49,17 +43,15 @@ msgid "Paperless answered with more than this plugin reads, or too slowly."
 msgstr "Paperless-ը պատասխանեց ավելիով, քան այս հավելումը կարդում է, կամ չափազանց դանդաղ։"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Paperless-ը մշակեց փաստաթուղթը, բայց նույնացուցիչ չվերադարձրեց։"
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless-ը չկարողացավ մշակել փաստաթուղթը՝ %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless-ը դեռ մշակում է փաստաթուղթը․ այն կրկին կստուգվի։"
 
@@ -69,14 +61,12 @@ msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current o
 msgstr "Paperless-ն այլևս չի ընդունում API թոքենը (%(reason)s)։ Մուտքագրեք գործող թոքեն, ապա կրկին միացրեք կապը։"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr "Դրվում է Postulo-ից եկած յուրաքանչյուր փաստաթղթի վրա։ Թողեք դատարկ, եթե չկա։"
+msgstr "Դրվում է Postulo-ից եկած յուրաքանչյուր փաստաթղթի վրա։ Թողեք դատարկ, եթե պիտակ պետք չէ։"
 
 #: src/postulo_paperless/store.py
 #, python-format
@@ -86,16 +76,13 @@ msgstr[0] "Հասանելի է։ Արխիվը պարունակում է %(count)
 msgstr[1] "Հասանելի է։ Արխիվը պարունակում է %(count)d փաստաթուղթ։"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "Պիտակ"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr "Սա ձեր API թոքենը չգաղտնագրված կուղարկեր ինտերնետում գտնվող սերվերի, և ճանապարհին ցանկացած միջանկյալ կետ կարող է այն կարդալ։ Օգտագործեք https://։"
+msgstr "Սա ձեր API թոքենը չգաղտնագրված կուղարկեր ինտերնետում գտնվող սերվերին, և ճանապարհին ցանկացած միջանկյալ հանգույց կկարողանար այն կարդալ։ Օգտագործեք https://։"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "Հասցեն, որով բացում եք Paperless-ը, օր.՝ https://paperless.example.org։"

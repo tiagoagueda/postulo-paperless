@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:55+0000\n"
-"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"PO-Revision-Date: 2026-10-25 03:00+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Arabic <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -15,92 +15,78 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
 msgstr "حقل رابط في كل مستند يعود إلى طلب التوظيف هنا، يُنشأ في Paperless إن لم يكن موجودًا. اتركه فارغًا إن لم يوجد."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
 msgstr "رمز API المميز"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "حقل مخصص لرابط طلب التوظيف"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "من ملفك الشخصي في Paperless. يُخزَّن مشفّرًا ولا يُعرض مرة أخرى."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
 msgstr "أدخل العنوان كاملًا، بدءًا من https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
 msgstr "عنوان Paperless"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "جاوب بلا أوراق مع أكثر من هذا البلوغ يقرأ، أو ببطء شديد."
+msgstr "استجاب Paperless بأكثر مما يقرؤه هذا المكوّن الإضافي، أو ببطء شديد."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "عالج Paperless المستند لكنه لم يُرجع معرّفًا."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "تعذّر على Paperless معالجة المستند: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "لا يزال Paperless يعالج المستند؛ سيُتحقق منه مرة أخرى."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Paperless no longer accepts the API token (%(reason)s). أدخلي واحدة حالية، ثم أبدلي الإتصال مرة أخرى."
+msgstr "لم يعد Paperless يقبل رمز API المميز (%(reason)s). أدخل رمزًا صالحًا، ثم أعد تفعيل الاتصال."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "يوضع على كل مستند وارد من Postulo. اتركه فارغًا إن لم يوجد."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "قابل للتواصل المحفوظات لا تحمل أي وثائق."
-msgstr[1] "قابل للتواصل ويحتفظ المحفوظات بوثيقة %(count)d."
-msgstr[2] "قابل للتواصل المحفوظات تحمل وثيقتين."
-msgstr[3] "قابل للتواصل وتحتفظ المحفوظات بوثائق %(count)d."
-msgstr[4] ""
-msgstr[5] "قابل للتواصل وتحتفظ المحفوظات بوثائق %(count)d."
+msgstr[0] "يمكن الوصول إليه. لا يحتوي الأرشيف على أي مستند."
+msgstr[1] "يمكن الوصول إليه. يحتوي الأرشيف على مستند واحد."
+msgstr[2] "يمكن الوصول إليه. يحتوي الأرشيف على %(count)d مستندين."
+msgstr[3] "يمكن الوصول إليه. يحتوي الأرشيف على %(count)d مستندات."
+msgstr[4] "يمكن الوصول إليه. يحتوي الأرشيف على %(count)d مستندًا."
+msgstr[5] "يمكن الوصول إليه. يحتوي الأرشيف على %(count)d مستند."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "الوسم"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
 msgstr "سيؤدي هذا إلى إرسال رمز API المميز دون تشفير إلى خادم على الإنترنت، حيث يمكن لأي طرف على الطريق قراءته. استخدم https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "حيث تفتح Paperless، مثلًا https://paperless.example.org."

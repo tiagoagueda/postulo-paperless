@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: Administrator <weblate@tiagoagueda.com>\n"
+"PO-Revision-Date: 2026-10-24 21:43+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Icelandic <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/is/>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
@@ -15,88 +15,74 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr "Slóðarreitur á hverju skjali sem vísar aftur á umsóknina hér, búinn til í Paperless ef hann vantar. Skildu eftir autt til að sleppa honum."
+msgstr "Slóðarreitur á hverju skjali sem vísar aftur á umsóknina hér, búinn til í Paperless ef hann er ekki til. Skildu eftir autt til að sleppa honum."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
 msgstr "API-teikn"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "Sérsniðinn reitur fyrir tengil umsóknarinnar"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "Úr Paperless-notandasniðinu þínu. Vistað dulritað; aldrei sýnt aftur."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
 msgstr "Gefðu upp allt vistfangið, sem byrjar á https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
 msgstr "Vistfang Paperless"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "Paperless svaraði með meira en þessi íbót les, eða of hægt."
+msgstr "Paperless svaraði með meira en þessi viðbót les, eða of hægt."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Paperless tók við skjalinu en gaf ekkert auðkenni."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless gat ekki unnið úr skjalinu: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless er enn að vinna úr skjalinu; það verður athugað aftur."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
 msgstr "Paperless tekur ekki lengur við API-teikninu (%(reason)s). Sláðu inn gilt teikn og kveiktu svo aftur á tengingunni."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr "Settur á hvert skjal sem kom frá Postulo. Skildu eftir autt til að sleppa honum."
+msgstr "Sett á hvert skjal sem kom frá Postulo. Skildu eftir autt til að sleppa því."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "Næst í það. Safnið geymir %(count)d skjal."
-msgstr[1] "Næst í það. Safnið geymir %(count)d skjöl."
+msgstr[0] "Hægt er að ná sambandi. Safnið geymir %(count)d skjal."
+msgstr[1] "Hægt er að ná sambandi. Safnið geymir %(count)d skjöl."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
-msgstr "Merkimiði"
+msgstr "Merki"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
 msgstr "Þetta myndi senda API-teiknið þitt ódulritað til þjóns á netinu, þar sem hver sem er á leiðinni getur lesið það. Notaðu https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "Þar sem þú opnar Paperless, t.d. https://paperless.example.org."
