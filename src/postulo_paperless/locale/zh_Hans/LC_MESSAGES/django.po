@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"PO-Revision-Date: 2026-10-25 01:02+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
@@ -15,87 +15,73 @@ msgstr ""
 "X-Generator: postulo-messages\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr "每个文档上的 URL 字段可追溯到这里的应用程序, 如果缺少, 在无纸张中创建 。 留空无一."
+msgstr "每份文档上的一个 URL 字段，用于链接回此处的申请；如果 Paperless 中没有，会自动创建。留空则不使用。"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
 msgstr "API 令牌"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
-msgstr "应用程序链接的自定义字段"
+msgstr "申请链接的自定义字段"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr "从你的无纸化简介。 已存储加密; 不再显示 ."
+msgstr "来自你的 Paperless 个人资料。加密存储，不会再次显示。"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr "从https://."
+msgstr "请填写完整地址，以 https:// 开头。"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
-msgstr "无纸地址"
+msgstr "Paperless 地址"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "无纸回答的比这个插件读取的要多,或者太慢."
+msgstr "Paperless 的响应超出了此插件能读取的范围，或响应过慢。"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
-msgstr "无纸张消耗了文件,但没有提供身份证."
+msgstr "Paperless 已接收文档，但没有返回 ID。"
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr "无纸无法消耗文档 : %(reason)s"
+msgstr "Paperless 无法处理该文档：%(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr "无纸文件仍在消耗;将再次检查."
+msgstr "Paperless 仍在处理该文档；稍后会再次检查。"
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "无纸已经不再接受API令牌(%(reason)s). 输入当前一个,然后再次切换连接 ."
+msgstr "Paperless 不再接受该 API 令牌（%(reason)s）。请输入一个有效的令牌，然后重新开启连接。"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
-msgstr "无纸-ngx"
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr "把所有来自波斯图的文件都写上 留空无一."
+msgstr "添加到所有来自 Postulo 的文档上。留空则不添加。"
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "可达. 存档持有%(count)d文件."
+msgstr[0] "可以连接。归档中有%(count)d份文档。"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
-msgstr "标记"
+msgstr "标签"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr "这将发送您的API 令牌未加密到 互联网上的服务器, 任何沿途可以读到它。 请使用https://."
+msgstr "这会将你的 API 令牌以未加密形式发送到互联网上的服务器，途中的任何环节都能读取它。请使用 https://。"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr "打开无纸,例如https://paperless.example.org."
+msgstr "你打开 Paperless 的地址，例如 https://paperless.example.org。"

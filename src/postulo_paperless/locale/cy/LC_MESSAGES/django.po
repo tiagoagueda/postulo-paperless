@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:55+0000\n"
-"Last-Translator: Administrator <weblate@tiagoagueda.com>\n"
+"PO-Revision-Date: 2026-10-24 21:43+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Welsh <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/cy/>\n"
 "Language: cy\n"
 "MIME-Version: 1.0\n"
@@ -15,90 +15,76 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr "Maes URL ar bob dogfen sy'n arwain yn ôl at y cais yma, wedi'i greu yn Paperless os yw ar goll. Gadewch yn wag am ddim."
+msgstr "Maes URL ar bob dogfen sy'n arwain yn ôl at y cais yma, wedi'i greu yn Paperless os yw ar goll. Gadewch yn wag os nad oes angen un."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
 msgstr "Tocyn API"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "Maes personol ar gyfer dolen y cais"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "O'ch proffil Paperless. Wedi'i storio wedi'i amgryptio; byth yn cael ei ddangos eto."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
 msgstr "Rhowch y cyfeiriad cyfan, gan ddechrau gyda https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
 msgstr "Cyfeiriad Paperless"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
 msgstr "Atebodd Paperless gyda mwy nag y mae'r ategyn hwn yn ei ddarllen, neu'n rhy araf."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Proseswyd y ddogfen gan Paperless, ond ni roddodd id."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Ni allai Paperless brosesu'r ddogfen: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Mae Paperless yn dal i brosesu'r ddogfen; caiff ei gwirio eto."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Dyw Paperless ddim yn derbyn y tocyn API mwyach (%(reason)s). Rhowch un cyfredol, yna trowch y cysylltiad ymlaen eto."
+msgstr "Nid yw Paperless yn derbyn y tocyn API mwyach (%(reason)s). Rhowch un cyfredol, yna trowch y cysylltiad ymlaen eto."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr "Yn cael ei roi ar bob dogfen a ddaeth o Postulo. Gadewch yn wag am ddim."
+msgstr "Yn cael ei roi ar bob dogfen a ddaeth o Postulo. Gadewch yn wag os nad oes angen un."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "Mae modd ei gyrraedd. Mae %(count)d dogfen yn yr archif."
-msgstr[1] "Mae modd ei gyrraedd. Mae %(count)d dogfen yn yr archif."
-msgstr[2] "Mae modd ei gyrraedd. Mae %(count)d o ddogfennau yn yr archif."
-msgstr[3] "Mae modd ei gyrraedd. Mae %(count)d o ddogfennau yn yr archif."
+msgstr[0] "Mae modd ei gyrraedd. Mae %(count)d ddogfen yn yr archif."
+msgstr[1] "Mae modd ei gyrraedd. Mae %(count)d ddogfen yn yr archif."
+msgstr[2] "Mae modd ei gyrraedd. Mae %(count)d dogfen yn yr archif."
+msgstr[3] "Mae modd ei gyrraedd. Mae %(count)d dogfen yn yr archif."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "Tag"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
 msgstr "Byddai hyn yn anfon eich tocyn API heb ei amgryptio i weinydd ar y rhyngrwyd, lle gall unrhyw beth ar y ffordd ei ddarllen. Defnyddiwch https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "Lle rydych yn agor Paperless, e.e. https://paperless.example.org."

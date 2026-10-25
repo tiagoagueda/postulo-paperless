@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-10-25 03:21+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Azerbaijani <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/az/>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
@@ -16,73 +16,73 @@ msgstr ""
 
 #: src/postulo_paperless/store.py
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr ""
+msgstr "Hər sənəddə buradakı müraciətə aparan URL sahəsi; Paperless-də yoxdursa, yaradılır. Lazım deyilsə, boş buraxın."
 
 #: src/postulo_paperless/store.py
 msgid "API token"
-msgstr ""
+msgstr "API tokeni"
 
 #: src/postulo_paperless/store.py
 msgid "Custom field for the application's link"
-msgstr ""
+msgstr "Müraciət keçidi üçün xüsusi sahə"
 
 #: src/postulo_paperless/store.py
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr ""
+msgstr "Paperless profilinizdən. Şifrələnmiş şəkildə saxlanılır; bir daha göstərilmir."
 
 #: src/postulo_paperless/store.py
 msgid "Give the whole address, beginning with https://."
-msgstr ""
+msgstr "https:// ilə başlayan tam ünvanı daxil edin."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless address"
-msgstr ""
+msgstr "Paperless ünvanı"
 
 #: src/postulo_paperless/store.py
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "Paperless bu plaginin oxuduğundan artıq və ya çox gec cavab verdi."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless consumed the document but gave no id."
-msgstr ""
+msgstr "Paperless sənədi qəbul etdi, lakin identifikator vermədi."
 
 #: src/postulo_paperless/store.py
 #, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr ""
+msgstr "Paperless sənədi qəbul edə bilmədi: %(reason)s"
 
 #: src/postulo_paperless/store.py
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr ""
+msgstr "Paperless hələ də sənədi emal edir; yenidən yoxlanılacaq."
 
 #: src/postulo_paperless/store.py
 #, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Paperless artıq API tokenini qəbul etmir (%(reason)s). Etibarlı token daxil edin, sonra bağlantını yenidən aktiv edin."
 
 #: src/postulo_paperless/store.py
 msgid "Paperless-ngx"
-msgstr ""
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr ""
+msgstr "Postulo-dan gələn hər sənədə qoyulur. Lazım deyilsə, boş buraxın."
 
 #: src/postulo_paperless/store.py
 #, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Əlçatandır. Arxivdə %(count)d sənəd var."
+msgstr[1] "Əlçatandır. Arxivdə %(count)d sənəd var."
 
 #: src/postulo_paperless/store.py
 msgid "Tag"
-msgstr ""
+msgstr "Teq"
 
 #: src/postulo_paperless/store.py
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr ""
+msgstr "Bu, API tokeninizi internetdəki serverə şifrələnmədən göndərərdi və yol boyu istənilən tərəf onu oxuya bilərdi. https:// istifadə edin."
 
 #: src/postulo_paperless/store.py
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr ""
+msgstr "Paperless-i açdığınız ünvan, məsələn, https://paperless.example.org."

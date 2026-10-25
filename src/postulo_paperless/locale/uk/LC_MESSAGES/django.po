@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: LibreTranslate <noreply-mt-libretranslate@weblate.org>\n"
+"PO-Revision-Date: 2026-10-24 23:02+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Ukrainian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -15,89 +15,75 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr "Поле URL на кожному документі, що ведеться назад до програми тут, створеного в документі, якщо відсутній. Залишити заявку."
+msgstr "Поле URL у кожному документі, що веде назад до заявки тут; створюється в Paperless, якщо його немає. Залиште порожнім, якщо воно не потрібне."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
-msgstr "API токени"
+msgstr "API-токен"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
-msgstr "Користувальницьке поле для посилання на додаток"
+msgstr "Користувацьке поле для посилання на заявку"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr "З вашого профілю без паперу. Зберігати зашифровані; ніколи не показувати знову."
+msgstr "З вашого профілю Paperless. Зберігається зашифрованим; більше ніколи не показується."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr "Подаруйте всю адресу, починаючи з https://."
+msgstr "Вкажіть повну адресу, що починається з https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
-msgstr "Без рубрики"
+msgstr "Адреса Paperless"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "Відповідав, що цей плагін читає, або занадто повільно."
+msgstr "Paperless відповів більшим обсягом, ніж читає цей плагін, або надто повільно."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
-msgstr "Безпосередньо вживали документом, але не давали id."
+msgstr "Paperless прийняв документ, але не повернув ідентифікатор."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
-msgstr "Без паперу не можна споживати документ: %(reason)s"
+msgstr "Paperless не зміг обробити документ: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr "Безпам'ятний документ все ще споживає документ, він знову перевірить."
+msgstr "Paperless ще обробляє документ; його буде перевірено знову."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Без паперу більше не приймає токени API (%(reason)s). Введіть поточний, після чого знову переключіть з'єднання."
+msgstr "Paperless більше не приймає API-токен (%(reason)s). Введіть чинний, а потім знову ввімкніть підключення."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
-msgstr "Без паперу"
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr "Поставте на будь-який документ, який прийшов з Postulo. Залишити заявку."
+msgstr "Ставиться на кожен документ, що надійшов із Postulo. Залиште порожнім, якщо не потрібно."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] "Досягнення. Архів номерів %(count)d."
-msgstr[2] "Досягнення. Архів номерів %(count)d."
+msgstr[0] "Доступно. В архіві %(count)d документ."
+msgstr[1] "Доступно. В архіві %(count)d документи."
+msgstr[2] "Доступно. В архіві %(count)d документів."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
-msgstr "Навігація"
+msgstr "Мітка"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr "Це буде відправлено ваш API токени нешифрований на сервер в Інтернеті, де все по дорозі може прочитати його. Використовуйте HTTPS://."
+msgstr "Так ваш API-токен було б надіслано незашифрованим на сервер в інтернеті, де його може прочитати будь-хто дорогою. Використовуйте https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "Де ви відкриваєте Paperless, наприклад, https://paperless.example.org."

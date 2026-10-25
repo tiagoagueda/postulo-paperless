@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-10-24 23:02+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Georgian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
@@ -15,87 +15,74 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr "URL ველი ყოველ დოკუმენტზე, რომელიც აქ განაცხადისკენ მიგიყვანთ; თუ არ არსებობს, Paperless-ში შეიქმნება. დატოვეთ ცარიელი, თუ არცერთი არ არის."
+msgstr "URL ველი ყოველ დოკუმენტზე, რომელიც აქ განაცხადისკენ მიგიყვანთ; თუ არ არსებობს, Paperless-ში შეიქმნება. დატოვეთ ცარიელი, თუ ასეთი ველი არ გჭირდებათ."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
 msgstr "API ტოკენი"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "მორგებული ველი განაცხადის ბმულისთვის"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "თქვენი Paperless-ის პროფილიდან. ინახება დაშიფრულად; აღარასოდეს გამოჩნდება."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr "მიუთითეთ სრული მისამართი, რომელიც იწყება https://."
+msgstr "მიუთითეთ სრული მისამართი, რომელიც https://-ით იწყება."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
 msgstr "Paperless-ის მისამართი"
 
 #: src/postulo_paperless/store.py
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr ""
+msgstr "Paperless-მა უპასუხა იმაზე მეტით, რასაც ეს მოდული კითხულობს, ან ძალიან ნელა."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Paperless-მა დოკუმენტი მიიღო, მაგრამ id არ მისცა."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless-მა დოკუმენტი ვერ მიიღო: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless ჯერ კიდევ ამუშავებს დოკუმენტს; ის ხელახლა შემოწმდება."
 
 #: src/postulo_paperless/store.py
 #, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr ""
+msgstr "Paperless აღარ იღებს API ტოკენს (%(reason)s). შეიყვანეთ მოქმედი ტოკენი, შემდეგ კი კავშირი ხელახლა ჩართეთ."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr "ედება ყოველ დოკუმენტს, რომელიც Postulo-დან მოვიდა. დატოვეთ ცარიელი, თუ არცერთი არ არის."
+msgstr "ედება ყოველ დოკუმენტს, რომელიც Postulo-დან მოვიდა. დატოვეთ ცარიელი, თუ იარლიყი არ გჭირდებათ."
 
 #: src/postulo_paperless/store.py
 #, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ხელმისაწვდომია. არქივში %(count)d დოკუმენტია."
+msgstr[1] "ხელმისაწვდომია. არქივში %(count)d დოკუმენტია."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "იარლიყი"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
 msgstr "ეს თქვენს API ტოკენს დაუშიფრავად გაუგზავნიდა ინტერნეტში არსებულ სერვერს, სადაც გზაში ნებისმიერს შეუძლია მისი წაკითხვა. გამოიყენეთ https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "სადაც Paperless-ს ხსნით, მაგ. https://paperless.example.org."

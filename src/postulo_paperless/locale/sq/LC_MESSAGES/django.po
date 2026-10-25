@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-23 11:33+0000\n"
+"PO-Revision-Date: 2026-10-24 23:02+0000\n"
 "Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Albanian <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/sq/>\n"
 "Language: sq\n"
@@ -15,88 +15,74 @@ msgstr ""
 "X-Generator: postulo scripts/messages.py\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr "Një fushë URL në çdo dokument që të çon përsëri në aplikativ këtu, e krijuar në mungesë të fletës. Lëre të zbrazët për asnjë."
+msgstr "Një fushë URL në çdo dokument që të çon te aplikimi këtu, e krijuar në Paperless nëse mungon. Lëreni bosh për asnjë."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
-msgstr "Sinj"
+msgstr "Token API"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
-msgstr "Fusha e personalizuar për lidhjen e aplikativit"
+msgstr "Fusha e personalizuar për lidhjen e aplikimit"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr "Nga profili yt pa letra. I shifruar; asnjëherë më."
+msgstr "Nga profili juaj në Paperless. Ruhet i enkriptuar; nuk shfaqet më kurrë."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr "Jep të gjithë adresën, duke filluar me https://."
+msgstr "Jepni të gjithë adresën, duke filluar me https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
-msgstr "Adresa pa letra"
+msgstr "Adresa e Paperless"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "Pa letër u përgjigj me më shumë se ky plugin lexon, ose shumë ngadalë."
+msgstr "Paperless u përgjigj me më shumë se sa lexon kjo shtojcë, ose tepër ngadalë."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
-msgstr "Pa letra e konsumoi dokumentin por nuk dha asnjë ID."
+msgstr "Paperless e përpunoi dokumentin, por nuk dha asnjë ID."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless nuk mundi ta përpunonte dokumentin: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr "Pa fletë akoma është duke konsumuar dokumentin; ai do të kontrollohet përsëri."
+msgstr "Paperless po e përpunon ende dokumentin; do të kontrollohet sërish."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Paperless nuk e pranon më token-in e API-t (%(reason)s). Jepni një të vlefshëm, pastaj aktivizojeni sërish lidhjen."
+msgstr "Paperless nuk e pranon më tokenin API (%(reason)s). Jepni një të vlefshëm, pastaj aktivizojeni sërish lidhjen."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
-msgstr "Fx pa fletë"
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr "Vendos çdo dokument që vjen nga Populo. Mos lër asgjë bosh."
+msgstr "Vendoset në çdo dokument që erdhi nga Postulo. Lëreni bosh për asnjë."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "E arritshme. Arkivi përmban dokumentin %(count)d."
-msgstr[1] "E arritshme. Arkivi përmban dokumente %(count)d."
+msgstr[0] "E arritshme. Arkivi përmban %(count)d dokument."
+msgstr[1] "E arritshme. Arkivi përmban %(count)d dokumente."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
-msgstr "Tag"
+msgstr "Etiketë"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr "Kjo do t'i dërgojë stemën tuaj API të pakriptuar një serveri në internet, ku çdo gjë gjatë rrugës mund ta lexojë atë. Përdor https://."
+msgstr "Kjo do ta dërgonte tokenin tuaj API të paenkriptuar te një server në internet, ku çdo gjë gjatë rrugës mund ta lexojë. Përdorni https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr "Aty ku hap fletë pa kusht, e.g. https://tonless.example.org."
+msgstr "Aty ku hapni Paperless, p.sh. https://paperless.example.org."

@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-22 21:56+0000\n"
-"Last-Translator: Administrator <weblate@tiagoagueda.com>\n"
+"PO-Revision-Date: 2026-10-25 01:03+0000\n"
+"Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Faroese <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/fo/>\n"
 "Language: fo\n"
 "MIME-Version: 1.0\n"
@@ -15,62 +15,52 @@ msgstr ""
 "X-Generator: postulo-messages\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr "Eitt URL-felt á hvørjum skjali, sum leiðir aftur til umsóknina her, stovnað í Paperless, um tað vantar. Lat tað vera tómt fyri einki."
+msgstr "Ein URL-teigur á hvørjum skjali, sum leiðir aftur til umsóknina her, stovnaður í Paperless, um hann vantar. Lat hann vera tóman fyri ongan."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
-msgstr "API-token"
+msgstr "API-tekin"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
-msgstr "Sergjørt felt fyri leinkið til umsóknina"
+msgstr "Sergjørdur teigur fyri leinkið til umsóknina"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr "Úr Paperless-vanganum hjá tær. Goymdur bronglaður; ongantíð vístur aftur."
+msgstr "Úr Paperless-vanganum hjá tær. Goymt bronglað; ongantíð víst aftur."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
 msgstr "Gev alla adressuna, sum byrjar við https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
 msgstr "Paperless-adressa"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "Paperless svaraði við meira, enn henda viðbótin lesur, ella ov seint."
+msgstr "Paperless svaraði við meira, enn hetta ískoytið lesur, ella ov seint."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
-msgstr "Paperless tók ímóti skjalinum, men gav einki id."
+msgstr "Paperless tók ímóti skjalinum, men gav einki eyðmerki."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless kundi ikki taka ímóti skjalinum: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless er framvegis í holt við at taka ímóti skjalinum; tað verður kannað aftur."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Paperless tekur ikki longur ímóti API-tokinum (%(reason)s). Skriva ein galdandi, og tendra so sambandið aftur."
+msgstr "Paperless tekur ikki longur ímóti API-tekininum (%(reason)s). Skriva eitt galdandi, og tendra so sambandið aftur."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
@@ -80,23 +70,20 @@ msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Sett á hvørt skjal, sum kom frá Postulo. Lat tað vera tómt fyri einki."
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
 msgstr[0] "Røkkur. Arkivið hevur %(count)d skjal."
 msgstr[1] "Røkkur. Arkivið hevur %(count)d skjøl."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "Merki"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr "Hetta hevði sent API-tokin hjá tær ódulkóðaðan til ein ambætara á internetinum, har alt á vegnum kann lesa hann. Brúka https://."
+msgstr "Hetta hevði sent API-tekinið hjá tær óbronglað til ein ambætara á internetinum, har alt á vegnum kann lesa tað. Brúka https://."
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "Har tú opnar Paperless, t.d. https://paperless.example.org."
