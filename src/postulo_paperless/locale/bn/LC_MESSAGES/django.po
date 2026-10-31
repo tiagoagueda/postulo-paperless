@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-23 12:47+0000\n"
+"PO-Revision-Date: 2026-10-31 00:04+0000\n"
 "Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Bengali <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/bn/>\n"
 "Language: bn\n"
@@ -15,88 +15,74 @@ msgstr ""
 "X-Generator: postulo-messages\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
 msgstr "প্রতিটি নথিতে একটি URL ফিল্ড, যা এখানে আবেদনটিতে ফিরিয়ে নিয়ে যায়; না থাকলে Paperless-এ তৈরি করা হয়। কোনোটি না চাইলে ফাঁকা রাখুন।"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
 msgstr "API টোকেন"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
 msgstr "আবেদনের লিঙ্কের জন্য কাস্টম ফিল্ড"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
 msgstr "আপনার Paperless প্রোফাইল থেকে। এনক্রিপ্ট করে সংরক্ষণ করা হয়; আর কখনো দেখানো হয় না।"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
 msgstr "https:// দিয়ে শুরু করে পুরো ওয়েব ঠিকানা দিন।"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
 msgstr "Paperless-এর ওয়েব ঠিকানা"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "Paperless এই প্লাগইন যতটা পড়ে তার চেয়ে বেশি দিয়ে উত্তর দিয়েছে, অথবা অত্যধিক ধীরে।"
+msgstr "Paperless এই প্লাগইন যতটা পড়ে তার চেয়ে বেশি দিয়ে, অথবা খুব ধীরে উত্তর দিয়েছে।"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
 msgstr "Paperless নথিটি গ্রহণ করেছে কিন্তু কোনো id দেয়নি।"
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless নথিটি গ্রহণ করতে পারেনি: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
 msgstr "Paperless এখনো নথিটি গ্রহণ করছে; এটি আবার যাচাই করা হবে।"
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
-msgstr "Paperless আর API টোকেনটি গ্রহণ করে না (%(reason)s)। একটি বর্তমান টোকেন দিন, তারপর সংযোগটি আবার চালু করুন।"
+msgstr "Paperless আর API টোকেনটি গ্রহণ করে না (%(reason)s)। একটি বৈধ টোকেন দিন, তারপর সংযোগটি আবার চালু করুন।"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
 msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
 msgstr "Postulo থেকে আসা প্রতিটি নথিতে দেওয়া হয়। কোনোটি না চাইলে ফাঁকা রাখুন।"
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "সংযোগযোগ্য। আর্কাইভে %(count)dটি নথি আছে।"
-msgstr[1] "সংযোগযোগ্য। আর্কাইভে %(count)dটি নথি আছে।"
+msgstr[0] "পৌঁছানো যাচ্ছে। আর্কাইভে %(count)dটি নথি আছে।"
+msgstr[1] "পৌঁছানো যাচ্ছে। আর্কাইভে %(count)dটি নথি আছে।"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "ট্যাগ"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
 msgstr "এটি আপনার API টোকেন এনক্রিপশন ছাড়াই ইন্টারনেটের একটি সার্ভারে পাঠাবে, যেখানে পথের যেকোনো কিছু এটি পড়তে পারে। https:// ব্যবহার করুন।"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
 msgstr "যেখানে আপনি Paperless খোলেন, যেমন https://paperless.example.org।"
