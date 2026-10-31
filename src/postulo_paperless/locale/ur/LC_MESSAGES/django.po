@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: postulo-paperless\n"
-"PO-Revision-Date: 2026-10-23 12:47+0000\n"
+"PO-Revision-Date: 2026-10-31 00:04+0000\n"
 "Last-Translator: Tiago Águeda <tiago.agueda@tiagoagueda.com>\n"
 "Language-Team: Urdu <https://translate.tiagoagueda.com/projects/postulo/plugin-paperless/ur/>\n"
 "Language: ur\n"
@@ -15,88 +15,74 @@ msgstr ""
 "X-Generator: postulo-messages\n"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "A URL field on each document leading back to the application here, created in Paperless if missing. Leave blank for none."
-msgstr "ہر دستاویز پر ایک ادائیگی کا میدان جو یہاں درخواست کی طرف رجوع کرتا ہے، اگر گم شدہ نہ ہو تو کاغذی کرنسی میں بنایا گیا ہے. کسی کو پریشان نہ کریں ۔."
+msgstr "ہر دستاویز پر ایک URL خانہ جو یہاں کی درخواست تک واپس لے جاتا ہے، اگر موجود نہ ہو تو Paperless میں بنایا جاتا ہے۔ کچھ نہ چاہیں تو خالی چھوڑ دیں۔"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "API token"
-msgstr "علامات"
+msgstr "API ٹوکن"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Custom field for the application's link"
-msgstr "اطلاقیہ لنک کے لیے متعلقه میدان"
+msgstr "درخواست کے لنک کے لیے حسبِ ضرورت خانہ"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "From your Paperless profile. Stored encrypted; never shown again."
-msgstr "آپ کی کاغذی پرفارم سے. دوبارہ کبھی نظر نہیں آتا ۔."
+msgstr "آپ کی Paperless پروفائل سے۔ انکرپٹ کر کے محفوظ کیا جاتا ہے؛ دوبارہ کبھی نہیں دکھایا جاتا۔"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Give the whole address, beginning with https://."
-msgstr "پورا پتہ دے، شروع https://s://."
+msgstr "پورا پتہ دیں، https:// سے شروع کرتے ہوئے۔"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless address"
-msgstr "کاغذی پتہ"
+msgstr "Paperless کا پتہ"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless answered with more than this plugin reads, or too slowly."
-msgstr "اس پلگن سے زیادہ جواب دینے والا کاغذی جواب یا بہت آہستہ ہوتا ہے۔."
+msgstr "Paperless نے اس سے زیادہ جواب دیا جتنا یہ پلگ ان پڑھتا ہے، یا بہت آہستہ جواب دیا۔"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless consumed the document but gave no id."
-msgstr "کاغذی کرنسی کھا لی لیکن کوئی شناخت نہیں دی۔."
+msgstr "Paperless نے دستاویز پراسیس کر لی لیکن کوئی id نہیں دی۔"
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless could not consume the document: %(reason)s"
 msgstr "Paperless دستاویز کو پراسیس نہیں کر سکا: %(reason)s"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless is still consuming the document; it will be checked again."
-msgstr "کاغذی کرنسی ابھی تک کھا رہی ہے؛ پھر سے چیک کیا جائے گا۔."
+msgstr "Paperless ابھی دستاویز پراسیس کر رہا ہے؛ اسے دوبارہ چیک کیا جائے گا۔"
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Paperless no longer accepts the API token (%(reason)s). Enter a current one, then switch the connection on again."
 msgstr "Paperless اب API ٹوکن قبول نہیں کرتا (%(reason)s)۔ ایک موجودہ ٹوکن درج کریں، پھر کنکشن دوبارہ آن کریں۔"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Paperless-ngx"
-msgstr "غیر متصل"
+msgstr "Paperless-ngx"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Put on every document that came from Postulo. Leave blank for none."
-msgstr "پوسٹلو سے آنے والی ہر دستاویز پر رکھیں۔ کسی کو پریشان نہ کریں ۔."
+msgstr "Postulo سے آنے والی ہر دستاویز پر لگایا جاتا ہے۔ کچھ نہ چاہیں تو خالی چھوڑ دیں۔"
 
 #: src/postulo_paperless/store.py
-#, fuzzy, python-format
+#, python-format
 msgid "Reachable. The archive holds %(count)d document."
 msgid_plural "Reachable. The archive holds %(count)d documents."
-msgstr[0] "دستیاب. محفوظہ %(count)d دستاویز رکھتی ہے."
-msgstr[1] "دستیاب. محفوظہ %(count)d دستاویز رکھتا ہے."
+msgstr[0] "قابلِ رسائی۔ آرکائیو میں %(count)d دستاویز ہے۔"
+msgstr[1] "قابلِ رسائی۔ آرکائیو میں %(count)d دستاویزات ہیں۔"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Tag"
 msgstr "ٹیگ"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "This would send your API token unencrypted to a server on the internet, where anything along the way can read it. Use https://."
-msgstr "یہ آپ کے اے پی آئی انٹرنیٹ پر ایک سرور کے پاس نشان بھیج دیں گے، جہاں راستے سے کوئی بھی چیز اسے پڑھ سکتی ہے۔ ایس ."
+msgstr "اس سے آپ کا API ٹوکن بغیر انکرپشن کے انٹرنیٹ پر کسی سرور کو بھیجا جائے گا، جہاں راستے میں کوئی بھی اسے پڑھ سکتا ہے۔ https:// استعمال کریں۔"
 
 #: src/postulo_paperless/store.py
-#, fuzzy
 msgid "Where you open Paperless, e.g. https://paperless.example.org."
-msgstr "جہاں آپ کھلے کاغذ کے بغیر، مثلاً https://ppersless.expal.org."
+msgstr "جہاں آپ Paperless کھولتے ہیں، مثلاً https://paperless.example.org۔"
