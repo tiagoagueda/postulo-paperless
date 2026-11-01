@@ -1,6 +1,6 @@
 [project]
 name = "postulo-paperless"
-version = "0.3.0"
+version = "0.5.0"
 description = "Keep every document Postulo holds — rendered CVs and letters, uploaded files — in a Paperless-ngx archive, filed by company, kind and application."
 readme = "README.md"
 requires-python = ">=3.12.4"
@@ -48,11 +48,11 @@ artifacts = ["src/postulo_paperless/locale/*/LC_MESSAGES/django.mo"]
 # themselves in CI rather than running (#2). The lock beside this file carries the exact
 # commit, so a run is reproducible; the ref is what a deliberate `uv lock --upgrade` follows.
 #
-# The ref is a full commit of the core's `main`, because the core cuts no tag the plugin surface
-# this package imports is in (#215, #216). Move it with `uv lock --upgrade`, and let the audit job
-# in `.forgejo/workflows/ci.yml` say when the lock's dependencies have drifted (#17).
+# The ref is the core's release tag, the Postulo this plugin is released beside; a plugin release
+# moves it (postulo/postulo#1090) with `uv lock --upgrade-package postulo`, and the audit job in
+# `.forgejo/workflows/ci.yml` says when the lock's dependencies have drifted (#17).
 dev = [
-    "postulo @ git+https://source.tiagoagueda.com/postulo/postulo.git@a8467ab21fac7e16c4a6faf825413e42381656e5",
+    "postulo @ git+https://source.tiagoagueda.com/postulo/postulo.git@v0.5.0",
     "pytest>=8.3",
     "pytest-django>=4.14",
     "ruff>=0.16",
