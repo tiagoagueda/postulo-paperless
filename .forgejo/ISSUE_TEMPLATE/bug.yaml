@@ -1,0 +1,92 @@
+name: Bug report
+about: Something in sending documents to Paperless-ngx does not work, or does not work for you.
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time. Write in whatever language you can; English is easiest for the maintainer to act on, but a report in another language is better than none.
+
+        **Is it a security problem?** Do not post it here, this page is public. Follow [SECURITY.md](https://source.tiagoagueda.com/postulo/postulo/src/branch/main/SECURITY.md).
+
+        **Remove personal details before you paste anything.** Postulo holds CVs, home addresses and the names of the people somebody is applying to. A log or a screenshot is where those leak: blank out names, addresses, e-mail addresses, company and listing details, tokens and cookies first.
+
+        Say what kind of document was being filed; never attach the document itself. Paperless's address and its API token do not belong in a report.
+  - type: input
+    id: plugin-version
+    attributes:
+      label: postulo-paperless version
+      description: "*Server settings → Plugins* lists it."
+      placeholder: "0.5.0"
+    validations:
+      required: true
+  - type: input
+    id: postulo-version
+    attributes:
+      label: Postulo version
+      description: The foot of every page shows the version. On the `:dev` image, give the pinned tag (`<version>-dev.<short sha>`), because `:dev` moves.
+      placeholder: "0.5.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: How the plugin is installed
+      options:
+        - From a catalogue, under Server settings → Plugins
+        - A wheel uploaded under Server settings → Plugins
+        - Into Postulo's environment by hand (uv pip install)
+        - Built into an image of my own
+        - Other (say so below)
+    validations:
+      required: true
+  - type: input
+    id: paperless
+    attributes:
+      label: Paperless-ngx version
+      description: Not its address.
+      placeholder: "2.18.4"
+    validations:
+      required: true
+  - type: dropdown
+    id: document
+    attributes:
+      label: What kind of document was being filed
+      description: The kind only, not the document.
+      options:
+        - A CV Postulo drew
+        - A cover letter Postulo drew
+        - A file I uploaded (certificate, portfolio, reference or other)
+        - Several, or not one document in particular
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: What you did, step by step
+      placeholder: |
+        1. Open ...
+        2. Press ...
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened
+      description: What the document showed (archived, waiting to be sent, failed, not accepted) and the reason given, if any.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Anything from the logs that bears on it, with personal details removed first.
+      render: text
