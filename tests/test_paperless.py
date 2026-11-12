@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import datetime as dt
+import hashlib
 import json
 import tomllib
 from pathlib import Path
@@ -44,6 +45,11 @@ class FakePaperless:
         self.tasks: dict[str, dict] = {}
         self.posted: list[dict] = []
         self.checksums: dict[bytes, int] = {}
+        #: Each document's MD5, as Paperless keeps it and its metadata names it.
+        self.md5s: dict[int, str] = {}
+        #: Whether ``checksum__iexact`` is understood. Paperless-ngx before 1.16 ignores a
+        #: filter it does not know and answers with every document.
+        self.checksum_filter = True
         self.pending_polls = 0  # how many polls answer PENDING before SUCCESS
         #: The refusal of the file, as Paperless words it: under the ``document`` field, in a list.
         self.reject_with: str | None = None
@@ -61,7 +67,16 @@ class FakePaperless:
             return httpx.Response(401, json={"detail": "Invalid token."})
 
         if path == "/api/documents/" and request.method == "GET":
-            return httpx.Response(200, json={"count": len(self.documents), "results": []})
+            wanted = query.get("checksum__iexact", [""])[0].lower()
+            if wanted and self.checksum_filter:
+                rows = [{"id": i} for i, md5 in self.md5s.items() if md5 == wanted]
+            else:
+                rows = [{"id": i} for i in self.documents]
+            return httpx.Response(200, json={"count": len(rows), "results": rows[:1]})
+
+        if path.startswith("/api/documents/") and path.endswith("/metadata/"):
+            document_id = int(path.split("/")[3])
+            return httpx.Response(200, json={"original_checksum": self.md5s[document_id]})
 
         for table in self.tables:
             if path == f"/api/{table}/":
@@ -109,6 +124,7 @@ class FakePaperless:
                     "custom_fields": [],
                 }
                 self.checksums[file_bytes] = document_id
+                self.md5s[document_id] = hashlib.md5(file_bytes, usedforsecurity=False).hexdigest()
                 self.tasks[task_id] = {
                     "status": "SUCCESS",
                     "result": f"Success. New document id {document_id} created",
@@ -170,6 +186,14 @@ def paperless(monkeypatch):
     monkeypatch.setattr(store_module, "client", fake_client)
     monkeypatch.setattr(store_module, "POLL_SECONDS", 0)
     return fake
+
+
+@pytest.fixture(autouse=True)
+def _a_new_process():
+    """Every test starts with nothing remembered, as a new process does (#27)."""
+    store_module.forget_lookups()
+    yield
+    store_module.forget_lookups()
 
 
 def a_metadata(**overrides) -> DocumentMetadata:
@@ -333,6 +357,120 @@ def test_a_slow_consumer_is_left_to_the_next_pass(paperless, monkeypatch):
         PaperlessStore().put(None, ContentFile(b"slow"), a_metadata(), CONFIG, None)
 
 
+# ------------------------------------------- fewer requests and uploads (#27)
+
+
+def _asked(paperless, method: str, path: str) -> int:
+    return sum(1 for request in paperless.requests if request == (method, path))
+
+
+NAME_LOOKUPS = ("/api/document_types/", "/api/correspondents/", "/api/tags/", "/api/custom_fields/")
+
+
+def test_a_batch_for_one_company_looks_each_name_up_once(paperless):
+    store = PaperlessStore()
+    store.put(None, ContentFile(b"first"), a_metadata(), CONFIG, None)
+    asked = {path: _asked(paperless, "GET", path) for path in NAME_LOOKUPS}
+    assert asked == dict.fromkeys(NAME_LOOKUPS, 1)
+    for number in range(4):
+        content = ContentFile(f"letter {number}".encode())
+        store.put(None, content, a_metadata(company="black mesa"), CONFIG, None)
+    assert {path: _asked(paperless, "GET", path) for path in NAME_LOOKUPS} == asked
+    assert len(paperless.documents) == 5
+    assert {doc["correspondent"] for doc in paperless.documents.values()} == {"1"}
+
+
+def test_a_name_is_looked_up_again_once_remembered_long_enough(paperless, monkeypatch):
+    clock = [1000.0]
+    monkeypatch.setattr(store_module.time, "monotonic", lambda: clock[0])
+    store = PaperlessStore()
+    store.put(None, ContentFile(b"one"), a_metadata(), CONFIG, None)
+    clock[0] += store_module.LOOKUP_SECONDS - 1
+    store.put(None, ContentFile(b"two"), a_metadata(), CONFIG, None)
+    assert _asked(paperless, "GET", "/api/correspondents/") == 1
+    clock[0] += 1
+    store.put(None, ContentFile(b"three"), a_metadata(), CONFIG, None)
+    assert _asked(paperless, "GET", "/api/correspondents/") == 2
+
+
+def test_an_id_paperless_refuses_is_forgotten_and_asked_for_again(paperless):
+    store = PaperlessStore()
+    store.put(None, ContentFile(b"one"), a_metadata(), CONFIG, None)
+    # Somebody deletes the correspondent in Paperless and makes it again, with a new id.
+    paperless.tables["correspondents"] = [{"id": 7, "name": "Black Mesa"}]
+    handler = paperless.handler
+
+    def refusing_the_old_id(request):
+        if (
+            request.url.path == "/api/documents/post_document/"
+            and b'name="correspondent"\r\n\r\n1\r\n' in request.content
+        ):
+            paperless.requests.append((request.method, request.url.path))
+            return httpx.Response(
+                400, json={"correspondent": ['Invalid pk "1" - object does not exist.']}
+            )
+        return handler(request)
+
+    paperless.handler = refusing_the_old_id
+    with pytest.raises(PaperlessError, match="Invalid pk"):
+        store.put(None, ContentFile(b"two"), a_metadata(), CONFIG, None)
+    assert _asked(paperless, "GET", "/api/correspondents/") == 1, "the refused id was remembered"
+    ref = store.put(None, ContentFile(b"two"), a_metadata(), CONFIG, None)
+    assert _asked(paperless, "GET", "/api/correspondents/") == 2
+    assert _asked(paperless, "GET", "/api/document_types/") == 1, "the others are still good"
+    assert paperless.documents[int(ref.id)]["correspondent"] == "7"
+
+
+def test_a_retry_after_a_slow_consumption_does_not_upload_again(paperless, monkeypatch):
+    """The first attempt gives up waiting; Paperless finishes; the retry only asks."""
+    paperless.pending_polls = 1000
+    monkeypatch.setattr(store_module, "WAIT_SECONDS", 0.0)
+    store = PaperlessStore()
+    with pytest.raises(PaperlessError, match="still consuming"):
+        store.put(None, ContentFile(b"a long scan"), a_metadata(), CONFIG, None)
+    ref = store.put(None, ContentFile(b"a long scan"), a_metadata(), CONFIG, None)
+    assert ref.id == "1"
+    assert _asked(paperless, "POST", "/api/documents/post_document/") == 1
+    assert _asked(paperless, "GET", "/api/tasks/") == 1, "nothing to wait for the second time"
+
+
+def test_a_document_archived_by_hand_is_not_uploaded(paperless):
+    store = PaperlessStore()
+    store.put(None, ContentFile(b"by hand"), a_metadata(), CONFIG, None)
+    paperless.requests.clear()
+    ref = store.put(None, ContentFile(b"by hand"), a_metadata(), CONFIG, None)
+    assert ref.id == "1"
+    assert _asked(paperless, "POST", "/api/documents/post_document/") == 0
+    assert not [r for r in paperless.requests if r[1] in NAME_LOOKUPS and r[0] == "GET"]
+
+
+def test_a_paperless_that_ignores_the_filter_is_offered_the_file(paperless):
+    """Before 1.16 the filter is ignored and every document comes back: none is taken for it."""
+    paperless.checksum_filter = False
+    store = PaperlessStore()
+    store.put(None, ContentFile(b"the only one"), a_metadata(), CONFIG, None)
+    ref = store.put(None, ContentFile(b"another"), a_metadata(), CONFIG, None)
+    assert ref.id == "2", "one document in the archive is not a match for every file"
+    assert _asked(paperless, "POST", "/api/documents/post_document/") == 2
+
+
+def test_a_paperless_that_refuses_the_filter_is_offered_the_file(paperless):
+    handler = paperless.handler
+
+    def refusing(request):
+        if request.url.path == "/api/documents/" and "checksum__iexact" in str(request.url):
+            return httpx.Response(400, json={"checksum__iexact": ["Unknown filter."]})
+        return handler(request)
+
+    paperless.handler = refusing
+    ref = PaperlessStore().put(None, ContentFile(b"x"), a_metadata(), CONFIG, None)
+    assert ref.id == "1" and len(paperless.posted) == 1
+
+
+def test_the_wait_is_short_because_the_retry_costs_one_question():
+    assert store_module.WAIT_SECONDS <= 5
+
+
 def test_a_consumer_that_needs_a_few_polls_is_waited_for(paperless):
     paperless.pending_polls = 3
     ref = PaperlessStore().put(None, ContentFile(b"ok"), a_metadata(), CONFIG, None)
@@ -422,6 +560,7 @@ def test_forbidden_is_an_ordinary_failure_because_one_permission_is_missing(pape
 
 
 def test_a_retried_document_is_matched_by_the_id_at_the_end_of_the_message(paperless):
+    paperless.checksum_filter = False  # a Paperless older than 1.16 is offered the file again
     store = PaperlessStore()
     store.put(None, ContentFile(b"someone else's"), a_metadata(role="Other"), CONFIG, None)
     first = store.put(
@@ -438,6 +577,7 @@ def test_a_retried_document_is_matched_by_the_id_at_the_end_of_the_message(paper
 
 
 def test_an_uploads_own_title_with_a_hash_does_not_win_either(paperless):
+    paperless.checksum_filter = False
     store = PaperlessStore()
     upload = a_metadata(origin="upload", title="Ticket #48213 — scan", company="", role="")
     store.put(None, ContentFile(b"filler"), a_metadata(), CONFIG, None)

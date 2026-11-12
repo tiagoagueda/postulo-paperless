@@ -63,12 +63,20 @@ had; *Send to stores now* under a document tries at once.
   own name, followed by the date.
 - **Created** ← the day it was sent, or uploaded.
 
-Paperless refuses a document whose checksum it already holds and names the one it has;
-the plugin reads that as success. So a document is never archived twice, however many
-times it is offered — which is what makes retrying safe. Consumption is asynchronous:
-the plugin waits a short while for it, and if Paperless is slower (OCR of a large scan,
-a busy server) it leaves the document to the next scheduler pass, where the duplicate
-answer picks it up.
+Before uploading, the plugin asks Paperless whether it already holds the file, by the MD5
+checksum Paperless keeps of every original, and a document it already has (an earlier
+attempt, or one you archived by hand) is not uploaded again. Paperless-ngx before 1.16
+cannot be asked that, and is offered the file; it refuses a document whose checksum it
+already holds and names the one it has, and the plugin reads that as success. Either way
+a document is never archived twice, however many times it is offered — which is what makes
+retrying safe. Consumption is asynchronous: the plugin waits up to five seconds for it, and
+if Paperless is slower (OCR of a large scan, a busy server) it leaves the document to the
+next scheduler pass, which finds it by its checksum.
+
+The correspondents, document types, tag and custom field are looked up by name once and
+remembered for five minutes, so a pass filing many documents for the same companies does
+not ask again for each. One that was deleted in Paperless in the meantime is refused there
+once, forgotten, and looked up again on the next attempt.
 
 A file type Paperless has no parser for (a Word document without Tika, say) is offered once
 and recorded as *not accepted*, not retried. A token Paperless no longer accepts (revoked, or

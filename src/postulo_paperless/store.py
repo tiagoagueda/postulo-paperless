@@ -1,11 +1,18 @@
 """The store: post each document to Paperless-ngx, filed so it can be found again.
 
 Paperless consumes a document asynchronously — ``POST /api/documents/post_document/``
-answers with a task id, and the document exists once the task has run. ``put`` posts,
-then waits a short while for the task; if Paperless is slower than that, it raises, and
-Postulo's scheduler tries again later. That retry is safe because Paperless refuses a
-document whose checksum it already holds and names the one it has, which this plugin
-reads as success: a document is never archived twice, however many times it is offered.
+answers with a task id, and the document exists once the task has run. ``put`` first asks
+whether Paperless already holds the file, by its MD5 checksum, and uploads only when it does
+not (#27); then it waits a short while for the task, and if Paperless is slower than that, it
+raises, and Postulo's scheduler tries again later. That retry finds the document by its
+checksum without uploading it again, and where the question cannot be asked (a Paperless
+older than 1.16), the upload is still safe: Paperless refuses a document whose checksum it
+already holds and names the one it has, which this plugin reads as success. A document is
+never archived twice, however many times it is offered.
+
+The correspondent, document type, tag and custom field are looked up by name once and
+remembered for a few minutes (#27), so a scheduler pass filing fifty documents for the same
+companies asks a handful of times rather than a hundred and fifty.
 
 What is filed, all created on the Paperless side when missing: the **correspondent** is
 the company; the **document type** is the kind — CV, cover letter, certificate…; one
@@ -25,6 +32,7 @@ else: that module is the promise, and the rest of ``postulo`` is this month's in
 
 from __future__ import annotations
 
+import hashlib
 import ipaddress
 import logging
 import re
@@ -53,8 +61,12 @@ from . import __version__
 
 #: How long ``put`` waits for Paperless to consume a document before leaving it to the
 #: next scheduler pass. Consumption usually takes a few seconds; OCR of a scan takes
-#: longer, and a request must not hang for it.
-WAIT_SECONDS = 20.0
+#: longer, and the scheduler, or a person's *Send now*, must not hang for it. Short, because
+#: waiting longer saves nothing (#27): the next attempt finds the document by its checksum
+#: and does not upload it again. Postulo's own budget for a pass of copies
+#: (postulo/postulo#1172) never cuts a copy off once started, so this is also most of what
+#: one copy can add to a pass beyond that budget.
+WAIT_SECONDS = 5.0
 POLL_SECONDS = 1.0
 #: Uploading a document may take longer than the default request timeout.
 UPLOAD_TIMEOUT = 60.0
@@ -71,8 +83,27 @@ MAX_BODY = 1024 * 1024
 ACCEPT_ENCODING = "gzip, deflate"
 #: The longest the remote server's own words are allowed to run in a message (#14).
 DETAIL_CHARACTERS = 120
+#: How long an id found or made by ``Archive.ensure`` is remembered (#27): about one
+#: scheduler pass, so that a batch of documents for the same company asks once, and short
+#: enough that a correspondent renamed or deleted in Paperless is looked up again soon.
+LOOKUP_SECONDS = 300.0
+#: The most ids remembered at once; past it the memory starts again. A few per connection.
+LOOKUP_ENTRIES = 1024
+#: What Paperless's ``post_document`` calls each field ``put`` fills with an id, against the
+#: table ``ensure`` found it in. A 400 naming one is an id Paperless no longer has.
+FIELD_TABLES = {
+    "correspondent": "correspondents",
+    "document_type": "document_types",
+    "tags": "tags",
+}
 
 logger = logging.getLogger(__name__)
+
+#: (address, account, table, name in lower case) → (id, until when, by ``time.monotonic``).
+#: Module-level so that it outlives one ``put``: the scheduler files each document through a
+#: new ``Archive``. The account is a digest of the token, because what one Paperless user can
+#: see of the tables another may not.
+_lookups: dict[tuple[str, str, str, str], tuple[int, float]] = {}
 
 #: The id Paperless closes its duplicate message with: "... It is a duplicate of <title>
 #: (#<id>)." The title comes first and is the person's own text, so a ``#`` in it comes before
@@ -95,6 +126,29 @@ class StillConsuming(PaperlessError):
 
 def _base(config: dict) -> str:
     return str(config.get("url", "")).rstrip("/")
+
+
+def forget_lookups() -> None:
+    """Forget every remembered id, as a new process would."""
+    _lookups.clear()
+
+
+def md5_of(file) -> str:
+    """The file's MD5, which is the checksum Paperless keeps of a document's original.
+
+    Read from the start and put back there, for the upload that may follow. Empty when the
+    file cannot be rewound, and then nothing is looked up: the upload reads it as it is.
+    """
+    try:
+        file.seek(0)
+    except (AttributeError, OSError, ValueError):
+        return ""
+    # Not a security use: Paperless names a document by this, and this is only how it is asked.
+    digest = hashlib.md5(usedforsecurity=False)
+    for chunk in iter(lambda: file.read(1024 * 1024), b""):
+        digest.update(chunk)
+    file.seek(0)
+    return digest.hexdigest()
 
 
 def _is_public(address: str) -> bool:
@@ -192,6 +246,10 @@ class Archive:
         self.base = _base(config)
         self.client = client
         self.headers = _headers(config)
+        token = str(config.get("token", "")).encode()
+        self.account = hashlib.sha256(token).hexdigest()[:16]
+        #: The keys whose ids this archive took from memory rather than from Paperless.
+        self.remembered: list[tuple[str, str, str, str]] = []
 
     # ------------------------------------------------------------ plumbing
 
@@ -264,14 +322,64 @@ class Archive:
         """The id of the correspondent, document type, tag or custom field called ``name``.
 
         Created when missing. Names are matched without regard to case, so "Black Mesa"
-        and "black mesa" are the one correspondent.
+        and "black mesa" are the one correspondent. Remembered for ``LOOKUP_SECONDS`` (#27),
+        and forgotten sooner if Paperless refuses the id (`forget`).
         """
+        key = (self.base, self.account, kind, name.lower())
+        now = time.monotonic()
+        remembered = _lookups.get(key)
+        if remembered is not None and remembered[1] > now:
+            self.remembered.append(key)
+            return remembered[0]
         found = self._get(f"{kind}/", name__iexact=name, page_size=1)
         results = found.get("results", []) if isinstance(found, dict) else []
         if results:
-            return int(results[0]["id"])
-        created = self._post(f"{kind}/", json={"name": name, **extra})
-        return int(created.json()["id"])
+            found_id = int(results[0]["id"])
+        else:
+            found_id = int(self._post(f"{kind}/", json={"name": name, **extra}).json()["id"])
+        if len(_lookups) >= LOOKUP_ENTRIES:
+            _lookups.clear()
+        _lookups[key] = (found_id, now + LOOKUP_SECONDS)
+        return found_id
+
+    def forget(self, kinds: set[str] | None = None) -> None:
+        """Forget the ids this archive took from memory, of ``kinds`` or all of them.
+
+        Called when Paperless refuses one with a 400: it was deleted or merged there, and the
+        next document looks the name up again rather than being refused for the same reason.
+        """
+        for key in self.remembered:
+            if kinds is None or key[2] in kinds:
+                _lookups.pop(key, None)
+
+    def find_by_checksum(self, checksum: str) -> int | None:
+        """The document Paperless already holds whose original has this MD5, if any (#27).
+
+        ``checksum__iexact`` arrived in Paperless-ngx 1.16, and an older one ignores a filter it
+        does not know and answers with every document. So a match counts only when exactly one
+        came back and its metadata names this checksum; anything else, or a refusal, is "not
+        known", and the document is uploaded as it always was. A token Paperless no longer
+        accepts is still said at once.
+        """
+        try:
+            response = self._send(
+                "GET", "documents/", params={"checksum__iexact": checksum, "page_size": 1}
+            )
+            if response.status_code == 401:
+                raise self._refuse(response)
+            body = response.json() if response.status_code == 200 else {}
+            results = body.get("results") if isinstance(body, dict) else None
+            if not results or body.get("count") != 1:
+                return None
+            candidate = int(results[0]["id"])
+            response = self._send("GET", f"documents/{candidate}/metadata/")
+            if response.status_code == 401:
+                raise self._refuse(response)
+            metadata = response.json() if response.status_code == 200 else {}
+        except (PaperlessError, ValueError, TypeError, KeyError):
+            return None
+        original = metadata.get("original_checksum") if isinstance(metadata, dict) else None
+        return candidate if str(original or "").lower() == checksum.lower() else None
 
     def post_document(self, file, metadata: DocumentMetadata, fields: dict) -> str:
         """Offer the file to the consumer. Returns the task id Paperless gave back."""
@@ -288,6 +396,16 @@ class Archive:
             # Paperless looked at the file and will not consume it (a type it has no parser
             # for). It is the same answer however often it is asked, so say so once (#14).
             raise FileRefused(_explain(response))
+        if response.status_code == 400:
+            # Most likely an id remembered from an earlier document that Paperless no longer
+            # has: forget the ones it names, or every one this document used, and the next
+            # attempt asks again.
+            try:
+                body = response.json()
+            except ValueError:
+                body = None
+            named = {table for field, table in FIELD_TABLES.items() if field in (body or {})}
+            self.forget(named or None)
         if response.status_code != 200:
             raise self._refuse(response)
         body = response.json()
@@ -340,6 +458,8 @@ class Archive:
         ]
         fields.append({"field": field_id, "value": value})
         response = self._send("PATCH", f"documents/{document_id}/", json={"custom_fields": fields})
+        if response.status_code == 400:
+            self.forget({"custom_fields"})
         if response.status_code != 200:
             raise self._refuse(response)
 
@@ -451,23 +571,28 @@ class PaperlessStore:
     ) -> ExternalRef | None:
         tag = str(config.get("tag") or "").strip()
         field_name = str(config.get("custom_field") or "").strip()
+        checksum = md5_of(file)
         with client(total=UPLOAD_TIMEOUT) as session:
             archive = Archive(config, client=session)
-            fields = {
-                "title": compose_title(metadata)[:128],
-                "created": (metadata.sent_on or metadata.created_at.date()).isoformat(),
-                "document_type": archive.ensure("document_types", metadata.kind_label),
-            }
-            if metadata.company:
-                fields["correspondent"] = archive.ensure("correspondents", metadata.company)
-            if tag:
-                fields["tags"] = [archive.ensure("tags", tag)]
-            try:
-                task_id = archive.post_document(file, metadata, fields)
-            except FileRefused as refusal:
-                logger.info("Paperless will not take %s: %s", metadata.filename, refusal)
-                return None
-            document_id = archive.wait_for(task_id)
+            # Asked first (#27): a document an earlier attempt uploaded and Paperless consumed
+            # after the wait, or one somebody archived by hand, is not sent a second time.
+            document_id = archive.find_by_checksum(checksum) if checksum else None
+            if document_id is None:
+                fields = {
+                    "title": compose_title(metadata)[:128],
+                    "created": (metadata.sent_on or metadata.created_at.date()).isoformat(),
+                    "document_type": archive.ensure("document_types", metadata.kind_label),
+                }
+                if metadata.company:
+                    fields["correspondent"] = archive.ensure("correspondents", metadata.company)
+                if tag:
+                    fields["tags"] = [archive.ensure("tags", tag)]
+                try:
+                    task_id = archive.post_document(file, metadata, fields)
+                except FileRefused as refusal:
+                    logger.info("Paperless will not take %s: %s", metadata.filename, refusal)
+                    return None
+                document_id = archive.wait_for(task_id)
             # The document is archived from here on. The link back is a convenience: a failure
             # to write it must not make the copy look failed, or the whole file is uploaded
             # again for nothing, six times over (#12).
